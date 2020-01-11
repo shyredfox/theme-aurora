@@ -1,0 +1,1082 @@
+/* ==UserStyle==
+@name           Aurora Theme
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    WA theme test
+@author         Amy Winters-Voss
+==/UserStyle== */
+/* --------------------------------- 
+AURORA THEME - by Shyredfox
+ ---------------------------------*/
+/*  ---------------------------------
+Ademal's editor hack - scrolls with the page and it's wider - gifted in Discord server
+-------------------------------- */
+@media (min-width: 768px) {
+    .col-sm-2 {
+        width: 32%
+    }
+    .col-sm-10 {
+        width: 68%
+    }
+}
+#css-palette-panel {
+    position: fixed!important;
+    width: 32%!important;
+    top: 30px!important;
+    background: grey;
+    z-index: 2000
+}
+#css-palette-panel textarea.form-control {
+    height: 0
+}
+#css-palette-panel .form-group {
+    margin-bottom: 5px;
+    background: #d3d3d3;
+    border-radius: 3px;
+    padding: 5px
+}
+#css-palette-panel textarea {
+    min-height: 55vh!important
+}
+.hidden-xs {
+    background: transparent
+}
+.hidden-xs .fa-palette {
+    background: #fff;
+    border-radius: 5px;
+    padding: 3px;
+    top: 200px!important;
+    border: 2px solid;
+    margin-left: -9px;
+    border-left: #fff;
+    border-style: outset;
+    position: fixed!important;
+    left: unset!important;
+    z-index: 0
+}
+.user-css pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word
+}
+
+/*  ---------------------------------
+Ademal's grid column hack - gifted in Discord server
+-------------------------------- */
+/*Contain-Grid*/
+@media only screen and (min-width: 960px) {
+    .contain-grid {
+        display: grid;
+        grid-gap: 20px;
+        grid-auto-rows: minmax(0px, auto);
+    }
+    .contain-grid-col-12 {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .contain-grid-col-8 {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    .contain-grid-col-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .contain-grid-col-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .contain-grid-col-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .contain-grid-col-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*  ---------------------------------
+AURORA THEME Variables
+-------------------------------- */
+:root {
+
+    /* pallete */
+    --aurora-1: #D9F96C;
+    /* chartreuse */
+    --aurora-1t: #D9F96C80;
+    --aurora-1l: #EFF9CB;
+    --aurora-1d: #9CC11E;
+    --aurora-2: #7BB14B;
+    /* lime*/
+    --aurora-2t: #7BB14B80;
+    --aurora-2l: #CBF6A4;
+    --aurora-2d: #599028;
+    --aurora-3: #4BB179;
+    /* green*/
+    --aurora-3t: #4BB17980;
+    --aurora-3l: #9DE2BC;
+    --aurora-3d: #289057;
+    --aurora-4: #00858A;
+    /* teal*/
+    --aurora-4t: #00858A80;
+    --aurora-4l: #79DDDF;
+    --aurora-4lt: #79DDDF80;
+    --aurora-4d: #016F73;
+    --aurora-5: #3B8CA6;
+    /* sky */
+    --aurora-5t: #3B8CA680;
+    --aurora-5l: #59B3CF;
+    --aurora-5d: #086D8C;
+    --aurora-6: #00618A;
+    /* cerulean */
+    --aurora-6t: #00618A80;
+    --aurora-6l: #0581B4;
+    --aurora-6d: #004E6F;
+    --aurora-7: #3517AD;
+    /* blue violet*/
+    --aurora-7t: #1C008A60;
+    --aurora-7l: #4822E4;
+    --aurora-7d: #1B0180;
+    --aurora-8: #7A008A;
+    /* purple*/
+    --aurora-8t: #7A008A80;
+    --aurora-8l: #9D02B1;
+    --aurora-8d: #570162;
+    --aurora-9: #B90E6B;
+    /* magenta*/
+    --aurora-9t: #B90E6B80;
+    --aurora-9l: #EF168B;
+    --aurora-9d: #7B0043;
+    --aurora-f: #D35E03;
+    /* fox*/
+    --aurora-ft: #D35E0380;
+    --aurora-fl: #FC8B33;
+    --aurora-fd: #9F4600;
+    --aurora-night: #090649;
+    /* midnight blue */
+    --aurora-nightt: #09064980;
+    --aurora-nightl: #221F69;
+    /* dark grey */
+    --aurora-nightd: #000;
+    /* black */
+    --aurora-w: #CCC;
+    /* almost white */
+    --aurora-wt: #CCCCCC70;
+    --aurora-wtb: #FFFFFF99;
+    --aurora-wl: #EEE;
+    --aurora-wtl: #FFFFFF20;
+    --aurora-wd: #888888;
+    --aurora-clear: none;
+
+    /* fonts */
+    --font-1:  Shrikhand, Skranji, Noto;
+    --font-2: Lemon, Noto;
+    --font-3: Varela Round, Noto;
+    --font-4: Courgette, Noto;
+    --font-code: Source Code Pro, Noto;
+
+    --font-reg: 400;
+    --font-bold: 800;
+
+    --fsize-h0: 80pt;
+    --fsize-h1: 60pt;
+    --fsize-h2: 30pt;
+    --fsize-h3: 24pt;
+    --fsize-h4: 20pt;
+    --fsize-h5: 18pt;
+    --fsize-h6: 16pt;
+    --fsize-text: 14pt;
+    --fsize-big: 1.5em;
+    --fsize-small: .5em;
+    --fsize-med: .7em;
+
+    /*  containers */
+    --cont-rad: 10px;
+    --sect-rad: 5px;
+    --border-tiny: 1px;
+    --border-thin: 2px;
+    --border-medthin: 3.5px;
+    --border-med: 5px;
+    --border-thick: 10px;
+    --border-xthick: 20px;
+    --cont-pad-sm: 10px;
+    --cont-pad-med: 15px;
+    --cont-pad: 20px;
+    --box-shadows: 3px 3px 5px #44444420;
+    --glow-params: 0 0 5px 5px var(--aurora-2l), inset 0 0 2px 2px var(--aurora-2l);
+
+    /* text */
+    --indent: 20px;
+
+    /* MY CONTAINERS */
+    --HL-background: #FFEDB0;
+    --HL-color: #000;
+    --HL-font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+    --HL-border-radius: 5px;
+    --HL-padding-right: 4px;
+    --HL-padding-left: 4px;
+
+    --HLbox-background: rgba(119, 119, 119, .1);
+    --HLbox-padding: 9.5px;
+}
+
+
+
+
+
+
+/* -------------------------------- THEME -------------------------------- */
+/* -------------------------------- FONTS/TEXT/HEADERs -------------------------------- */
+/* HEADER FONTS: */
+/* latin-ext */
+@font-face {
+  font-family: Shrikhand;
+  font-style: normal;
+  font-weight: 400;
+  src: local(Shrikhand Regular), local(Shrikhand-Regular), url(https://fonts.gstatic.com/s/shrikhand/v5/a8IbNovtLWfR7T7bMJwrDYKR4zg.woff2) ;
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: Shrikhand;
+  font-style: normal;
+  font-weight: 400;
+  src: local(Shrikhand Regular), local(Shrikhand-Regular), url(https://fonts.gstatic.com/s/shrikhand/v5/a8IbNovtLWfR7T7bMJwrA4KR.woff2) ;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: Ruslan Display;
+  font-style: normal;
+  font-weight: 400;
+  src: local(Ruslan Display), local(RuslanDisplay), url(https://fonts.gstatic.com/s/ruslandisplay/v10/Gw6jwczl81XcIZuckK_e3Upfdwxin921vg.woff2);
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: Ruslan Display;
+  font-style: normal;
+  font-weight: 400;
+  src: local(Ruslan Display), local(RuslanDisplay), url(https://fonts.gstatic.com/s/ruslandisplay/v10/Gw6jwczl81XcIZuckK_e3Upfdwxsn90.woff2) ;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: Skranji;
+    font-style: normal;
+    font-weight: 400;
+    src: local(Skranji), url(https://fonts.gstatic.com/s/skranji/v7/OZpDg_dtriVFNerMUzKkk2Tm.woff2);
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: Skranji;
+    font-style: normal;
+    font-weight: 400;
+    src: local(Skranji), url(https://fonts.gstatic.com/s/skranji/v7/OZpDg_dtriVFNerMUzykkw.woff2);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+    font-family: Lemon;
+    font-style: normal;
+    font-weight: 400;
+    src: local(Lemon Regular), local(Lemon-Regular), url(https://fonts.gstatic.com/s/lemon/v8/HI_EiYEVKqRMq3jGQ5Q.woff2);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* CODE FONT */
+/* latin-ext */
+@font-face {
+    font-family: Source Code Pro;
+    font-style: normal;
+    font-weight: 400;
+    src: local(Source Code Pro Regular), local(SourceCodePro-Regular), url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_SiYsKILxRpg3hIP6sJ7fM7PqlM-vWjMY.woff2);
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: Source Code Pro;
+    font-style: normal;
+    font-weight: 400;
+    src: local(Source Code Pro Regular), local(SourceCodePro-Regular), url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_SiYsKILxRpg3hIP6sJ7fM7PqlPevW.woff2);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* MAIN FONT */
+@font-face {
+    font-family: Varela Round;
+    font-style: normal;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/varelaround/v11/w8gdH283Tvk__Lua32TysjIfqcuPP9g.woff2);
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: Varela Round;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/varelaround/v11/w8gdH283Tvk__Lua32TysjIfp8uP.woff2);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* HANDWRITING FONT */
+/* latin-ext */
+@font-face {
+    font-family: Courgette;
+    font-style: normal;
+    font-weight: 400;
+    src: local(Courgette Regular), local(Courgette-Regular), url(https://fonts.gstatic.com/s/courgette/v7/wEO_EBrAnc9BLjLQAUk1WPoK7Es.woff2);
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: Courgette;
+    font-style: normal;
+    font-weight: 400;
+    src: local(Courgette Regular), local(Courgette-Regular), url(https://fonts.gstatic.com/s/courgette/v7/wEO_EBrAnc9BLjLQAUk1VvoK.woff2);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Japanese */
+@font-face {
+    font-family: Noto;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://rawcdn.githack.com/shyredfox/liminal-chronicles/e707041be71eb7d59821103a37010dd4f77681cc/lc-fonts/noto-sans-japanese/NotoSansCJKjp-Regular.otf);
+}
+/* container based font classes */
+.font-1 {
+    font-family: var(--font-1);
+}
+.font-2 {
+    font-family: var(--font-2);
+}
+.font-3 {
+    font-family: var(--font-3);
+}
+.font-4 {
+    font-family: var(--font-4);
+}
+.font-code {
+    font-family: var(--font-code);
+}
+
+/* world background */
+.user-css-presentation {
+    background-image:  /* url(https://www.worldanvil.com/uploads/images/424135ed9a353c8206e31dd761405903.jpg); */url(http://www.worldanvil.com/uploads/images/dd542140dedd4a4a637eaabe0568f8e8.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--aurora-night;
+    /* Used if the image is unavailable */
+}
+
+/* --------------------------- Cover image ------------------- 
+.user-css .row.cover {
+    content: url(https://www.worldanvil.com/uploads/images/adc132cee663e528c8455611a5a1307a.jpg);
+   width: 104.3%;
+}*/
+/* article bg */
+.user-css.page,
+.user-css-extended .page {
+    /* background: var(--aurora-wtb); */
+    background: var(--aurora-nightt);
+    box-shadow: 0 0 var(--border-xthick) var(--border-med) var(--aurora-1);
+}
+
+
+/* ---------- GENERAL TEXT ---------- */
+.user-css,
+.user-css-extended,
+.user-css p {
+    color: var(--aurora-nightd);
+    font-size: var(--fsize-text);
+    font-family: var(--font-3);
+}
+
+/* --------------- HEADERS -------------------*/
+.user-css h1 {
+    /* the article/world title / "h1" in the WA editor */
+    font-family: var(--font-1);
+    font-size: var(--fsize-h1);
+    line-height: 1.2em;
+    text-align: center;
+	outline: none !important;
+    text-transform: uppercase;
+    /* font-variant: small-caps; */
+    padding-left: 0;
+    background: linear-gradient(var(--aurora-1), var(--aurora-2l), var(--aurora-7));
+    /* light bg */
+    /*background: linear-gradient(var(--aurora-1), var(--aurora-)) ;  dark bg */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: .02em var(--aurora-night);
+}
+
+/* .user-css .article-title h1{
+    -webkit-text-stroke: .5px var(--aurora-night);
+} */
+
+.user-css h2,
+.user-css h3,
+.user-css h4,
+.user-css h5,
+.user-css h6,
+.user-css-extended h2,
+.user-css-extended h3,
+.user-css-extended h4,
+.user-css-extended h5,
+.user-css-extended h6
+{
+    /* "hN-1" in the WA editor */
+    border-radius: var(--cont-rad);
+    font-family: var(--font-2);
+    color: var(--aurora-night);
+    line-height: 1.3em;
+    text-align: center;
+}
+
+.user-css h2, .user-css-extended h2 {
+    /* "hN-1" in the WA editor */
+    font-size: var(--fsize-h2);
+    text-transform: capitalize;
+    background: var(--aurora-wtb);
+    border-bottom: .5px dashed;
+    border-top: .5px dashed;
+}
+
+.user-css h3 {
+    /* "hN-1" in the WA editor */
+    font-size: var(--fsize-h3);
+    text-transform: capitalize;
+    background: var(--aurora-wtb);
+}
+
+/* the TOC headers should be left aligned */
+.user-css .table-of-contents h5, 
+.user-css .table-of-contents h6,
+.user-css .world-toc-loader h5, 
+.user-css .world-toc-loader h6
+{
+    text-align: left;    
+}
+
+/* ---------- TEXT ---------- */
+.user-css a, .user-css-extended a, .user-css .panel-greatgm a {
+    color: var(--aurora-8);
+}
+
+.user-css a:focus,
+.user-css a:hover,
+.user-css-extended a:focus,
+.user-css-extended a:hover
+{
+    color: var(--aurora-8l);
+}
+
+.user-css strong.phrase-key {
+    color: var(--aurora-8d);
+}
+
+.user-css .phrase-value {
+    color: var(--aurora-nightd);
+    margin-left: var(--indent);
+}
+
+.dropcap {
+    font-family: var(--font-2);
+    font-size: var(--fsize-h1);
+    text-transform: uppercase;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-left: 3px;
+    float: left;
+    line-height: 1em;
+}
+/* ---------- TOC ---------- */
+.user-css .world-toc-loader .category-list a,
+.user-css #world-menu .category-list h5 a {
+    color: var(--aurora-6);
+    text-transform: capitalize;
+}
+
+.user-css .world-toc-loader .category-list h6 a,
+.user-css #world-menu .category-list h6 a {
+    color: var(--aurora-4);
+    text-transform: capitalize;
+}
+
+.user-css .category-list .fa-folder:before {
+    content: url(https://www.worldanvil.com/uploads/images/6db53a5494b8ed6ead463f20e05b269f.svg);
+    display: inline-block;
+    width: .9em;
+    margin-right: -5px;
+    margin-left: 0px;
+    padding-right: 0px;
+}
+
+.user-css .category-list .fa-file:before {
+    content: url(http://www.worldanvil.com/uploads/images/20e928e762d50fd6c818293f2f65423e.svg);
+    display: inline-block;
+    width: .9em;
+    margin-right: -5px;
+    margin-left: 0px;
+    padding-right: 0px;
+}
+
+/* ---------- WA CONTAINERS ---------- */
+
+.user-css .backtoworld a { 
+    background: var(--aurora-7d);
+    color: var(--aurora-1l);
+    border-top-right-radius: var(--cont-rad);
+    font-family: var(--font-4);
+}
+
+.user-css .backtoworld a:hover { 
+    background: var(--aurora-7);
+    color: var(--aurora-1l);
+}
+
+/* caret for the backto world pages */
+.user-css .backtoworld a:before { 
+  content: attr(none);
+  position: absolute;
+  top: .7em;
+  left: .5em;
+  border-right: 5px solid var(--aurora-1l);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+.user-css .backtoworld a:after { 
+  content: attr(none);
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  border-right: -1px solid var(--aurora-7d);
+  border-top: -1px solid transparent;
+  border-bottom: -1px solid transparent;
+}
+
+.user-css img,
+.user-css-extended img,
+.user-css.page,
+.user-css-extended .page
+{
+    /* round the corners */
+    border-radius: var(--cont-rad);
+}
+
+.user-css .aloud,
+.user-css-extended .aloud {
+    border-radius: var(--cont-rad);
+    background: var(--aurora-7t);
+    border-color: var(--aurora-7d);
+    border-width: var(--border-thick) 0;
+    font-style: normal;
+    font-weight: var(--font-bold);
+    color: var(--aurora-wl);
+    font-size: var(--fsize-text);
+}
+
+.user-css .statblock,
+.user-css-extended .statblock {
+    border-radius: var(--cont-rad);
+    background: var(--aurora-clear);
+    border-color: var(--aurora-nightl);
+    border-width: var(--border-thin);
+}
+
+.user-css pre,
+.user-css-extended pre {
+    border-radius: var(--cont-rad);
+    background: var(--aurora-1l);
+    border-color: var(--aurora-1d);
+    border-width: var(--border-thin);
+    font-family: var(--font-code);
+    font-size: var(--fsize-text);
+}
+
+.user-css blockquote,
+.user-css-extended blockquote {
+    border-radius: var(--cont-rad);
+    -webkit-box-shadow: var(--glow-params);
+    -moz-box-shadow: var(--glow-params);
+    box-shadow: var(--glow-params);
+    background: var(--aurora-4t);
+    margin: var(--cont-pad-sm);
+    padding: var(--cont-pad);
+    border: none;
+    font-family: var(--font-3);
+    color: var(--aurora-1l);
+}
+
+.user-css blockquote .author,
+.user-css-extended blockquote .author {
+    border-radius: var(--cont-rad);
+    color: var(--aurora-2l);
+    font-family: var(--font-4);
+    font-style: normal;
+    text-align: center;
+    padding-right: var(--cont-pad-sm);
+}
+
+.user-css .spoiler-button,
+.user-css-extended .spoiler-button {
+    color: var(--aurora-1l) !important;
+    background: var(--aurora-5d);
+    font-family: var(--font-2);
+    text-align: center;
+    padding-right: var(--cont-pad-sm);
+}
+
+.user-css .spoiler-button:hover,
+.user-css-extended .spoiler-button[aria-expanded=true],
+.user-css .spoiler-button:hover,
+.user-css .spoiler-button[aria-expanded=true] {
+    color: var(--aurora-2l) !important;
+    background: var(--aurora-5d);
+    font-family: var(--font-2);
+    text-align: center;
+    padding-right: var(--cont-pad-sm);
+}
+
+.user-css .spoiler-content,
+.user-css-extended .spoiler-content {
+    border-radius: var(--cont-rad);
+    color: var(--aurora-night) !important;
+    background: var(--aurora-1l);
+}
+
+.user-css .article-panel,
+.user-css-extended .article-panel {
+    border-radius: var(--cont-rad);
+    background: var(--aurora-1l);
+}
+.user-css .cover.cover-article, .user-css #cover .img-responsive { /* top only */
+    border-top-left-radius: var(--cont-rad) ;
+    border-top-right-radius: var(--cont-rad) ; 
+    border-bottom-left-radius: 0 ;
+    border-bottom-right-radius: 0 ; 
+}
+
+.user-css .article-panel .details h5,
+.user-css-extended .article-panel .details h5 {
+    color: var(--aurora-8d);
+}
+
+.user-css .article-panel .details .subheading,
+.user-css .article-panel .details .subheading .date,
+.user-css-extended .article-panel .details .subheading,
+.user-css-extended .article-panel .details .subheading .date {
+    color: var(--aurora-5d);
+}
+
+.user-css .article-panel .details .excerpt,
+.user-css-extended .article-panel .details .excerpt {
+    color: var(--aurora-nightd);
+}
+
+/* tooltip */
+.user-css .tooltip.top .tooltip-arrow,
+.user-css-extended .tooltip.top .tooltip-arrow,
+.user-css-worldmenu .tooltip.top .tooltip-arrow {
+    border-top-color: var(--aurora-night);
+}
+.user-css .tooltip.left .tooltip-arrow,
+.user-css-extended .tooltip.left .tooltip-arrow,
+.user-css-worldmenu .tooltip.left .tooltip-arrow {
+    border-left-color: var(--aurora-night);
+}
+.user-css .tooltip.bottom .tooltip-arrow,
+.user-css-extended .tooltip.bottom .tooltip-arrow,
+.user-css-worldmenu .tooltip.bottom .tooltip-arrow {
+    border-bottom-color: var(--aurora-night);
+}
+.user-css .tooltip.right .tooltip-arrow,
+.user-css-extended .tooltip.right .tooltip-arrow,
+.user-css-worldmenu .tooltip.right .tooltip-arrow {
+    border-right-color: var(--aurora-night);
+}
+
+
+.user-css .tooltip .tooltip-inner,
+.user-css-extended .tooltip .tooltip-inner,
+.user-css-worldmenu .tooltip .tooltip-inner {
+    background: var(--aurora-night);
+    border-color: var(--aurora-night);
+    color: var(--aurora-wl);
+}
+
+.user-css .text-abbreviation,
+.user-css-extended .text-abbreviation {
+    color: var(--aurora-6);
+    text-decoration-line: none;
+    border-bottom: var(--border-tiny) var(--aurora-6) dotted;
+}
+
+/* tables */
+table {
+    background: none;
+    border: 0 solid;
+    width: 100%;
+    font-family: source sans pro, sans-serif;
+}
+.user-css table td {
+    background: none !important;
+    color: var(--aurora-nightd) !important;
+    /*  border-top: var(--border-tiny) solid var(--aurora-wd); */
+    width: 100%;
+    font-family: var(--font-3);
+    font-size: .8em;
+}
+
+.user-css-presentation table,
+.user-css table {
+    border-radius: var(--cont-rad);
+}
+
+/* Affects every odd row in tables, good for making striped looks. */
+tr:nth-of-type(odd) {
+    background-color: var(--aurora-w) !important;
+}
+
+/* Affects every evenrow in tables, good for making striped looks. */
+tr:nth-of-type(even) {
+    background-color: var(--aurora-wl) !important;
+}
+
+.user-css-presentation table th,
+.user-css table th,
+.user-css-extended table th,
+.user-css .statblock .table tbody tr th,
+.user-css-extended .statblock .table tbody tr th {
+    background: var(--aurora-4lt) !important;
+    border: 0 solid !important;
+    width: 100%;
+    color: var(--aurora-night) !important;
+    font-family: var(--font-2);
+    font-size: 1.2em;
+}
+
+/*Round the corners set only specific radii per corner (don't use the border-radius shorthand)*/
+.user-css-presentation table tr:first-child th:first-child,
+.user-css-presentation table tr:first-child td:first-child,
+.user-css-presentation tbody tr:first-child th:first-child,
+.user-css-presentation .statblock thead tr:first-child th:first-child,
+.user-css-presentation .statblock table tr:first-child td:first-child,
+.user-css-presentation .statblock tbody tr:first-child th:first-child {
+    border-top-left-radius: var(--cont-rad);
+}
+.user-css-presentation table tr:first-child th:last-child,
+.user-css-presentation table tr:first-child td:last-child,
+.user-css-presentation tbody tr:first-child th:last-child,
+.user-css-presentation .statblock thead tr:first-child th:last-child,
+.user-css-presentation .statblock table tr:first-child td:last-child,
+.user-css-presentation .statblock tbody tr:first-child th:last-child {
+    border-top-right-radius: var(--cont-rad);
+}
+.user-css-presentation tbody tr:last-child td:first-child,
+.user-css-presentation table tr:last-child td:first-child,
+.user-css-presentation tbody tr:last-child th:first-child,
+.user-css-presentation .statblock tbody tr:last-child td:first-child,
+.user-css-presentation .statblock table tr:last-child td:first-child,
+.user-css-presentation .statblock tbody tr:last-child th:first-child {
+    border-bottom-left-radius: var(--cont-rad);
+}
+.user-css-presentation tbody tr:last-child td:last-child,
+.user-css-presentation table tr:last-child td:last-child,
+.user-css-presentation tbody tr:last-child th:last-child,
+.user-css-presentation .statblock tbody tr:last-child td:last-child,
+.user-css-presentation .statblock table tr:last-child td:last-child,
+.user-css-presentation .statblock tbody tr:last-child th:last-child {
+    border-bottom-right-radius: var(--cont-rad);
+}
+
+
+.user-css .panel-greatgm {
+    background: var(--aurora-5t);
+    border: var(--border-thin) var(--aurora-5) dotted;
+    margin: var(--cont-pad);
+    padding: var(--cont-pad-sm);
+    color: var(--aurora-night);
+    font-family: var(--font-3);
+    font-size: 1em;
+}
+
+/* ------------------ BOOTSTRAP CONTAINERS --------------- */
+.user-css .jumbotron {
+    background: var(--aurora-2t);
+}
+
+.user-css .well {
+    background: var(--aurora-4t);
+    border: var(--border-tiny) solid var(--aurora-4d);
+}
+
+.user-css .alert {
+    color: var(--aurora-wl);
+    padding: var(--cont-pad-med);
+    margin-bottom: var(--cont-pad);
+    border: var(--border-tiny) solid var(--aurora-nightd);
+    border-radius: var(--cont-rad);
+    background: var(--aurora-night);
+}
+
+.user-css .alert-success{ background: var(--aurora-5d);}
+.user-css .alert-info{  background: var(--aurora-3d);}
+.user-css .alert-warning {  background: var(--aurora-fd);}
+.user-css .alert-danger {  background: var(--aurora-9d);}
+
+.user-css .breadcrumb {
+    padding: var(--cont-pad-sm) var(--cont-pad-med);
+    margin-bottom: var(--cont-pad);
+    list-style: none;
+    background-color: var(--aurora-1t);
+    border-radius: var(--cont-rad);
+    border: var(--border-tiny) solid var(--aurora-1d);
+}
+
+/* ------------------ MY CONTAINERS ----------------- */
+.HL {
+    background: var(--HL-background);
+    color: var(--HL-color);
+    font-family: var(--font-3);
+    border-radius: var(--sect-rad);
+    padding-right: var(--HL-padding-right);
+    padding-left: var(--HL-padding-left);
+}
+
+/* highlight box */
+.HLBox {
+    border-radius: var(--cont-rad);
+    padding: var(--cont-pad);
+    box-shadow: var(--box-shadows);
+    -moz-box-shadow: var(--box-shadows);
+    -webkit-box-shadow: var(--box-shadows);
+    background: var(--aurora-wt);
+}
+
+.palette {
+    font-size: var(--fsize-med);
+    padding: var(--cont-pad-sm);
+    word-break: break-all;
+}
+
+/* palette classes*/
+.aurora-1 {
+    background: var(--aurora-1);
+}
+.aurora-2 {
+    background: var(--aurora-2);
+}
+.aurora-3 {
+    background: var(--aurora-3);
+}
+.aurora-4 {
+    background: var(--aurora-4);
+}
+.aurora-5 {
+    background: var(--aurora-5);
+}
+.aurora-6 {
+    background: var(--aurora-6);
+}
+.aurora-7 {
+    background: var(--aurora-7);
+}
+.aurora-8 {
+    background: var(--aurora-8);
+}
+.aurora-9 {
+    background: var(--aurora-9);
+}
+.aurora-f {
+    background: var(--aurora-f);
+}
+.aurora-n {
+    background: var(--aurora-night);
+}
+.aurora-w {
+    background: var(--aurora-w);
+}
+
+.aurora-1t {
+    background: var(--aurora-1t);
+}
+.aurora-2t {
+    background: var(--aurora-2t);
+}
+.aurora-3t {
+    background: var(--aurora-3t);
+}
+.aurora-4t {
+    background: var(--aurora-4t);
+}
+.aurora-5t {
+    background: var(--aurora-5t);
+}
+.aurora-6t {
+    background: var(--aurora-6t);
+}
+.aurora-7t {
+    background: var(--aurora-7t);
+}
+.aurora-8t {
+    background: var(--aurora-8t);
+}
+.aurora-9t {
+    background: var(--aurora-9t);
+}
+.aurora-ft {
+    background: var(--aurora-ft);
+}
+.aurora-nt {
+    background: var(--aurora-nightt);
+}
+.aurora-wt {
+    background: var(--aurora-wt);
+}
+
+.aurora-1l {
+    background: var(--aurora-1l);
+}
+.aurora-2l {
+    background: var(--aurora-2l);
+}
+.aurora-3l {
+    background: var(--aurora-3l);
+}
+.aurora-4l {
+    background: var(--aurora-4l);
+}
+.aurora-5l {
+    background: var(--aurora-5l);
+}
+.aurora-6l {
+    background: var(--aurora-6l);
+}
+.aurora-7l {
+    background: var(--aurora-7l);
+}
+.aurora-8l {
+    background: var(--aurora-8l);
+}
+.aurora-9l {
+    background: var(--aurora-9l);
+}
+.aurora-fl {
+    background: var(--aurora-fl);
+}
+.aurora-nl {
+    background: var(--aurora-nightl);
+}
+.aurora-wl {
+    background: var(--aurora-wl);
+}
+
+.aurora-1d {
+    background: var(--aurora-1d);
+}
+.aurora-2d {
+    background: var(--aurora-2d);
+}
+.aurora-3d {
+    background: var(--aurora-3d);
+}
+.aurora-4d {
+    background: var(--aurora-4d);
+}
+.aurora-5d {
+    background: var(--aurora-5d);
+}
+.aurora-6d {
+    background: var(--aurora-6d);
+}
+.aurora-7d {
+    background: var(--aurora-7d);
+}
+.aurora-8d {
+    background: var(--aurora-8d);
+}
+.aurora-9d {
+    background: var(--aurora-9d);
+}
+.aurora-fd {
+    background: var(--aurora-fd);
+}
+.aurora-nd {
+    background: var(--aurora-nightd);
+}
+.aurora-wd {
+    background: var(--aurora-wd);
+}
+
+.light-text {
+    color: var(--aurora-w);
+}
+
+.opacity-50 {
+    opacity: .5;
+}
+.pad-small {
+    padding: var(--cont-pad-sm);
+}
+
+/* ------------------------------------- Red text because [color] not seem to work in statblocks ------------------------------------ */
+.red {
+    color: red;
+}
+.orange {
+    color: orange;
+}
+.yellow {
+    color: yellow;
+}
+.green {
+    color: green;
+}
+.blue {
+    color: blue;
+}
+.purple {
+    color: purple;
+}
+.white {
+    color: white;
+}
+.black {
+    color: black;
+}
+.gray {
+    color: gray;
+}
+.lightgray-hex {
+    color: #bbb;
+}
+.lightgray-hex-50 {
+    color: #bbbbbb50;
+}
+
+.bar-05 { width: 05%;}
+.bar-10 { width: 10%;}
+.bar-15 { width: 15%;}
+.bar-20 { width: 20%;}
+.bar-25 { width: 25%;}
+.bar-30 { width: 30%;}
+.bar-35 { width: 35%;}
+.bar-40 { width: 40%;}
+.bar-45 { width: 45%;}
+.bar-50 { width: 50%;}
+.bar-55 { width: 55%;}
+.bar-60 { width: 60%;}
+.bar-65 { width: 65%;}
+.bar-70 { width: 70%;}
+.bar-75 { width: 75%;}
+.bar-80 { width: 80%;}
+.bar-85 { width: 85%;}
+.bar-90 { width: 90%;}
+.bar-95 { width: 95%;}
+.bar-100 { width: 100%;}
