@@ -516,6 +516,7 @@ AURORA THEME Variables
     border-radius: var(--cont-rad);
     font-family: var(--font-2);
     color: var(--aurora-6);
+	font-weight: 500;
     line-height: 1.3em;
     text-align: center;
 }
