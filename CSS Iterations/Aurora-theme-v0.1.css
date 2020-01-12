@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        0.1.0
 @description    WA theme test
 @author         Amy Winters-Voss
 ==/UserStyle== */
@@ -152,6 +152,7 @@ AURORA THEME Variables
     --aurora-night: #090649;
     /* midnight blue */
     --aurora-nightt: #09064980;
+	--aurora-nightt2: #09064990;
     --aurora-nightl: #221F69;
     /* dark grey */
     --aurora-nightd: #000;
@@ -166,10 +167,11 @@ AURORA THEME Variables
     --aurora-clear: none;
 
     /* fonts */
-    --font-1:  Shrikhand, Skranji, Noto;
+    --font-1:  Shrikhand, Noto;
     --font-2: Lemon, Noto;
     --font-3: Varela Round, Noto;
     --font-4: Courgette, Noto;
+	--font-5: Merienda One, Noto;
     --font-code: Source Code Pro, Noto;
 
     --font-reg: 400;
@@ -259,22 +261,38 @@ AURORA THEME Variables
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* latin-ext */
+@font-face {
+  font-family: Acme;
+  font-style: normal;
+  font-weight: 400;
+  src: local(Acme Regular), local(Acme-Regular), url(https://fonts.gstatic.com/s/acme/v9/RrQfboBx-C5_XxrBbg.woff2);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Merienda One;
+  font-style: normal;
+  font-weight: 400;
+  src: local(Merienda One), local(MeriendaOne-Regular), url(https://fonts.gstatic.com/s/meriendaone/v10/H4cgBXaMndbflEq6kyZ1ht6ohYaz.woff2);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext 
 @font-face {
     font-family: Skranji;
     font-style: normal;
     font-weight: 400;
     src: local(Skranji), url(https://fonts.gstatic.com/s/skranji/v7/OZpDg_dtriVFNerMUzKkk2Tm.woff2);
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; 
+}*/
+/* latin 
 @font-face {
     font-family: Skranji;
     font-style: normal;
     font-weight: 400;
     src: local(Skranji), url(https://fonts.gstatic.com/s/skranji/v7/OZpDg_dtriVFNerMUzykkw.woff2);
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+}*/
 
 /* latin */
 @font-face {
@@ -346,21 +364,12 @@ AURORA THEME Variables
     src: url(https://rawcdn.githack.com/shyredfox/liminal-chronicles/e707041be71eb7d59821103a37010dd4f77681cc/lc-fonts/noto-sans-japanese/NotoSansCJKjp-Regular.otf);
 }
 /* container based font classes */
-.font-1 {
-    font-family: var(--font-1);
-}
-.font-2 {
-    font-family: var(--font-2);
-}
-.font-3 {
-    font-family: var(--font-3);
-}
-.font-4 {
-    font-family: var(--font-4);
-}
-.font-code {
-    font-family: var(--font-code);
-}
+.font-1 { font-family: var(--font-1); }
+.font-2 { font-family: var(--font-2); }
+.font-3 { font-family: var(--font-3); }
+.font-4 { font-family: var(--font-4); }
+.font-5 { font-family: var(--font-5); }
+.font-code { font-family: var(--font-code); }
 
 /* world background */
 .user-css-presentation {
@@ -369,7 +378,7 @@ AURORA THEME Variables
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-color: var(--aurora-night;
+    background-color: var(--aurora-night);
     /* Used if the image is unavailable */
 }
 
@@ -381,8 +390,7 @@ AURORA THEME Variables
 /* article bg */
 .user-css.page,
 .user-css-extended .page {
-    /* background: var(--aurora-wtb); */
-    background: var(--aurora-nightt);
+    background: var(--aurora-nightt2);
     box-shadow: 0 0 var(--border-xthick) var(--border-med) var(--aurora-1);
 }
 
@@ -391,7 +399,8 @@ AURORA THEME Variables
 .user-css,
 .user-css-extended,
 .user-css p {
-    color: var(--aurora-nightd);
+    /* color: var(--aurora-nightd); */
+	color: var(--aurora-wl);
     font-size: var(--fsize-text);
     font-family: var(--font-3);
 }
@@ -413,6 +422,7 @@ AURORA THEME Variables
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: .02em var(--aurora-night);
+
 }
 
 /* .user-css .article-title h1{
@@ -421,11 +431,11 @@ AURORA THEME Variables
 
 .user-css h2,
 .user-css h3,
+.user-css-extended h2,
+.user-css-extended h3,
 .user-css h4,
 .user-css h5,
 .user-css h6,
-.user-css-extended h2,
-.user-css-extended h3,
 .user-css-extended h4,
 .user-css-extended h5,
 .user-css-extended h6
@@ -433,25 +443,49 @@ AURORA THEME Variables
     /* "hN-1" in the WA editor */
     border-radius: var(--cont-rad);
     font-family: var(--font-2);
-    color: var(--aurora-night);
+    color: var(--aurora-6);
     line-height: 1.3em;
     text-align: center;
 }
+
+/* .user-css h2, .user-css-extended h2 {
+    font-size: var(--fsize-h2);
+    text-transform: capitalize;
+    background: var(--aurora-wl);
+	border-top: var( --border-med) solid var(--aurora-5l);
+    border-bottom: var( --border-med) solid var(--aurora-6l);
+} */
 
 .user-css h2, .user-css-extended h2 {
     /* "hN-1" in the WA editor */
     font-size: var(--fsize-h2);
     text-transform: capitalize;
-    background: var(--aurora-wtb);
-    border-bottom: .5px dashed;
-    border-top: .5px dashed;
+	color: var(--aurora-wl);
+    background: var(--aurora-6t);
+	border-top: var( --border-med) solid var(--aurora-5l);
+    border-bottom: var( --border-med) solid var(--aurora-6l);
 }
 
 .user-css h3 {
     /* "hN-1" in the WA editor */
     font-size: var(--fsize-h3);
     text-transform: capitalize;
-    background: var(--aurora-wtb);
+    background: var(--aurora-4t);
+	color: var(--aurora-wl);
+	border-bottom: var( --border-thin) solid var(--aurora-5l);
+	border-top: var(--border-thin) solid var(--aurora-4l);
+}
+
+.user-css h4,
+.user-css h5,
+.user-css h6,
+.user-css-extended h4,
+.user-css-extended h5,
+.user-css-extended h6 {
+	    font-family: var(--font-5);
+	    color: var(--aurora-2l);
+		letter-spacing: 0.15em;
+
 }
 
 /* the TOC headers should be left aligned */
@@ -463,9 +497,11 @@ AURORA THEME Variables
     text-align: left;    
 }
 
+
+
 /* ---------- TEXT ---------- */
 .user-css a, .user-css-extended a, .user-css .panel-greatgm a {
-    color: var(--aurora-8);
+    color: var(--aurora-5l);
 }
 
 .user-css a:focus,
@@ -473,15 +509,15 @@ AURORA THEME Variables
 .user-css-extended a:focus,
 .user-css-extended a:hover
 {
-    color: var(--aurora-8l);
+    color: var(--aurora-4l);
 }
 
 .user-css strong.phrase-key {
-    color: var(--aurora-8d);
+    color: var(--aurora-8l);
 }
 
 .user-css .phrase-value {
-    color: var(--aurora-nightd);
+    color: var(--aurora-wl);
     margin-left: var(--indent);
 }
 
@@ -495,16 +531,40 @@ AURORA THEME Variables
     float: left;
     line-height: 1em;
 }
+
+/* ---------- Search bar -------- */
+.search-form .typeahead-input {
+    width: 180px;
+    height: 25px;
+    padding:  var(--cont-pad-med);
+    color: var(--aurora-night);
+    font-size: var(--fsize-text);
+    text-transform: capitalize;
+    background-color: var(--aurora-wl);
+    border: 3px solid var(--aurora-2d);;
+    background-image: none;
+    border-radius: var(--cont-rad);
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.search-form #search-button {
+    color: var(--aurora-5l);;
+    padding-right: 6px;
+    padding-top: 7px;
+}
+
 /* ---------- TOC ---------- */
 .user-css .world-toc-loader .category-list a,
 .user-css #world-menu .category-list h5 a {
-    color: var(--aurora-6);
+    color: var(--aurora-3l);
     text-transform: capitalize;
 }
 
 .user-css .world-toc-loader .category-list h6 a,
 .user-css #world-menu .category-list h6 a {
-    color: var(--aurora-4);
+    color: var(--aurora-2l);
     text-transform: capitalize;
 }
 
@@ -529,10 +589,11 @@ AURORA THEME Variables
 /* ---------- WA CONTAINERS ---------- */
 
 .user-css .backtoworld a { 
-    background: var(--aurora-7d);
+    background: var(--aurora-7l);
     color: var(--aurora-1l);
     border-top-right-radius: var(--cont-rad);
     font-family: var(--font-4);
+	bottom: -.5px;
 }
 
 .user-css .backtoworld a:hover { 
@@ -554,7 +615,7 @@ AURORA THEME Variables
   content: attr(none);
   position: absolute;
   left: 1em;
-  top: 1em;
+  top: 0em;
   border-right: -1px solid var(--aurora-7d);
   border-top: -1px solid transparent;
   border-bottom: -1px solid transparent;
@@ -572,8 +633,8 @@ AURORA THEME Variables
 .user-css .aloud,
 .user-css-extended .aloud {
     border-radius: var(--cont-rad);
-    background: var(--aurora-7t);
-    border-color: var(--aurora-7d);
+    background: var(--aurora-3t);
+    border-color: var(--aurora-3);
     border-width: var(--border-thick) 0;
     font-style: normal;
     font-weight: var(--font-bold);
@@ -585,7 +646,7 @@ AURORA THEME Variables
 .user-css-extended .statblock {
     border-radius: var(--cont-rad);
     background: var(--aurora-clear);
-    border-color: var(--aurora-nightl);
+    border-color: var(--aurora-1l);
     border-width: var(--border-thin);
 }
 
@@ -653,7 +714,8 @@ AURORA THEME Variables
 .user-css .article-panel,
 .user-css-extended .article-panel {
     border-radius: var(--cont-rad);
-    background: var(--aurora-1l);
+    background: var(--aurora-nightl);
+	border: 1px dotted var(--aurora-wl);
 }
 .user-css .cover.cover-article, .user-css #cover .img-responsive { /* top only */
     border-top-left-radius: var(--cont-rad) ;
@@ -664,20 +726,24 @@ AURORA THEME Variables
 
 .user-css .article-panel .details h5,
 .user-css-extended .article-panel .details h5 {
-    color: var(--aurora-8d);
+    color: var(--aurora-2l);
+	/* text-shadow: none;
+	-webkit-text-stroke: .02em var(--aurora-4); */
 }
 
 .user-css .article-panel .details .subheading,
 .user-css .article-panel .details .subheading .date,
 .user-css-extended .article-panel .details .subheading,
 .user-css-extended .article-panel .details .subheading .date {
-    color: var(--aurora-5d);
+    color: var(--aurora-w);
 }
 
 .user-css .article-panel .details .excerpt,
 .user-css-extended .article-panel .details .excerpt {
-    color: var(--aurora-nightd);
+    color: var(--aurora-wl);
 }
+
+
 
 /* tooltip */
 .user-css .tooltip.top .tooltip-arrow,
@@ -712,9 +778,9 @@ AURORA THEME Variables
 
 .user-css .text-abbreviation,
 .user-css-extended .text-abbreviation {
-    color: var(--aurora-6);
+    color: var(--aurora-3);
     text-decoration-line: none;
-    border-bottom: var(--border-tiny) var(--aurora-6) dotted;
+    border-bottom: var(--border-tiny)  dotted var(--aurora-3);
 }
 
 /* tables */
@@ -798,10 +864,10 @@ tr:nth-of-type(even) {
 
 .user-css .panel-greatgm {
     background: var(--aurora-5t);
-    border: var(--border-thin) var(--aurora-5) dotted;
+    border: var(--border-thin) dotted var(--aurora-5);
     margin: var(--cont-pad);
     padding: var(--cont-pad-sm);
-    color: var(--aurora-night);
+    color: var(--aurora-wl);
     font-family: var(--font-3);
     font-size: 1em;
 }
