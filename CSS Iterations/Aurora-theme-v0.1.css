@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.1.0
+@version        0.1.1
 @description    WA theme test
 @author         Amy Winters-Voss
 ==/UserStyle== */
@@ -101,6 +101,7 @@ AURORA THEME Variables
     --aurora-1: #D9F96C;
     /* chartreuse */
     --aurora-1t: #D9F96C80;
+	--aurora-1tb: #D9F96C99;
     --aurora-1l: #EFF9CB;
     --aurora-1d: #9CC11E;
     --aurora-2: #7BB14B;
@@ -116,8 +117,10 @@ AURORA THEME Variables
     --aurora-4: #00858A;
     /* teal*/
     --aurora-4t: #00858A80;
+	--aurora-4tb: #00858A99;
     --aurora-4l: #79DDDF;
     --aurora-4lt: #79DDDF80;
+	--aurora-4ltb: #79DDDF99;
     --aurora-4d: #016F73;
     --aurora-5: #3B8CA6;
     /* sky */
@@ -421,7 +424,7 @@ AURORA THEME Variables
     /*background: linear-gradient(var(--aurora-1), var(--aurora-)) ;  dark bg */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: .02em var(--aurora-night);
+    -webkit-text-stroke: .02em var(--aurora-4);
 
 }
 
@@ -575,6 +578,7 @@ AURORA THEME Variables
     margin-right: -5px;
     margin-left: 0px;
     padding-right: 0px;
+	filter: invert(.85) sepia(1); 
 }
 
 .user-css .category-list .fa-file:before {
@@ -584,6 +588,7 @@ AURORA THEME Variables
     margin-right: -5px;
     margin-left: 0px;
     padding-right: 0px;
+	filter: invert(.95);
 }
 
 /* ---------- WA CONTAINERS ---------- */
@@ -653,11 +658,12 @@ AURORA THEME Variables
 .user-css pre,
 .user-css-extended pre {
     border-radius: var(--cont-rad);
-    background: var(--aurora-1l);
-    border-color: var(--aurora-1d);
+    background: var(--aurora-wtb);
+    border-color: var(--aurora-1t);
     border-width: var(--border-thin);
     font-family: var(--font-code);
     font-size: var(--fsize-text);
+	font-weight: 800;
 }
 
 .user-css blockquote,
@@ -714,8 +720,8 @@ AURORA THEME Variables
 .user-css .article-panel,
 .user-css-extended .article-panel {
     border-radius: var(--cont-rad);
-    background: var(--aurora-nightl);
-	border: 1px dotted var(--aurora-wl);
+    background: var(--aurora-nightt);
+	border: 1px dotted var(--aurora-3l);
 }
 .user-css .cover.cover-article, .user-css #cover .img-responsive { /* top only */
     border-top-left-radius: var(--cont-rad) ;
@@ -778,13 +784,13 @@ AURORA THEME Variables
 
 .user-css .text-abbreviation,
 .user-css-extended .text-abbreviation {
-    color: var(--aurora-3);
+    color: var(--aurora-3l);
     text-decoration-line: none;
     border-bottom: var(--border-tiny)  dotted var(--aurora-3);
 }
 
 /* tables */
-table {
+.user-css table, .user-css .table {
     background: none;
     border: 0 solid;
     width: 100%;
@@ -806,12 +812,12 @@ table {
 
 /* Affects every odd row in tables, good for making striped looks. */
 tr:nth-of-type(odd) {
-    background-color: var(--aurora-w) !important;
+    background-color: var(--aurora-wtb) !important;
 }
 
 /* Affects every evenrow in tables, good for making striped looks. */
 tr:nth-of-type(even) {
-    background-color: var(--aurora-wl) !important;
+    background-color: var(--aurora-w) !important;
 }
 
 .user-css-presentation table th,
@@ -861,7 +867,7 @@ tr:nth-of-type(even) {
     border-bottom-right-radius: var(--cont-rad);
 }
 
-
+/* ------------- GM Notes ------------ */
 .user-css .panel-greatgm {
     background: var(--aurora-5t);
     border: var(--border-thin) dotted var(--aurora-5);
@@ -874,7 +880,7 @@ tr:nth-of-type(even) {
 
 /* ------------------ BOOTSTRAP CONTAINERS --------------- */
 .user-css .jumbotron {
-    background: var(--aurora-2t);
+    background: var(--aurora-1t);
 }
 
 .user-css .well {
@@ -888,7 +894,7 @@ tr:nth-of-type(even) {
     margin-bottom: var(--cont-pad);
     border: var(--border-tiny) solid var(--aurora-nightd);
     border-radius: var(--cont-rad);
-    background: var(--aurora-night);
+    background: var(--aurora-nightl);
 }
 
 .user-css .alert-success{ background: var(--aurora-5d);}
@@ -900,7 +906,7 @@ tr:nth-of-type(even) {
     padding: var(--cont-pad-sm) var(--cont-pad-med);
     margin-bottom: var(--cont-pad);
     list-style: none;
-    background-color: var(--aurora-1t);
+    background-color: var(--aurora-clear);
     border-radius: var(--cont-rad);
     border: var(--border-tiny) solid var(--aurora-1d);
 }
