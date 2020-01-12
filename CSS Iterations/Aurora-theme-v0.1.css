@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.1.1
-@description    WA theme test
+@version        0.1.2
+@description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 ==/UserStyle== */
 /* --------------------------------- 
@@ -168,6 +168,17 @@ AURORA THEME Variables
     --aurora-wtl: #FFFFFF20;
     --aurora-wd: #888888;
     --aurora-clear: none;
+	
+	/* bootstrap/theme color names */
+	--aurora-success: var(--aurora-5);
+	--aurora-info: var(--aurora-3d);
+	--aurora-warning: var(--aurora-fd);
+	--aurora-danger: var(--aurora-9d);
+	--aurora-primary: var(--aurora-7l);
+	--aurora-default: var(--aurora-wtb);
+	--aurora-link-text: var(--aurora-4l);
+	--aurora-link: var(--aurora-7d);
+	--aurora-text: var(--aurora-wl);
 
     /* fonts */
     --font-1:  Shrikhand, Noto;
@@ -191,6 +202,9 @@ AURORA THEME Variables
     --fsize-big: 1.5em;
     --fsize-small: .5em;
     --fsize-med: .7em;
+	
+	--letter-space-sm-text: 0.1em;
+	--letter-space: .05em;
 
     /*  containers */
     --cont-rad: 10px;
@@ -374,6 +388,61 @@ AURORA THEME Variables
 .font-5 { font-family: var(--font-5); }
 .font-code { font-family: var(--font-code); }
 
+
+/* ------------------ BOOTSTRAP CONTAINERS --------------- */
+.user-css .jumbotron {
+    background: var(--aurora-1t);
+}
+
+.user-css .well {
+    background: var(--aurora-4t);
+    border: var(--border-tiny) solid var(--aurora-4d);
+}
+
+.user-css .alert {
+	font-family: var(--font-3); 
+    color: var(--aurora-text);
+    padding: var(--cont-pad-med);
+    margin-bottom: var(--cont-pad);
+    border: var(--border-tiny) solid var(--aurora-nightd);
+    border-radius: var(--cont-rad);
+    background: none;
+}
+
+.user-css .alert-success{ background: var(--aurora-success);}
+.user-css .alert-info{  background: var(--aurora-info);}
+.user-css .alert-warning {  background: var(--aurora-warning);}
+.user-css .alert-danger {  background: var(--aurora-danger);}
+
+
+.user-css .btn {
+    color: var(--aurora-text);
+	font-family: var(--font-3); 
+    padding: var(--cont-pad-sm);
+    margin-bottom: var(--sect-pad);
+    border: var(--border-tiny) solid var(--aurora-nightd) !important;
+    border-radius: var(--cont-rad);
+}
+
+.user-css .btn-default { font-weight: 600; color: var(--aurora-night); background: var(--aurora-default);}
+.user-css .btn-primary { background: var(--aurora-primary);}
+.user-css .btn-success { background: var(--aurora-success) !important;;}
+.user-css .btn-info { background: var(--aurora-info);}
+.user-css .btn-warning { background: var(--aurora-warning);}
+.user-css .btn-danger { background: var(--aurora-danger);}
+.user-css .btn-link { color: var(--aurora-link-text); background: var(--aurora-link);}
+
+.user-css .breadcrumb {
+    padding: var(--cont-pad-sm) var(--cont-pad-med);
+    margin-bottom: var(--cont-pad);
+    list-style: none;
+    background-color: var(--aurora-clear);
+    border-radius: var(--cont-rad);
+    border: var(--border-tiny) solid var(--aurora-1d);
+}
+
+
+/* -------------- WA Theme -------------------- */
 /* world background */
 .user-css-presentation {
     background-image:  /* url(https://www.worldanvil.com/uploads/images/424135ed9a353c8206e31dd761405903.jpg); */url(http://www.worldanvil.com/uploads/images/dd542140dedd4a4a637eaabe0568f8e8.jpg);
@@ -463,6 +532,7 @@ AURORA THEME Variables
     /* "hN-1" in the WA editor */
     font-size: var(--fsize-h2);
     text-transform: capitalize;
+	letter-spacing: var(--letter-space);
 	color: var(--aurora-wl);
     background: var(--aurora-6t);
 	border-top: var( --border-med) solid var(--aurora-5l);
@@ -474,6 +544,7 @@ AURORA THEME Variables
     font-size: var(--fsize-h3);
     text-transform: capitalize;
     background: var(--aurora-4t);
+	letter-spacing: var(--letter-space);
 	color: var(--aurora-wl);
 	border-bottom: var( --border-thin) solid var(--aurora-5l);
 	border-top: var(--border-thin) solid var(--aurora-4l);
@@ -664,6 +735,7 @@ AURORA THEME Variables
     font-family: var(--font-code);
     font-size: var(--fsize-text);
 	font-weight: 800;
+	line-height: 1.2;
 }
 
 .user-css blockquote,
@@ -693,9 +765,10 @@ AURORA THEME Variables
 .user-css .spoiler-button,
 .user-css-extended .spoiler-button {
     color: var(--aurora-1l) !important;
-    background: var(--aurora-5d);
+    background: var(--aurora-primary) !important;
     font-family: var(--font-2);
     text-align: center;
+	letter-spacing: var(--letter-space-sm-text);
     padding-right: var(--cont-pad-sm);
 }
 
@@ -704,7 +777,7 @@ AURORA THEME Variables
 .user-css .spoiler-button:hover,
 .user-css .spoiler-button[aria-expanded=true] {
     color: var(--aurora-2l) !important;
-    background: var(--aurora-5d);
+    background: var(--aurora-7d) !important;
     font-family: var(--font-2);
     text-align: center;
     padding-right: var(--cont-pad-sm);
@@ -713,8 +786,8 @@ AURORA THEME Variables
 .user-css .spoiler-content,
 .user-css-extended .spoiler-content {
     border-radius: var(--cont-rad);
-    color: var(--aurora-night) !important;
-    background: var(--aurora-1l);
+    color: var(--aurora-text) !important;
+    background: var(--aurora-7t);
 }
 
 .user-css .article-panel,
@@ -878,38 +951,6 @@ tr:nth-of-type(even) {
     font-size: 1em;
 }
 
-/* ------------------ BOOTSTRAP CONTAINERS --------------- */
-.user-css .jumbotron {
-    background: var(--aurora-1t);
-}
-
-.user-css .well {
-    background: var(--aurora-4t);
-    border: var(--border-tiny) solid var(--aurora-4d);
-}
-
-.user-css .alert {
-    color: var(--aurora-wl);
-    padding: var(--cont-pad-med);
-    margin-bottom: var(--cont-pad);
-    border: var(--border-tiny) solid var(--aurora-nightd);
-    border-radius: var(--cont-rad);
-    background: var(--aurora-nightl);
-}
-
-.user-css .alert-success{ background: var(--aurora-5d);}
-.user-css .alert-info{  background: var(--aurora-3d);}
-.user-css .alert-warning {  background: var(--aurora-fd);}
-.user-css .alert-danger {  background: var(--aurora-9d);}
-
-.user-css .breadcrumb {
-    padding: var(--cont-pad-sm) var(--cont-pad-med);
-    margin-bottom: var(--cont-pad);
-    list-style: none;
-    background-color: var(--aurora-clear);
-    border-radius: var(--cont-rad);
-    border: var(--border-tiny) solid var(--aurora-1d);
-}
 
 /* ------------------ MY CONTAINERS ----------------- */
 .HL {
