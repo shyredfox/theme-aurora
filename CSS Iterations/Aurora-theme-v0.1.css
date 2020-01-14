@@ -411,7 +411,7 @@ AURORA THEME Variables
     color: var(--aurora-text);
     padding: var(--cont-pad-med);
     margin-bottom: var(--cont-pad);
-    border: var(--border-tiny) solid var(--aurora-nightd);
+    border: var(--border-thin) solid var(--aurora-wtb);
     border-radius: var(--cont-rad);
     background: none;
 }
