@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.1.2
+@version        0.1.25
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 ==/UserStyle== */
@@ -390,6 +390,13 @@ AURORA THEME Variables
 
 
 /* ------------------ BOOTSTRAP CONTAINERS --------------- */
+
+.bg-primary {background: var(--aurora-primary); }
+.bg-success { background: var(--aurora-success); }
+.bg-info { background: var(--aurora-info); }
+.bg-warning { background: var(--aurora-warning);} 
+.bg-danger { background: var(--aurora-danger); }
+
 .user-css .jumbotron {
     background: var(--aurora-1t);
 }
@@ -424,13 +431,30 @@ AURORA THEME Variables
     border-radius: var(--cont-rad);
 }
 
-.user-css .btn-default { font-weight: 600; color: var(--aurora-night); background: var(--aurora-default);}
-.user-css .btn-primary { background: var(--aurora-primary);}
-.user-css .btn-success { background: var(--aurora-success) !important;;}
-.user-css .btn-info { background: var(--aurora-info);}
-.user-css .btn-warning { background: var(--aurora-warning);}
-.user-css .btn-danger { background: var(--aurora-danger);}
-.user-css .btn-link { color: var(--aurora-link-text); background: var(--aurora-link);}
+.user-css .btn-default, .user-css .label-default { 
+	font-weight: 600; 
+	color: var(--aurora-night); 		
+	background: var(--aurora-default);
+}
+.user-css .btn-primary, .user-css .label-primary { 
+	background: var(--aurora-primary);
+}
+.user-css .btn-success, .user-css .label-success  { 
+	background: var(--aurora-success) !important;;
+}
+.user-css .btn-info, .user-css .label-info { 
+	background: var(--aurora-info);
+}
+.user-css .btn-warning, .user-css .label-warning { 
+	background: var(--aurora-warning);
+}
+.user-css .btn-danger, .user-css .label-danger { 
+	background: var(--aurora-danger);
+}
+.user-css .btn-link { 
+	color: var(--aurora-link-text); background: var(--aurora-link);
+}
+
 
 .user-css .breadcrumb {
     padding: var(--cont-pad-sm) var(--cont-pad-med);
