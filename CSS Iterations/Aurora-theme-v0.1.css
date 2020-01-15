@@ -538,7 +538,7 @@ AURORA THEME Variables
 	border-bottom-left-radius: var(--cont-rad);
 }
 .user-css .panel-default {
-	background-color: var(--aurora-default);
+	background-color: var(--aurora-clear);
 	color: var(--aurora-textd);
 }
 .user-css .panel-success {
