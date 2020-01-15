@@ -401,12 +401,15 @@ AURORA THEME Variables
 .bg-danger { background: var(--aurora-danger); }
 
 .user-css .jumbotron {
-    background: var(--aurora-1t);
+    background: var(--aurora-3t);
+	color: var(--aurora-text);
+	border-radius: var(--cont-rad);
 }
 
 .user-css .well {
     background: var(--aurora-4t);
     border: var(--border-tiny) solid var(--aurora-4d);
+	 border-radius: var(--cont-rad);
 }
 
 .user-css .alert {
