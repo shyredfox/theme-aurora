@@ -1065,7 +1065,9 @@ tr:nth-of-type(even) {
     font-family: var(--font-3);
     font-size: 1em;
 }
-
+.user-css .panel-greatgm .panel-body {
+	    background: var(--aurora-clear);
+}
 
 /* ------------------ MY CONTAINERS ----------------- */
 .HL {
