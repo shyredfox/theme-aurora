@@ -519,9 +519,8 @@ AURORA THEME Variables
 	color: var(--aurora-text);
 }
 .user-css .panel-body {
-	background-color: var(--aurora-clear);
-	color: var(--aurora-night);
-	border-top: var(--border-tiny) solid var(--aurora-wtb);
+	background-color: var(--aurora-nightt);
+	color: var(--aurora-text);
 	padding: var(--cont-pad-sm);
 }
 .user-css .panel-heading {
@@ -535,7 +534,6 @@ AURORA THEME Variables
 	background-color: var(--aurora-default);
 	color: var(--aurora-textd);
 	padding: var(--cont-pad-sm);
-	border-top: var(--border-tiny) solid var(--aurora-wtb) !important;
 	border-bottom-right-radius: var(--cont-rad);
 	border-bottom-left-radius: var(--cont-rad);
 }
@@ -1063,7 +1061,7 @@ tr:nth-of-type(even) {
     border: var(--border-thin) dotted var(--aurora-5);
     margin: var(--cont-pad);
     padding: var(--cont-pad-sm);
-    color: var(--aurora-wl);
+    color: var(--aurora-wl) !important;
     font-family: var(--font-3);
     font-size: 1em;
 }
