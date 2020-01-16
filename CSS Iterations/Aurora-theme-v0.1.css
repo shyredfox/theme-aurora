@@ -222,6 +222,7 @@ AURORA THEME Variables
     --cont-pad-sm: 10px;
     --cont-pad-med: 15px;
     --cont-pad: 20px;
+	--cont-pad-lg: 40px;
     --box-shadows: 3px 3px 5px #44444420;
     --glow-params: 0 0 3px 3px var(--aurora-2l), inset 0 0 2px 2px var(--aurora-2l);
 
@@ -343,20 +344,21 @@ AURORA THEME Variables
 }
 
 /* MAIN FONT */
+/* latin-ext */
 @font-face {
-    font-family: Varela Round;
-    font-style: normal;
-    font-weight: 100;
-    src: url(https://fonts.gstatic.com/s/varelaround/v11/w8gdH283Tvk__Lua32TysjIfqcuPP9g.woff2);
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: Varela Round;
+  font-style: normal;
+  font-weight: 400;
+  src: local(Varela Round Regular), local(VarelaRound-Regular), url(https://fonts.gstatic.com/s/varelaround/v12/w8gdH283Tvk__Lua32TysjIfqcuPP9g.woff2) ;
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-    font-family: Varela Round;
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/varelaround/v11/w8gdH283Tvk__Lua32TysjIfp8uP.woff2);
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: Varela Round;
+  font-style: normal;
+  font-weight: 400;
+  src: local(Varela Round Regular), local(VarelaRound-Regular), url(https://fonts.gstatic.com/s/varelaround/v12/w8gdH283Tvk__Lua32TysjIfp8uP.woff2) ;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /* HANDWRITING FONT */
@@ -696,11 +698,13 @@ AURORA THEME Variables
 /* ---------- GENERAL TEXT ---------- */
 .user-css,
 .user-css-extended,
-.user-css p {
+.user-css p, .user-css-extended p,
+.user-css .tab-content, .user-css .panel-body p {
     /* color: var(--aurora-nightd); */
 	color: var(--aurora-wl);
     font-size: var(--fsize-text);
     font-family: var(--font-3);
+	margin-bottom: var(--cont-pad);
 }
 
 /* --------------- HEADERS -------------------*/
@@ -745,6 +749,8 @@ AURORA THEME Variables
 	font-weight: 500;
     line-height: 1.3em;
     text-align: center;
+	margin-top: var(--cont-pad-lg);
+	margin-bottom: var(--cont-pad-sm);
 }
 
 /* .user-css h2, .user-css-extended h2 {
@@ -793,7 +799,9 @@ AURORA THEME Variables
 .user-css .table-of-contents h5, 
 .user-css .table-of-contents h6,
 .user-css .world-toc-loader h5, 
-.user-css .world-toc-loader h6
+.user-css .world-toc-loader h6,
+.user-css .category-toc-loader h5, 
+.user-css .category-toc-loader h6
 {
     text-align: left;    
 }
@@ -834,7 +842,7 @@ AURORA THEME Variables
 }
 
 /* ---------- Search bar -------- */
-.search-form .typeahead-input {
+.user-css .search-form .typeahead-input {
     width: 180px;
     height: 25px;
     padding:  var(--cont-pad-med);
@@ -850,10 +858,22 @@ AURORA THEME Variables
     -webkit-box-shadow: none;
 }
 
-.search-form #search-button {
+.user-css .search-form #search-button {
     color: var(--aurora-5l);;
     padding-right: 6px;
     padding-top: 7px;
+	background: none;
+	border: none !important;
+}
+
+.user-css .typeahead.dropdown-menu li .dropdown-item {
+	color: var(--aurora-night);
+    background-color: var(--aurora-wl);
+    border-color: var(--aurora-2d);;
+}
+
+.user-css .typeahead.dropdown-menu li .dropdown-item .text-muted{
+	color: var(--aurora-wd);
 }
 
 /* ---------- TOC ---------- */
@@ -889,6 +909,12 @@ AURORA THEME Variables
 	filter: invert(.95);
 }
 
+/* ------------ PANEL Side bar ----- */
+.user-css .panel.panel-default .panel-body {
+	background: var(--aurora-nightt);
+	color: var(--aurora-text);
+	border-radius: var(--cont-rad);
+}
 /* ---------- WA CONTAINERS ---------- */
 
 .user-css .backtoworld a { 
@@ -933,6 +959,12 @@ AURORA THEME Variables
     border-radius: var(--cont-rad);
 }
 
+.user-css .user-css-image-thumbnail .artist-credits {
+	background: var(--aurora-nightt);
+	color: var(--aurora-text);
+	border-radius: var(--cont-rad);
+}
+
 .user-css .aloud,
 .user-css-extended .aloud {
     border-radius: var(--cont-rad);
@@ -973,6 +1005,7 @@ AURORA THEME Variables
     box-shadow: var(--glow-params);
     background: var(--aurora-4t);
     margin: var(--cont-pad-sm);
+	margin-bottom: var(--cont-pad);
     padding: var(--cont-pad);
     border: none;
     font-family: var(--font-3);
@@ -1165,7 +1198,6 @@ tr:nth-of-type(even) {
     border-bottom-right-radius: var(--cont-rad);
 }
 
-/* ------------- GM Notes ------------ */
 .user-css .panel-greatgm {
     background: var(--aurora-5t);
     border: var(--border-thin) dotted var(--aurora-5);
@@ -1179,6 +1211,11 @@ tr:nth-of-type(even) {
 	    background: var(--aurora-clear);
 }
 
+.user-css-secret {
+	border: var(--border-thin) dotted var(--aurora-5);
+	border-radius: var(--cont-rad);
+	background: var(--aurora-4t)
+}
 /* ------------------ MY CONTAINERS ----------------- */
 .HL {
     background: var(--HL-background);
