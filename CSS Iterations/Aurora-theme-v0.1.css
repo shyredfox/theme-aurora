@@ -451,7 +451,7 @@ AURORA THEME Variables
 	font-family: var(--font-3); 
     padding: var(--cont-pad-tiny);
     margin-bottom: var(--sect-pad);
-    border: var(--border-thin) solid var(--aurora-4l) !important;
+    border: var(--border-thin) solid var(--aurora-w) !important;
     border-radius: var(--cont-rad);
 }
 
@@ -640,9 +640,9 @@ AURORA THEME Variables
 .user-css .nav-tabs li a, .user-css-extended .nav-tabs li a{
 	border-top-right-radius: var(--cont-rad);
 	border-top-left-radius: var(--cont-rad);
-	border: var(--border-thin) solid var(--aurora-wt);
+	border: var(--border-thin) solid var(--aurora-wtb);
 	font-family: var(--font-5);
-	background-color: var(--aurora-nightt);
+	background-color: var(--aurora-nightt2);
 	color: var(--aurora-text);
 	font-size: var(--fsize-text);
 	letter-spacing: var(--letter-space);
@@ -651,7 +651,7 @@ AURORA THEME Variables
 .user-css .nav-tabs li.active a, .user-css .nav-tabs li.active a:hover, .user-css .nav-tabs li.active a:focus, .user-css-extended .nav-tabs li.active a, .user-css .nav-tabs li.active a:hover, .user-css .nav-tabs li.active a:focus {
 	border-top-right-radius: var(--cont-rad);
 	border-top-left-radius: var(--cont-rad);
-	background-color: var(--aurora-9d);
+	background-color: var(--aurora-3t);
 	font-family: var(--font-5);
 	color: var(--aurora-text);
 	border: var(--border-thin) solid var(--aurora-wtb);
