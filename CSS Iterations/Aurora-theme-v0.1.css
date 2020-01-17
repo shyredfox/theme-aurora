@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.1.4
+@version        0.1.5
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 ==/UserStyle== */
@@ -182,6 +182,8 @@ AURORA THEME Variables
 	--aurora-link: var(--aurora-7d);
 	--aurora-text: var(--aurora-wl);
 	--aurora-textd: var(--aurora-night);
+	--aurora-text-danger: var(--aurora-9l);
+
 
     /* fonts */
     --font-1:  Shrikhand, Noto;
@@ -397,11 +399,13 @@ AURORA THEME Variables
 
 /* ------------------ BOOTSTRAP CONTAINERS --------------- */
 
-.bg-primary {background: var(--aurora-primary); }
-.bg-success { background: var(--aurora-success); }
-.bg-info { background: var(--aurora-info); }
-.bg-warning { background: var(--aurora-warning);} 
-.bg-danger { background: var(--aurora-danger); }
+.user-css .text-danger { color: var(--aurora-text-danger);}
+
+.user-css .bg-primary {background: var(--aurora-primary); }
+.user-css .bg-success { background: var(--aurora-success); }
+.user-css .bg-info { background: var(--aurora-info); }
+.user-css .bg-warning { background: var(--aurora-warning);} 
+.user-css .bg-danger { background: var(--aurora-danger); }
 
 .user-css .jumbotron {
     background: var(--aurora-3t);
@@ -432,7 +436,7 @@ AURORA THEME Variables
 .user-css .alert-danger {  background: var(--aurora-danger);}
 
 
-.user-css .btn {
+.user-css .btn, .user-css-extended .btn {
     color: var(--aurora-text);
 	font-family: var(--font-3); 
     padding: var(--cont-pad-sm);
@@ -441,36 +445,53 @@ AURORA THEME Variables
     border-radius: var(--cont-rad);
 }
 
-.user-css .label {
+.user-css .label, .user-css-extended .label {
     color: var(--aurora-text);
+	background: var(--aurora-4d);
 	font-family: var(--font-3); 
     padding: var(--cont-pad-tiny);
     margin-bottom: var(--sect-pad);
-    border: var(--border-thin) solid var(--aurora-wt) !important;
+    border: var(--border-thin) solid var(--aurora-4l) !important;
     border-radius: var(--cont-rad);
 }
 
-.user-css .btn-default, .user-css .label-default, .user-css .badge-default { 
+.user-css .label:hover, .user-css-extended .label:hover {
+    color: var(--aurora-text);
+	background: var(--aurora-4d);
+	font-family: var(--font-3); 
+    padding: var(--cont-pad-tiny);
+    margin-bottom: var(--sect-pad);
+    border: var(--border-thin) solid var(--aurora-4l) !important;
+    border-radius: var(--cont-rad);
+}
+
+
+.user-css .btn-default, .user-css-extended .btn-default, .user-css .label-default, .user-css .badge-default { 
 	font-weight: 600; 
 	color: var(--aurora-night); 		
 	background: var(--aurora-default);
 }
-.user-css .btn-primary, .user-css .label-primary, .user-css .badge-primary  { 
+.user-css .btn-primary, .user-css-extended .btn-primary, .user-css .label-primary, .user-css .badge-primary  { 
 	background: var(--aurora-primary);
 }
-.user-css .btn-success, .user-css .label-success, .user-css .badge-success  { 
+.user-css .btn-primary:hover, .user-css-extended .btn-primary:hover { background: var(--aurora-8);
+}
+.user-css .btn-success, .user-css-extended .btn-success, .user-css .label-success, .user-css .badge-success  { 
 	background: var(--aurora-success) !important;;
 }
-.user-css .btn-info, .user-css .label-info, .user-css .badge-info { 
+.user-css .btn-info, .user-css-extended .btn-info, .user-css .label-info, .user-css .badge-info { 
 	background: var(--aurora-info);
 }
 .user-css .btn-warning, .user-css .label-warning, .user-css .badge-warning { 
 	background: var(--aurora-warning);
 }
-.user-css .btn-danger, .user-css .label-danger, .user-css .badge-danger { 
+.user-css .btn-danger, .user-css-extended .btn-danger, .user-css .label-danger, .user-css .badge-danger { 
 	background: var(--aurora-danger);
 }
-.user-css .btn-link, .user-css .badge-link { 
+.user-css .btn-danger:hover, .user-css-extended .btn-danger:hover{
+	background: var(--aurora-9);
+}
+.user-css .btn-link, .user-css-extended .btn-link, .user-css .badge-link { 
 	color: var(--aurora-link-text); background: var(--aurora-link);
 }
 
@@ -531,19 +552,25 @@ AURORA THEME Variables
 	background-color: var(--aurora-clear);
 	color: var(--aurora-text);
 }
-.user-css .panel-body {
+.user-css .panel-body  {
 	background-color: var(--aurora-nightt);
 	color: var(--aurora-text);
 	padding: var(--cont-pad-sm);
 }
-.user-css .panel-heading {
-	background-color: var(--aurora-default);
-	color: var(--aurora-textd);
-	padding: var(--cont-pad-sm);
+
+.user-css-extended .panel { border-radius: var(--cont-rad); }
+.user-css-extended .panel-default {
+	background-color: var(--aurora-wt);
+	color: var(--aurora-text);
+}
+.user-css-extended .panel-default .panel-heading {
+	background-color: var(--aurora-7t);
+	color: var(--aurora-text);
 	border-top-right-radius: var(--cont-rad);
 	border-top-left-radius: var(--cont-rad);
-	font-family: var(--font-5);
 }
+.user-css-extended .panel-default .panel-heading h3 {color: var(--aurora-text); }
+.user-css-extended .panel-default .panel-heading small {color: var(--aurora-text); }
 .user-css .panel-footer {
 	background-color: var(--aurora-default);
 	color: var(--aurora-textd);
@@ -551,7 +578,7 @@ AURORA THEME Variables
 	border-bottom-right-radius: var(--cont-rad);
 	border-bottom-left-radius: var(--cont-rad);
 }
-.user-css .panel-default {
+.user-css .panel-default, .user-css .panel-default  {
 	background-color: var(--aurora-clear);
 	color: var(--aurora-textd);
 }
@@ -610,7 +637,7 @@ AURORA THEME Variables
 	color: var(--aurora-text);
 }
 
-.user-css .nav-tabs li a{
+.user-css .nav-tabs li a, .user-css-extended .nav-tabs li a{
 	border-top-right-radius: var(--cont-rad);
 	border-top-left-radius: var(--cont-rad);
 	border: var(--border-thin) solid var(--aurora-wt);
@@ -621,8 +648,11 @@ AURORA THEME Variables
 	letter-spacing: var(--letter-space);
 }
 
-.user-css .nav-tabs li a:active{
-	background-color: var(--aurora-night);
+.user-css .nav-tabs li.active a, .user-css .nav-tabs li.active a:hover, .user-css .nav-tabs li.active a:focus, .user-css-extended .nav-tabs li.active a, .user-css .nav-tabs li.active a:hover, .user-css .nav-tabs li.active a:focus {
+	border-top-right-radius: var(--cont-rad);
+	border-top-left-radius: var(--cont-rad);
+	background-color: var(--aurora-9d);
+	font-family: var(--font-5);
 	color: var(--aurora-text);
 	border: var(--border-thin) solid var(--aurora-wtb);
 	font-size: var(--fsize-text);
@@ -749,7 +779,7 @@ AURORA THEME Variables
 	font-weight: 500;
     line-height: 1.3em;
     text-align: center;
-	margin-top: var(--cont-pad-lg);
+	margin-top: var(--cont-pad-med);
 	margin-bottom: var(--cont-pad-sm);
 }
 
@@ -807,6 +837,9 @@ AURORA THEME Variables
 }
 
 
+.user-css hr, .user-css-extended hr {
+	border-top: 1px dotted var(--aurora-2l);
+}
 
 /* ---------- TEXT ---------- */
 .user-css a, .user-css-extended a, .user-css .panel-greatgm a {
@@ -821,16 +854,16 @@ AURORA THEME Variables
     color: var(--aurora-4l);
 }
 
-.user-css strong.phrase-key {
+.user-css strong.phrase-key, .user-css dt {
     color: var(--aurora-8l);
 }
 
-.user-css .phrase-value {
+.user-css .phrase-value, .user-css dd {
     color: var(--aurora-wl);
     margin-left: var(--indent);
 }
 
-.dropcap {
+.user-css .dropcap {
     font-family: var(--font-2);
     font-size: var(--fsize-h1);
     text-transform: uppercase;
@@ -841,6 +874,9 @@ AURORA THEME Variables
     line-height: 1em;
 }
 
+.user-css small, .user-css-extended small {
+	font-family: var(--font-code);
+}
 /* ---------- Search bar -------- */
 .user-css .search-form .typeahead-input {
     width: 180px;
@@ -876,6 +912,14 @@ AURORA THEME Variables
 	color: var(--aurora-wd);
 }
 
+/* --------- Org tree ------- */
+.user-css-extended .orgtree li a {
+	color: var(--aurora-textd);
+    background-color: var(--aurora-wtb);
+    border-color: var(--aurora-7t);;
+	font-size: var(--fsize-med);
+}
+
 /* ---------- TOC ---------- */
 .user-css .world-toc-loader .category-list a,
 .user-css #world-menu .category-list h5 a {
@@ -909,6 +953,10 @@ AURORA THEME Variables
 	filter: invert(.95);
 }
 
+/* ------------ Comment form ------- */
+.user-css-extended .comment-form .form-control {
+	color: var(--aurora-text);
+}
 /* ------------ PANEL Side bar ----- */
 .user-css .panel.panel-default .panel-body {
 	background: var(--aurora-nightt);
@@ -1212,9 +1260,9 @@ tr:nth-of-type(even) {
 }
 
 .user-css-secret {
-	border: var(--border-thin) dotted var(--aurora-5);
+	border: var(--border-thin) dotted var(--aurora-2t);
 	border-radius: var(--cont-rad);
-	background: var(--aurora-4t)
+	background: var(--aurora-2t)
 }
 /* ------------------ MY CONTAINERS ----------------- */
 .HL {
