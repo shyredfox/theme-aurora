@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.1.6
+@version        0.1.7
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 @-moz-document domain("https://www.worldanvil.com/")
@@ -226,7 +226,7 @@ AURORA THEME Variables
     --cont-pad-med: 15px;
     --cont-pad: 20px;
 	--cont-pad-lg: 40px;
-    --box-shadows: 3px 3px 5px #44444420;
+    --box-shadows: 0 0 4px 3px var(--aurora-1l);
     --glow-params: 0 0 3px 3px var(--aurora-2l), inset 0 0 2px 2px var(--aurora-2l);
 
     /* text */
@@ -255,15 +255,18 @@ AURORA THEME Variables
 .user-css-whitelabel {
    bottom: 50px;
    border-radius: var(--cont-rad);
-   padding: var(--sect-pad);
-   background: var(--aurora-clear);
+   padding: var(--cont-pad-tiny);
+   background: #00000050;
+   box-shadow: var(--box-shadows);
+   -moz-box-shadow: var(--box-shadows);
+   -webkit-box-shadow: var(--box-shadows);
    opacity: .8;
    text-align: center;
 }
 
 .user-css-whitelabel small a {
     content: url(https://www.worldanvil.com/uploads/images/0f448d0499c3bc69c2852a37ad390f51.png);
-    filter: drop-shadow(0 0 3px var(--aurora-8l));
+    filter: drop-shadow(0 0 3px var(--aurora-1d));
     width: 100px;
     padding: 3px;
     display: block;
@@ -1329,6 +1332,18 @@ tr:nth-of-type(even) {
 	border-radius: var(--cont-rad);
 	background: var(--aurora-8t);
 }
+
+/* ------ WA CATEGORIES ------ */ 
+.user-css.page-category .nav-strip {
+ background: var(--aurora-6d);
+    color: var(--aurora-1l);
+    border-top-right-radius: var(--cont-rad);
+    font-family: var(--font-4);
+	bottom: -.5px;
+}
+.user-css.page-category a:hover {    color: var(--aurora-1l);}
+.user-css.page-category .nav-strip:hover {  background: var(--aurora-6);}
+
 /* ------------------ MY CONTAINERS ----------------- */
 .HL {
     background: var(--HL-background);
