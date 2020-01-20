@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.1.7
+@version        0.1.8
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 @-moz-document domain("https://www.worldanvil.com/")
@@ -211,6 +211,7 @@ AURORA THEME Variables
 	
 	--letter-space-sm-text: 0.1em;
 	--letter-space: .05em;
+	--letter-space-lg: .1em;
 
     /*  containers */
     --cont-rad: 10px;
@@ -239,9 +240,6 @@ AURORA THEME Variables
     --HL-border-radius: 5px;
     --HL-padding-right: 4px;
     --HL-padding-left: 4px;
-
-    --HLbox-background: rgba(119, 119, 119, .1);
-    --HLbox-padding: 9.5px;
 }
 
 
@@ -256,7 +254,7 @@ AURORA THEME Variables
    bottom: 50px;
    border-radius: var(--cont-rad);
    padding: var(--cont-pad-tiny);
-   background: #00000050;
+   background: #00000099;
    box-shadow: var(--box-shadows);
    -moz-box-shadow: var(--box-shadows);
    -webkit-box-shadow: var(--box-shadows);
@@ -479,7 +477,7 @@ AURORA THEME Variables
     color: var(--aurora-text);
 	font-family: var(--font-3); 
     padding: var(--cont-pad-sm);
-    margin-bottom: var(--sect-pad);
+    margin-bottom: var(--cont-pad-sm);
     border: var(--border-thin) solid var(--aurora-wt) !important;
     border-radius: var(--cont-rad);
 }
@@ -489,7 +487,7 @@ AURORA THEME Variables
 	background: var(--aurora-4d);
 	font-family: var(--font-3); 
     padding: var(--cont-pad-tiny);
-    margin-bottom: var(--sect-pad);
+    margin-bottom: var(--cont-pad-sm);
     border: var(--border-thin) solid var(--aurora-w) !important;
     border-radius: var(--cont-rad);
 }
@@ -499,7 +497,7 @@ AURORA THEME Variables
 	background: var(--aurora-4d);
 	font-family: var(--font-3); 
     padding: var(--cont-pad-tiny);
-    margin-bottom: var(--sect-pad);
+    margin-bottom: var(--cont-pad-sm);
     border: var(--border-thin) solid var(--aurora-4l) !important;
     border-radius: var(--cont-rad);
 } */
@@ -524,7 +522,7 @@ AURORA THEME Variables
 .user-css .btn-warning, .user-css .label-warning, .user-css .badge-warning { 
 	background: var(--aurora-warning);
 }
-.user-css .btn-danger, .user-css-extended .btn-danger, .user-css .label-danger, .user-css .badge-danger { 
+.user-css .btn-danger, .user-css-extended .btn-danger, .user-css .label-danger, .user-css .badge-danger, .user-css-map-sidebar .badge-danger { 
 	background: var(--aurora-danger);
 }
 .user-css .btn-danger:hover, .user-css-extended .btn-danger:hover{
@@ -608,7 +606,12 @@ AURORA THEME Variables
 	border-top-right-radius: var(--cont-rad);
 	border-top-left-radius: var(--cont-rad);
 }
-.user-css-extended .panel-default .panel-heading h3 {color: var(--aurora-text); }
+.user-css-extended .panel-default .panel-heading h3 {
+	color: var(--aurora-text); 
+	letter-spacing: var(--letter-space);
+	text-transform: uppercase;
+	font-family: var(--font-5);
+}
 .user-css-extended .panel-default .panel-heading small {color: var(--aurora-text); }
 .user-css .panel-footer {
 	background-color: var(--aurora-default);
@@ -1026,15 +1029,17 @@ AURORA THEME Variables
 /* ---------- WA CONTAINERS ---------- */
 
 .user-css .backtoworld a { 
-    background: var(--aurora-6d);
-    color: var(--aurora-1l);
+    background: var(--aurora-nightd);
+    color: var(--aurora-2l);
     border-top-right-radius: var(--cont-rad);
-    font-family: var(--font-4);
+    font-family: var(--font-5);
 	bottom: -.5px;
+	letter-spacing: var(--letter-space-lg);
+	padding-left: 20px;
 }
 
 .user-css .backtoworld a:hover { 
-    background: var(--aurora-6);
+    background: var(--aurora-nightd);
     color: var(--aurora-1l);
 }
 
@@ -1044,18 +1049,9 @@ AURORA THEME Variables
   position: absolute;
   top: .7em;
   left: .5em;
-  border-right: 5px solid var(--aurora-1l);
+  border-right: 5px solid var(--aurora-2l);
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-}
-.user-css .backtoworld a:after { 
-  content: attr(none);
-  position: absolute;
-  left: 1em;
-  top: 0em;
-  border-right: -1px solid var(--aurora-7d);
-  border-top: -1px solid transparent;
-  border-bottom: -1px solid transparent;
 }
 
 .user-css img,
@@ -1265,10 +1261,10 @@ tr:nth-of-type(even) {
 .user-css-extended table th,
 .user-css .statblock .table tbody tr th,
 .user-css-extended .statblock .table tbody tr th {
-    background: var(--aurora-4lt) !important;
+    background: var(--aurora-nightt2) !important;
     border: 0 solid !important;
     width: 100%;
-    color: var(--aurora-night) !important;
+    color: var(--aurora-wl) !important;
     font-family: var(--font-2);
     font-size: 1.2em;
 }
@@ -1328,40 +1324,156 @@ tr:nth-of-type(even) {
 }
 
 .user-css-secret {
-	border: var(--border-thin) dotted var(--aurora-8l);
+	border: var(--border-thin) dotted var(--aurora-1l);
 	border-radius: var(--cont-rad);
-	background: var(--aurora-8t);
+	background: var(--aurora-wt);
+}
+.user-css-secret h5 {
+	color: var(--aurora-1l);
 }
 
 /* ------ WA CATEGORIES ------ */ 
 .user-css.page-category .nav-strip {
- background: var(--aurora-6d);
-    color: var(--aurora-1l);
+	background: var(--aurora-nightd);
     border-top-right-radius: var(--cont-rad);
-    font-family: var(--font-4);
+
 	bottom: -.5px;
 }
-.user-css.page-category a:hover {    color: var(--aurora-1l);}
-.user-css.page-category .nav-strip:hover {  background: var(--aurora-6);}
+.user-css.page-category .nav-strip a {
+	font-family: var(--font-5);
+	color: var(--aurora-2l);
+	font-size: 1em;
+	font-weight: 400;
+	letter-spacing: var(--letter-space-lg);
+	margin-left: 5px;
+}
+.user-css.page-category a:hover {
+	color: var(--aurora-1l);
+}
+.user-css.page-category .nav-strip:hover { 		
+	background: var(--aurora-nightd);
+}
 
+.user-css .nav-strip a .fa.fa-chevron-left{
+	display: none;
+}
+.user-css .nav-strip a:before { 
+  content: attr(none);
+  position: absolute;
+  top: 1.2em;
+  left: .2em;
+  border-right: 5px solid var(--aurora-2l);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+.user-css .bookcover{
+    height: auto;
+    background: transparent;
+	text-align: center;
+}
+.user-css .booktitle {
+	left: 10px;
+	width: 85%;
+    background-color: var(--aurora-wl);
+	color: var(--aurora-5d);
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 800;
+    max-width: 250px;
+    text-align: center;
+	font-family: var(--font-5);
+}
+.user-css .bookcover a:hover .booktitle {
+	background-color: var(--aurora-1l) ;
+	color: var(--aurora-6d);
+}
+.user-css .bookcover a:hover img {
+    opacity: 1;
+      box-shadow:  0px 0px 5px 10px var(--aurora-3t);
+    background: var(--aurora-3t);
+}
+
+.user-css .map-box { /* box with maps on world page */
+	border-radius: var(--cont-rad);
+	background: var(--aurora-6t);
+}
+
+.user-css-map-sidebar.active {
+	background: var(--aurora-nightd);
+	color: var(--aurora-wl);
+	font-size: var(--fsize-text);
+	font-family: var(--font-3);
+}
+
+.user-css-map-sidebar.active h3 {
+	color: var(--aurora-3l);
+	font-family: var(--font-4);
+}
+.user-css-map-sidebar.active h1 {
+	color: var(--aurora-5l);
+	font-family: var(--font-2);
+}
+.user-css-map-sidebar .btn-primary {			
+	background: var(--aurora-primary);
+	border-color: var(--aurora-8);
+}
+.user-css-map-sidebar .btn-primary:not(:disabled):not(.disabled):hover,
+.user-css-map-sidebar .btn-primary:not(:disabled):not(.disabled):active, .user-css-map-sidebar .btn-primary:not(:disabled):not(.disabled):active:focus {
+	background: var(--aurora-8);
+	border-color: var(--aurora-8l);
+	box-shadow: 0 0 0 0.2rem var(--aurora-8t);
+}
+.btn-secondary {
+    color: var(--aurora-wl);
+    background-color: var(--aurora-wd);
+    border-color: var(--aurora-wt);
+}
+.user-css-map-sidebar .btn-secondary:not(:disabled):not(.disabled):hover,
+.user-css-map-sidebar .btn-secondary:not(:disabled):not(.disabled):active, .user-css-map-sidebar .btn-secondary:not(:disabled):not(.disabled):active:focus {
+	background: var(--aurora-wd);
+	border-color: var(--aurora-wl);
+	box-shadow: 0 0 0 0.2rem var(--aurora-wt);
+}
+
+.user-css-map-sidebar .alert-primary {
+	background: var(--aurora-nightl);
+	color: var(--aurora-w);
+	font-weight: 400;
+}
+
+#sidebarCollapse {
+    background-color: var(--aurora-nightd);
+    color: var(--aurora-w);
+}
 /* ------------------ MY CONTAINERS ----------------- */
 .HL {
-    background: var(--HL-background);
-    color: var(--HL-color);
-    font-family: var(--font-3);
+    background: var(--aurora-2t);
     border-radius: var(--sect-rad);
-    padding-right: var(--HL-padding-right);
-    padding-left: var(--HL-padding-left);
+    padding-right: var(--cont-pad-tiny);
+    padding-left: var(--cont-pad-tiny);
+	color: var(--aurora-wb);
+
+}
+
+.HLBox {
+    border-radius: var(--cont-rad);
+    padding: var(--cont-pad);
+    background: var(--aurora-wt);
+	box-shadow: none;
+	-moz-box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 /* highlight box */
-.HLBox {
+.HLBox-glow {
     border-radius: var(--cont-rad);
     padding: var(--cont-pad);
     box-shadow: var(--box-shadows);
     -moz-box-shadow: var(--box-shadows);
     -webkit-box-shadow: var(--box-shadows);
     background: var(--aurora-wt);
+	margin: var(--cont-pad);
+	text-align: left;
 }
 
 .palette {
@@ -1519,17 +1631,6 @@ tr:nth-of-type(even) {
     background: var(--aurora-wd);
 }
 
-.light-text {
-    color: var(--aurora-w);
-}
-
-.opacity-50 {
-    opacity: .5;
-}
-.pad-small {
-    padding: var(--cont-pad-sm);
-}
-
 /* ------------------------------------- Red text because [color] not seem to work in statblocks ------------------------------------ */
 .red {
     color: red;
@@ -1585,3 +1686,18 @@ tr:nth-of-type(even) {
 .bar-90 { width: 90%;}
 .bar-95 { width: 95%;}
 .bar-100 { width: 100%;}
+
+/* display a statblock with it's parent container's attributes */ 
+.display-contents-statblock .statblock {
+  display: contents;
+}
+
+.table-aurora-icons .table tr td:nth-child(1) {
+	text-align: center;
+	font-size: var(--fsize-h3);
+}
+.table-aurora-icons .table tr td:nth-child(2) {
+    text-align: left;
+    white-space: nowrap;
+	font-family: var(--font-code);
+}
