@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.1.8
+@version        0.1.9
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 @-moz-document domain("https://www.worldanvil.com/")
@@ -1393,6 +1393,17 @@ tr:nth-of-type(even) {
     background: var(--aurora-3t);
 }
 
+/* document popup */
+.user-css #myModal .modal-content {
+	background: var(--aurora-nightd);}
+.user-css #myModal .modal-header button {
+	color: var(--aurora-wl);
+	text-shadow: 0 1px 0 var(--aurora-wt);
+	opacity: .4;
+}
+.user-css.template-document .btn-primary {
+	background: var(--aurora-2t);}
+
 .user-css .map-box { /* box with maps on world page */
 	border-radius: var(--cont-rad);
 	background: var(--aurora-6t);
@@ -1445,6 +1456,8 @@ tr:nth-of-type(even) {
     background-color: var(--aurora-nightd);
     color: var(--aurora-w);
 }
+
+
 /* ------------------ MY CONTAINERS ----------------- */
 .HL {
     background: var(--aurora-2t);
@@ -1550,7 +1563,7 @@ tr:nth-of-type(even) {
 .aurora-ft {
     background: var(--aurora-ft);
 }
-.aurora-nt {
+.aurora-nightt {
     background: var(--aurora-nightt);
 }
 .aurora-wt {
@@ -1587,7 +1600,7 @@ tr:nth-of-type(even) {
 .aurora-fl {
     background: var(--aurora-fl);
 }
-.aurora-nl {
+.aurora-nightl {
     background: var(--aurora-nightl);
 }
 .aurora-wl {
@@ -1624,7 +1637,7 @@ tr:nth-of-type(even) {
 .aurora-fd {
     background: var(--aurora-fd);
 }
-.aurora-nd {
+.aurora-nightd {
     background: var(--aurora-nightd);
 }
 .aurora-wd {
