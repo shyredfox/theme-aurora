@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.1.9
+@version        0.1.10
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 @-moz-document domain("https://www.worldanvil.com/")
@@ -1644,6 +1644,43 @@ tr:nth-of-type(even) {
     background: var(--aurora-wd);
 }
 
+/* gradients */
+.g-aurora-1 {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-1t));
+}
+.g-aurora-2 {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-2t));
+}
+.g-aurora-3 {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-3t));
+}
+.g-aurora-4 {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-4t));
+}
+.g-aurora-5 {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-5t));
+}
+.g-aurora-6 {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-6t));
+}
+.g-aurora-7 {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-7t));
+}
+.g-aurora-8 {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-8t));
+}
+.g-aurora-9 {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-9t));
+}
+.g-aurora-f {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-ft));
+}
+.g-aurora-night {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-nightt));
+}
+.g-aurora-w {
+    background: linear-gradient(var(--aurora-wt), var(--aurora-wtb));
+}
 /* ------------------------------------- Red text because [color] not seem to work in statblocks ------------------------------------ */
 .red {
     color: red;
@@ -1705,11 +1742,11 @@ tr:nth-of-type(even) {
   display: contents;
 }
 
-.table-aurora-icons .table tr td:nth-child(1) {
+.table-aurora-icons .table tr td:nth-child(1), .table-aurora-icons .table tr td:nth-child(3) {
 	text-align: center;
 	font-size: var(--fsize-h3);
 }
-.table-aurora-icons .table tr td:nth-child(2) {
+.table-aurora-icons .table tr td:nth-child(2), .table-aurora-icons .table tr td:nth-child(4)  {
     text-align: left;
     white-space: nowrap;
 	font-family: var(--font-code);
