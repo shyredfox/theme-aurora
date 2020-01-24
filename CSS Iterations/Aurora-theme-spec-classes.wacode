@@ -1,0 +1,184 @@
+[h3]
+	[section: HL aurora-2l black fsize-h2 ]
+	[section: fas fa-book-spells ] [/section] 
+    	(For Grandmaster +)
+  [section: fas fa-book-spells ] [/section]
+  [/section] 
+[/h3]
+
+I made this theme with flexible container use in mind. People should be able to mix and match styles!
+
+[center][section: HL aurora-9t]You can copy/paste the class names from this page.[/section][/center]
+
+Almost every aspect is variable based. If you wish to make simple changes, [section: HL]I'd recommend changing the variable values in your CSS.[/section] (Swap an attribute value for a different one or redefine the variable itself.) That will change things universally and you'll have fewer changes to make.
+
+[container: marg-top-lg][h1]Classes[/h1][/container]
+[h3][section: far fa-narwhal ] [/section]  Palette color classes:[/h]
+Transparent
+[container: contain-grid contain-grid-col-12]
+	[container: palette aurora-1t] aurora-1t [/container]
+	[container: palette aurora-2t] aurora-2t [/container]
+	[container: palette aurora-3t] aurora-3t [/container]
+	[container: palette aurora-4t] aurora-4t [/container]
+	[container: palette aurora-5t] aurora-5t [/container]
+	[container: palette aurora-6t] aurora-6t [/container]
+	[container: palette aurora-7t] aurora-7t [/container]
+	[container: palette aurora-8t] aurora-8t [/container]
+	[container: palette aurora-9t] aurora-9t [/container]
+	[container: palette aurora-ft] aurora-ft [/container]
+	[container: palette aurora-nightt ] aurora-nightt [/container]
+	[container: palette aurora-wt] aurora-wt [/container]
+[/container]
+Light
+[container: contain-grid contain-grid-col-12]
+	[container: palette aurora-1l black] aurora-1l [/container]
+	[container: palette aurora-2l black] aurora-2l [/container]
+	[container: palette aurora-3l] aurora-3l [/container]
+	[container: palette aurora-4l] aurora-4l [/container]
+	[container: palette aurora-5l] aurora-5l [/container]
+	[container: palette aurora-6l] aurora-6l [/container]
+	[container: palette aurora-7l] aurora-7l [/container]
+	[container: palette aurora-8l] aurora-8l [/container]
+	[container: palette aurora-9l] aurora-9l [/container]
+	[container: palette aurora-fl] aurora-fl [/container]
+	[container: palette aurora-nightl ] aurora-nightl [/container]
+	[container: palette aurora-wl black] aurora-wl [/container]
+[/container]
+Normal
+[container: contain-grid contain-grid-col-12]
+	[container: palette aurora-1 black] aurora-1 [/container]
+	[container: palette aurora-2] aurora-2 [/container]
+	[container: palette aurora-3] aurora-3 [/container]
+	[container: palette aurora-4] aurora-4 [/container]
+	[container: palette aurora-5] aurora-5 [/container]
+	[container: palette aurora-6] aurora-6 [/container]
+	[container: palette aurora-7] aurora-7 [/container]
+	[container: palette aurora-8] aurora-8 [/container]
+	[container: palette aurora-9] aurora-9 [/container]
+	[container: palette aurora-f] aurora-f [/container]
+	[container: palette aurora-night] aurora-night [/container]
+	[container: palette aurora-w black] aurora-w [/container]
+[/container]
+Dark
+[container: contain-grid contain-grid-col-12]
+	[container: palette aurora-1d ] aurora-1d [/container]
+	[container: palette aurora-2d ] aurora-2d[/container]
+	[container: palette aurora-3d ] aurora-3d[/container]
+	[container: palette aurora-4d ] aurora-4d [/container]
+	[container: palette aurora-5d ] aurora-5d [/container]
+	[container: palette aurora-6d ] aurora-6d [/container]
+	[container: palette aurora-7d ] aurora-7d [/container]
+	[container: palette aurora-8d ] aurora-8d [/container]
+	[container: palette aurora-9d ] aurora-9d [/container]
+	[container: palette aurora-fd ] aurora-fd [/container]
+	[container: palette aurora-nightd ] aurora-nightd [/container]
+	[container: palette aurora-wd ] aurora-wd [/container]
+[/container]
+Gradients
+[container: contain-grid contain-grid-col-12]
+	[container: palette g-aurora-1 ] g-aurora-1 [/container]
+	[container: palette g-aurora-2  ] g-aurora-2 [/container]
+	[container: palette g-aurora-3 light-text ] g-aurora-3 [/container]
+	[container: palette g-aurora-4 light-text ] g-aurora-4 [/container]
+	[container: palette g-aurora-5 light-text ] g-aurora-5 [/container]
+	[container: palette g-aurora-6 light-text ] g-aurora-6 [/container]
+	[container: palette g-aurora-7 light-text ] g-aurora-7 [/container]
+	[container: palette g-aurora-8 light-text ] g-aurora-8 [/container]
+	[container: palette g-aurora-9 light-text ] g-aurora-9 [/container]
+	[container: palette g-aurora-f light-text ] g-aurora-f [/container]
+	[container: palette g-aurora-night light-text ] g-aurora-night [/container]
+	[container: palette g-aurora-w light-text ] g-aurora-w [/container]
+[/container]
+
+[h3][section: far fa-narwhal ] [/section] Container Classes[/h3]
+	[h4][section: fas fa-deer ] [/section] 'Hightlight Boxes'[/h4]
+		[container: HLBox] [section: HL aurora-7t]HLBox[/section] ‏‏‎  ‏‏‎ 
+    [code][noparse][container: HLBox] [/container][/noparse][/code] [/container]
+		[container: HLBox-glow] [section: HL aurora-7t]HLBox-glow[/section] ‏‏‎  ‏‏‎ 
+    [code][noparse][container: HLBox-glow] [/container][/noparse] [/code]
+    [/container]
+		Which can be used with the palette classes to change the background color
+		[container: HLBox-glow aurora-8t] [section: HL aurora-7t]HLBox-glow[/section] 
+    [section: HL aurora-7t]aurora-8t[/section] ‏‏‎ ‏‏‎ [code][noparse]
+    [container: HLBox-glow aurora-8t] [/container][/noparse][/code][/container]
+		[container: HLBox g-aurora-9] [section: HL aurora-7t]HLBox[/section] 
+    [section: HL aurora-7t]g-aurora-9[/section] ‏‏‎ ‏‏‎  
+    [code][noparse][container: HLBox g-aurora-night] [/container][/noparse][/code]
+    [/container]
+
+[h4][section: fas fa-deer ] [/section] Text Highlighting Class[/h4]
+	[section: HL]HL[/section] section (Highlight) class 				[section: HL]to emphasize a section of text[/section] 
+  (Also can be used with palette [section: HL aurora-3t]color 	classes[/section]).
+
+
+[h4][section: fas fa-deer ] [/section] Text Color Classes [/h4]
+	[section: red]red[/section]  ‏‏‎  ‏‏‎ 
+	[section: orange]orange[/section]  ‏‏‎  ‏‏‎ 
+	[section: yellow]yellow[/section]  ‏‏‎  ‏‏‎ 
+	[section: green]green[/section]  ‏‏‎  ‏‏‎ 
+	[section: blue]blue[/section]  ‏‏‎  ‏‏‎ 
+	[section: purple]purple[/section]  ‏‏‎  ‏‏‎ 
+	[section: white]white[/section]  ‏‏‎  ‏‏‎ 
+	[section: black]black[/section]  ‏‏‎  ‏‏‎ 
+	[section: gray]gray[/section]  ‏‏‎  ‏‏‎ 
+	[section: lightgray-hex]lightgray-hex[/section]  ‏‏‎  ‏‏‎ 
+	[section: lightgray-hex-50]lightgray-hex-50[/section] 
+
+[h4][section: fas fa-deer ] [/section] Font classes[/h4]
+	[section: font-1]font-1[/section]  ‏‏‎  ‏‏‎ 
+	[section: font-2]font-2[/section]  ‏‏‎  ‏‏‎ 
+	[section: font-3]font-3[/section]  ‏‏‎  ‏‏‎ 
+	[section: font-4]font-4[/section]  ‏‏‎  ‏‏‎ 
+	[section: font-5]font-5[/section]  ‏‏‎  ‏‏‎ 
+	[section: font-code]font-code[/section]
+  [br][br]
+[h4][section: fas fa-deer ] [/section] Pt Based size [/h4]
+  [section: fsize-h0]fsize-h0[/section] [br]
+  [section: fsize-h1]fsize-h1[/section] [br]
+  [section: fsize-h2]fsize-h2[/section] [br]
+  [section: fsize-h3]fsize-h3[/section] [br]
+  [section: fsize-h4]fsize-h4[/section] [br] 
+  [section: fsize-h5]fsize-h5[/section] [br] 
+  [section: fsize-h6]fsize-h6[/section] [br] 
+  [section: fsize-text]fsize-text[/section][br]
+
+[h4][section: fas fa-deer ] [/section] Em based Size [/h4]
+  [section: fsize-big]fsize-big[/section] [br] 
+  [section: fsize-small]fsize-small[/section] [br] 
+  [section: fsize-med]fsize-med[/section]
+
+[h4][section: fas fa-deer ] [/section] Width Percentages (Thanks To [user:MappingDragon])[/h4]
+classes are [section: HL]bar-XX[/section] (where XX is the width in % by 5s)
+	[container: HLBox-glow bar-25] 
+  	[noparse]
+  		[container: HLBox-glow bar-25] bar-25 [/container] 
+  	[/noparse]
+  [/container]
+  [container:progress][container:progress-bar bar-90 g-aurora-8]bar-90[/container][/container]
+
+[h4][section: fas fa-deer ] [/section] Display a Statblock Without it's Box / Background[/h4]
+	[section: HL aurora-9t]display-contents-statblock[/section] to display a statblock with it's parent container's attributes. See [url:https://css-tricks.com/get-ready-for-display-contents/|tab]this article[/url] for more info.
+
+ Can you tell this section below is a statblock?
+[row]
+	[col3] [h3][section: fas fa-arrow-right fsize-h1] [/section][/h3] [/col3]
+	[col3] 
+		[container: display-contents-statblock ] [block:311163] 		[/container]
+	[/col3]
+	[col3] [h3][section: fas fa-arrow-left fsize-h1] [/section] [/h3] [/col3]
+[/row]
+
+[h4]Extra margin at the top of items[/h4]
+[container: HLBox]
+	[h2]no extra space at the top[/h2]
+	[h2]no extra space at the top[/h2]
+  [container: marg-top-lg][h2]with extra space at the top [/h2][/container]
+  use class [section: HL]marg-top-lg[/section]
+[/container]
+
+[container: marg-top-lg][h1]Other Tweaks To Go With The Theme[/h1][/container]
+	[section: far fa-narwhal ] [/section]  ‏‏‎  ‏‏‎ Invisible 	space character [ ‏‏‎ ] <- between the brackets that you 		can copy from here.
+
+[container: table-aurora-icons display-contents-statblock marg-top-lg]
+	[block:309240] 
+[/container]

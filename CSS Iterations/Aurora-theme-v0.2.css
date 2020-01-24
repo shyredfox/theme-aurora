@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.1.10
+@version        0.2.0
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 @-moz-document domain("https://www.worldanvil.com/")
@@ -432,7 +432,17 @@ AURORA THEME Variables
 .font-4 { font-family: var(--font-4); }
 .font-5 { font-family: var(--font-5); }
 .font-code { font-family: var(--font-code); }
-
+.fsize-h0 { font-size: var(--fsize-h0); line-height: 1.3em;}
+.fsize-h1 { font-size: var(--fsize-h1); line-height: 1.3em; }
+.fsize-h2 { font-size: var(--fsize-h2); line-height: 1.3em;}
+.fsize-h3 { font-size: var(--fsize-h3); line-height: 1.3em;}
+.fsize-h4 { font-size: var(--fsize-h4); line-height: 1.3em;}
+.fsize-h5 { font-size: var(--fsize-h5); line-height: 1.3em;}
+.fsize-h6 { font-size: var(--fsize-h6); line-height: 1.3em;}
+.fsize-text { font-size: var(--fsize-text); }
+.fsize-big { font-size: var(--fsize-big); }
+.fsize-small { font-size: var(--fsize-small); }
+.fsize-med { font-size: var(--fsize-med); }
 
 /* ------------------ BOOTSTRAP CONTAINERS --------------- */
 
@@ -584,6 +594,8 @@ AURORA THEME Variables
 	color: var(--aurora-text);
 	padding: 0;
 	border-radius: var(--cont-rad);
+	margin-top: var(--cont-pad-med);
+	margin-bottom: var(--cont-pad-med);
 }
 .user-css .panel-group {
 	background-color: var(--aurora-clear);
@@ -594,6 +606,7 @@ AURORA THEME Variables
 	color: var(--aurora-text);
 	padding: var(--cont-pad-sm);
 }
+
 
 .user-css-extended .panel { border-radius: var(--cont-rad); }
 .user-css-extended .panel-default {
@@ -827,9 +840,11 @@ AURORA THEME Variables
 	font-weight: 500;
     line-height: 1.3em;
     text-align: center;
-	margin-top: var(--cont-pad-med);
+	margin-top: var(--cont-pad-sm);
 	margin-bottom: var(--cont-pad-sm);
 }
+
+.marg-top-lg { margin-top: var(--cont-pad-lg); }
 
 /* .user-css h2, .user-css-extended h2 {
     font-size: var(--fsize-h2);
@@ -871,6 +886,10 @@ AURORA THEME Variables
 	    color: var(--aurora-2l);
 		letter-spacing: 0.15em;
 
+}
+/* */
+.user-css .tab-content .col-md-4 .panel h2:first-of-type, .user-css .tab-content .col-md-4 .panel h3:first-of-type, .user-css .tab-content .col-md-4 .panel h4:first-of-type   {
+		margin-top: var(--cont-pad-sm);
 }
 
 /* the TOC headers should be left aligned */
@@ -962,9 +981,7 @@ AURORA THEME Variables
     border-color: var(--aurora-2d);
 }
 
-.user-css .typeahead.dropdown-menu li .dropdown-item .text-muted{
-	color: var(--aurora-wd);
-}
+.user-css .typeahead.dropdown-menu li .dropdown-item .text-muted{ color: var(--aurora-wd); }
 
 /* --------- Org tree ------- */
 .user-css-extended .orgtree li a {
@@ -988,7 +1005,7 @@ AURORA THEME Variables
 }
 
 .user-css .category-list .fa-folder:before {
-    content: url(https://www.worldanvil.com/uploads/images/6db53a5494b8ed6ead463f20e05b269f.svg);
+    content: url(https://www.worldanvil.com/uploads/images/6db53a5494b8ed6ead463f20e05b269f.svg); /* sun */
     display: inline-block;
     width: .9em;
     margin-right: -5px;
@@ -998,7 +1015,7 @@ AURORA THEME Variables
 }
 
 .user-css .category-list .fa-file:before {
-    content: url(http://www.worldanvil.com/uploads/images/20e928e762d50fd6c818293f2f65423e.svg);
+    content: url(http://www.worldanvil.com/uploads/images/20e928e762d50fd6c818293f2f65423e.svg); /* moon */
     display: inline-block;
     width: .9em;
     margin-right: -5px;
@@ -1242,9 +1259,7 @@ AURORA THEME Variables
 }
 
 .user-css-presentation table,
-.user-css table {
-    border-radius: var(--cont-rad);
-}
+.user-css table { border-radius: var(--cont-rad); }
 
 /* Affects every odd row in tables, good for making striped looks. */
 tr:nth-of-type(odd) {
@@ -1312,9 +1327,7 @@ tr:nth-of-type(even) {
     font-family: var(--font-3);
     font-size: 1em;
 }
-.user-css .panel-greatgm .panel-body {
-	    background: var(--aurora-clear);
-}
+.user-css .panel-greatgm .panel-body { background: var(--aurora-clear); }
 
 .user-css .panel-generic-ggm.panel-npcsheet {
 	padding: var(--cont-pad);
@@ -1328,15 +1341,12 @@ tr:nth-of-type(even) {
 	border-radius: var(--cont-rad);
 	background: var(--aurora-wt);
 }
-.user-css-secret h5 {
-	color: var(--aurora-1l);
-}
+.user-css-secret h5 { color: var(--aurora-1l);}
 
 /* ------ WA CATEGORIES ------ */ 
 .user-css.page-category .nav-strip {
 	background: var(--aurora-nightd);
     border-top-right-radius: var(--cont-rad);
-
 	bottom: -.5px;
 }
 .user-css.page-category .nav-strip a {
@@ -1347,16 +1357,10 @@ tr:nth-of-type(even) {
 	letter-spacing: var(--letter-space-lg);
 	margin-left: 5px;
 }
-.user-css.page-category a:hover {
-	color: var(--aurora-1l);
-}
-.user-css.page-category .nav-strip:hover { 		
-	background: var(--aurora-nightd);
-}
+.user-css.page-category a:hover { color: var(--aurora-1l); }
+.user-css.page-category .nav-strip:hover {  background: var(--aurora-nightd); }
 
-.user-css .nav-strip a .fa.fa-chevron-left{
-	display: none;
-}
+.user-css .nav-strip a .fa.fa-chevron-left{ display: none; }
 .user-css .nav-strip a:before { 
   content: attr(none);
   position: absolute;
@@ -1389,7 +1393,7 @@ tr:nth-of-type(even) {
 }
 .user-css .bookcover a:hover img {
     opacity: 1;
-      box-shadow:  0px 0px 5px 10px var(--aurora-3t);
+    box-shadow:  0px 0px 5px 10px var(--aurora-3t);
     background: var(--aurora-3t);
 }
 
@@ -1429,7 +1433,8 @@ tr:nth-of-type(even) {
 	border-color: var(--aurora-8);
 }
 .user-css-map-sidebar .btn-primary:not(:disabled):not(.disabled):hover,
-.user-css-map-sidebar .btn-primary:not(:disabled):not(.disabled):active, .user-css-map-sidebar .btn-primary:not(:disabled):not(.disabled):active:focus {
+.user-css-map-sidebar .btn-primary:not(:disabled):not(.disabled):active, 
+.user-css-map-sidebar .btn-primary:not(:disabled):not(.disabled):active:focus {
 	background: var(--aurora-8);
 	border-color: var(--aurora-8l);
 	box-shadow: 0 0 0 0.2rem var(--aurora-8t);
@@ -1440,7 +1445,8 @@ tr:nth-of-type(even) {
     border-color: var(--aurora-wt);
 }
 .user-css-map-sidebar .btn-secondary:not(:disabled):not(.disabled):hover,
-.user-css-map-sidebar .btn-secondary:not(:disabled):not(.disabled):active, .user-css-map-sidebar .btn-secondary:not(:disabled):not(.disabled):active:focus {
+.user-css-map-sidebar .btn-secondary:not(:disabled):not(.disabled):active, 
+.user-css-map-sidebar .btn-secondary:not(:disabled):not(.disabled):active:focus {
 	background: var(--aurora-wd);
 	border-color: var(--aurora-wl);
 	box-shadow: 0 0 0 0.2rem var(--aurora-wt);
@@ -1475,6 +1481,7 @@ tr:nth-of-type(even) {
 	box-shadow: none;
 	-moz-box-shadow: none;
     -webkit-box-shadow: none;
+	margin: var(--cont-pad);
 }
 
 /* highlight box */
@@ -1490,209 +1497,90 @@ tr:nth-of-type(even) {
 }
 
 .palette {
+	border-radius: var(--cont-rad);
     font-size: var(--fsize-med);
     padding: var(--cont-pad-sm);
     word-break: break-all;
 }
 
 /* palette classes*/
-.aurora-1 {
-    background: var(--aurora-1);
-}
-.aurora-2 {
-    background: var(--aurora-2);
-}
-.aurora-3 {
-    background: var(--aurora-3);
-}
-.aurora-4 {
-    background: var(--aurora-4);
-}
-.aurora-5 {
-    background: var(--aurora-5);
-}
-.aurora-6 {
-    background: var(--aurora-6);
-}
-.aurora-7 {
-    background: var(--aurora-7);
-}
-.aurora-8 {
-    background: var(--aurora-8);
-}
-.aurora-9 {
-    background: var(--aurora-9);
-}
-.aurora-f {
-    background: var(--aurora-f);
-}
-.aurora-n {
-    background: var(--aurora-night);
-}
-.aurora-w {
-    background: var(--aurora-w);
-}
+.aurora-1 { background: var(--aurora-1); }
+.aurora-2 { background: var(--aurora-2); }
+.aurora-3 { background: var(--aurora-3); }
+.aurora-4 { background: var(--aurora-4); }
+.aurora-5 { background: var(--aurora-5); }
+.aurora-6 { background: var(--aurora-6); }
+.aurora-7 { background: var(--aurora-7); }
+.aurora-8 { background: var(--aurora-8); }
+.aurora-9 { background: var(--aurora-9); }
+.aurora-f { background: var(--aurora-f); }
+.aurora-night { background: var(--aurora-night); }
+.aurora-w { background: var(--aurora-w); }
 
-.aurora-1t {
-    background: var(--aurora-1t);
-}
-.aurora-2t {
-    background: var(--aurora-2t);
-}
-.aurora-3t {
-    background: var(--aurora-3t);
-}
-.aurora-4t {
-    background: var(--aurora-4t);
-}
-.aurora-5t {
-    background: var(--aurora-5t);
-}
-.aurora-6t {
-    background: var(--aurora-6t);
-}
-.aurora-7t {
-    background: var(--aurora-7t);
-}
-.aurora-8t {
-    background: var(--aurora-8t);
-}
-.aurora-9t {
-    background: var(--aurora-9t);
-}
-.aurora-ft {
-    background: var(--aurora-ft);
-}
-.aurora-nightt {
-    background: var(--aurora-nightt);
-}
-.aurora-wt {
-    background: var(--aurora-wt);
-}
+.aurora-1t { background: var(--aurora-1t); }
+.aurora-2t { background: var(--aurora-2t); }
+.aurora-3t { background: var(--aurora-3t); }
+.aurora-4t { background: var(--aurora-4t); }
+.aurora-5t { background: var(--aurora-5t); }
+.aurora-6t { background: var(--aurora-6t); }
+.aurora-7t { background: var(--aurora-7t); }
+.aurora-8t { background: var(--aurora-8t); }
+.aurora-9t { background: var(--aurora-9t); }
+.aurora-ft { background: var(--aurora-ft); }
+.aurora-nightt { background: var(--aurora-nightt); }
+.aurora-wt { background: var(--aurora-wt); }
 
-.aurora-1l {
-    background: var(--aurora-1l);
-}
-.aurora-2l {
-    background: var(--aurora-2l);
-}
-.aurora-3l {
-    background: var(--aurora-3l);
-}
-.aurora-4l {
-    background: var(--aurora-4l);
-}
-.aurora-5l {
-    background: var(--aurora-5l);
-}
-.aurora-6l {
-    background: var(--aurora-6l);
-}
-.aurora-7l {
-    background: var(--aurora-7l);
-}
-.aurora-8l {
-    background: var(--aurora-8l);
-}
-.aurora-9l {
-    background: var(--aurora-9l);
-}
-.aurora-fl {
-    background: var(--aurora-fl);
-}
-.aurora-nightl {
-    background: var(--aurora-nightl);
-}
-.aurora-wl {
-    background: var(--aurora-wl);
-}
+.aurora-1l { background: var(--aurora-1l); }
+.aurora-2l { background: var(--aurora-2l); }
+.aurora-3l { background: var(--aurora-3l); }
+.aurora-4l { background: var(--aurora-4l); }
+.aurora-5l { background: var(--aurora-5l); }
+.aurora-6l { background: var(--aurora-6l); }
+.aurora-7l { background: var(--aurora-7l); }
+.aurora-8l { background: var(--aurora-8l); }
+.aurora-9l {  background: var(--aurora-9l); }
+.aurora-fl { background: var(--aurora-fl); }
+.aurora-nightl { background: var(--aurora-nightl); }
+.aurora-wl { background: var(--aurora-wl); }
 
-.aurora-1d {
-    background: var(--aurora-1d);
-}
-.aurora-2d {
-    background: var(--aurora-2d);
-}
-.aurora-3d {
-    background: var(--aurora-3d);
-}
-.aurora-4d {
-    background: var(--aurora-4d);
-}
-.aurora-5d {
-    background: var(--aurora-5d);
-}
-.aurora-6d {
-    background: var(--aurora-6d);
-}
-.aurora-7d {
-    background: var(--aurora-7d);
-}
-.aurora-8d {
-    background: var(--aurora-8d);
-}
-.aurora-9d {
-    background: var(--aurora-9d);
-}
-.aurora-fd {
-    background: var(--aurora-fd);
-}
-.aurora-nightd {
-    background: var(--aurora-nightd);
-}
-.aurora-wd {
-    background: var(--aurora-wd);
-}
+.aurora-1d { background: var(--aurora-1d); }
+.aurora-2d { background: var(--aurora-2d); }
+.aurora-3d { background: var(--aurora-3d); }
+.aurora-4d { background: var(--aurora-4d); }
+.aurora-5d { background: var(--aurora-5d); }
+.aurora-6d { background: var(--aurora-6d); }
+.aurora-7d { background: var(--aurora-7d); }
+.aurora-8d { background: var(--aurora-8d); }
+.aurora-9d { background: var(--aurora-9d); }
+.aurora-fd { background: var(--aurora-fd); }
+.aurora-nightd { background: var(--aurora-nightd); }
+.aurora-wd { background: var(--aurora-wd); }
 
 /* gradients */
-.g-aurora-1 {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-1t));
-}
-.g-aurora-2 {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-2t));
-}
-.g-aurora-3 {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-3t));
-}
-.g-aurora-4 {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-4t));
-}
-.g-aurora-5 {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-5t));
-}
-.g-aurora-6 {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-6t));
-}
-.g-aurora-7 {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-7t));
-}
-.g-aurora-8 {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-8t));
-}
-.g-aurora-9 {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-9t));
-}
-.g-aurora-f {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-ft));
-}
-.g-aurora-night {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-nightt));
-}
-.g-aurora-w {
-    background: linear-gradient(var(--aurora-wt), var(--aurora-wtb));
-}
+.g-aurora-1 { background: linear-gradient(var(--aurora-night), var(--aurora-1t)); }
+.g-aurora-2 { background: linear-gradient(var(--aurora-night), var(--aurora-2t)); }
+.g-aurora-3 { background: linear-gradient(var(--aurora-night), var(--aurora-3t)); }
+.g-aurora-4 { background: linear-gradient(var(--aurora-night), var(--aurora-4t)); }
+.g-aurora-5 {  background: linear-gradient(var(--aurora-night), var(--aurora-5t)); }
+.g-aurora-6 { background: linear-gradient(var(--aurora-night), var(--aurora-6t)); }
+.g-aurora-7 { background: linear-gradient(var(--aurora-night), var(--aurora-7t)); }
+.g-aurora-8 { background: linear-gradient(var(--aurora-night), var(--aurora-8t)); }
+.g-aurora-9 { background: linear-gradient(var(--aurora-night), var(--aurora-9t)); }
+.g-aurora-f {  background: linear-gradient(var(--aurora-night), var(--aurora-ft)); }
+.g-aurora-night { background: linear-gradient(var(--aurora-night), var(--aurora-nightt3)); }
+.g-aurora-w { background: linear-gradient(var(--aurora-night), var(--aurora-wt)); }
 /* ------------------------------------- Red text because [color] not seem to work in statblocks ------------------------------------ */
-.red {color: red;}
-.orange {color: orange;}
-.yellow {color: yellow;}
-.green {color: green;}
-.blue {color: blue;}
-.purple {color: purple;}
-.white {color: white;}
-.black {color: black;}
-.gray {color: gray;}
-.lightgray-hex {color: #bbb;}
-.lightgray-hex-50 {color: #bbbbbb50;}
+.red { color: red; }
+.orange { color: orange; }
+.yellow { color: yellow; }
+.green { color: green; }
+.blue { color: blue; }
+.purple { color: purple; }
+.white { color: white; }
+.black { color: black; }
+.gray { color: gray; }
+.lightgray-hex { color: #bbb; }
+.lightgray-hex-50 { color: #bbbbbb50; }
 
 .bar-05 { width: 05%;}
 .bar-10 { width: 10%;}
@@ -1716,14 +1604,18 @@ tr:nth-of-type(even) {
 .bar-100 { width: 100%;}
 
 /* display a statblock with it's parent container's attributes */ 
-.display-contents-statblock .statblock {display: contents;}
+.display-contents-statblock .statblock {
+  display: contents;
+}
 
 .table-aurora-icons .table tr td:nth-child(1), .table-aurora-icons .table tr td:nth-child(3) {
 	text-align: center;
+	max-width: 10%;
 	font-size: var(--fsize-h3);
 }
 .table-aurora-icons .table tr td:nth-child(2), .table-aurora-icons .table tr td:nth-child(4)  {
     text-align: left;
-    white-space: nowrap;
+	max-width: 40%;
+	white-space: nowrap;
 	font-family: var(--font-code);
 }
