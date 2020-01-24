@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.2.0
+@version        0.2.1
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 @-moz-document domain("https://www.worldanvil.com/")
@@ -477,10 +477,10 @@ AURORA THEME Variables
     background: none;
 }
 
-.user-css .alert-success{ background: var(--aurora-success);}
-.user-css .alert-info{  background: var(--aurora-info);}
+.user-css .alert-success { background: var(--aurora-success);}
+.user-css .alert-info, .user-css-extended .alert-info {  background: var(--aurora-info);}
 .user-css .alert-warning {  background: var(--aurora-warning);}
-.user-css .alert-danger {  background: var(--aurora-danger);}
+.user-css .alert-danger {  background: var(--aurora-danger); }
 
 
 .user-css .btn, .user-css-extended .btn {
@@ -1485,16 +1485,13 @@ tr:nth-of-type(even) {
 }
 
 /* highlight box */
-.HLBox-glow {
-    border-radius: var(--cont-rad);
-    padding: var(--cont-pad);
+.glow {  
     box-shadow: var(--box-shadows);
     -moz-box-shadow: var(--box-shadows);
     -webkit-box-shadow: var(--box-shadows);
-    background: var(--aurora-wt);
-	margin: var(--cont-pad);
-	text-align: left;
 }
+
+.round-corners {border-radius: var(--cont-rad);}
 
 .palette {
 	border-radius: var(--cont-rad);
@@ -1619,3 +1616,25 @@ tr:nth-of-type(even) {
 	white-space: nowrap;
 	font-family: var(--font-code);
 }
+
+
+/* -------------------------------------
+               NON THEME 
+-------------------------------------- */
+/* Side box */
+.side-box-vocab {
+  opacity: 0.5;
+  border-radius: 10px; 
+  top: 100px; 
+  right: 10px; 
+  padding: 10px;
+  font-size: .7em;
+  line-height: 1.2em;
+  border: var(--border-thin) solid var(--aurora-wtb); 
+  background: var(--aurora-w); 
+  position: fixed;
+  z-index:10;
+}
+
+.side-box-vocab a {color: var(--aurora-night);}
+.side-box-vocab a:hover {color: var(--aurora-7l);}
