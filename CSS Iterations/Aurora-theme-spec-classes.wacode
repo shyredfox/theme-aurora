@@ -10,10 +10,11 @@ I made this theme with flexible container use in mind. People should be able to 
 
 [center][section: HL aurora-9t]You can copy/paste the class names from this page.[/section][/center]
 
-Almost every aspect is variable based. If you wish to make simple changes, [section: HL]I'd recommend changing the variable values in your CSS.[/section] (Swap an attribute value for a different one or redefine the variable itself.) That will change things universally and you'll have fewer changes to make.
 
-[container: marg-top-lg][h1]Classes[/h1][/container]
-[h3][section: far fa-narwhal ] [/section]  Palette color classes:[/h]
+Almost every aspect is variable based. [section: HL]If you wish to make simple changes, I'd recommend changing the variable values in your CSS.[/section] (Swap an attribute value for a different one or redefine the variable itself.) That will change things universally and you'll have fewer changes to make.
+
+[container: marg-top-lg][h1]Classes[/h1][/container][anchor|pbg]
+[h3][section: far fa-narwhal ] [/section]  Palette color classes (for backgrounds):[/h]
 Transparent
 [container: contain-grid contain-grid-col-12]
 	[container: palette aurora-1t] aurora-1t [/container]
@@ -90,27 +91,36 @@ Gradients
 	[container: palette g-aurora-w light-text ] g-aurora-w [/container]
 [/container]
 
+[h2] [/h2]
+[anchor|cc]
 [h3][section: far fa-narwhal ] [/section] Container Classes[/h3]
 	[h4][section: fas fa-deer ] [/section] 'Hightlight Boxes'[/h4]
 		[container: HLBox] [section: HL aurora-7t]HLBox[/section] ‏‏‎  ‏‏‎ 
     [code][noparse][container: HLBox] [/container][/noparse][/code] [/container]
-		[container: HLBox-glow] [section: HL aurora-7t]HLBox-glow[/section] ‏‏‎  ‏‏‎ 
-    [code][noparse][container: HLBox-glow] [/container][/noparse] [/code]
+		[container: HLBox glow] [section: HL aurora-7t]HLBox glow[/section] ‏‏‎  ‏‏‎ 
+    [code][noparse][container: HLBox glow] [/container][/noparse] [/code]
     [/container]
 		Which can be used with the palette classes to change the background color
-		[container: HLBox-glow aurora-8t] [section: HL aurora-7t]HLBox-glow[/section] 
+		[container: HLBox glow aurora-8t] [section: HL aurora-7t]HLBox glow[/section] 
     [section: HL aurora-7t]aurora-8t[/section] ‏‏‎ ‏‏‎ [code][noparse]
-    [container: HLBox-glow aurora-8t] [/container][/noparse][/code][/container]
+    [container: HLBox glow aurora-8t] [/container][/noparse][/code][/container]
 		[container: HLBox g-aurora-9] [section: HL aurora-7t]HLBox[/section] 
     [section: HL aurora-7t]g-aurora-9[/section] ‏‏‎ ‏‏‎  
     [code][noparse][container: HLBox g-aurora-night] [/container][/noparse][/code]
     [/container]
 
+
+[h2] [/h2]
+
+[anchor|th]
 [h4][section: fas fa-deer ] [/section] Text Highlighting Class[/h4]
 	[section: HL]HL[/section] section (Highlight) class 				[section: HL]to emphasize a section of text[/section] 
   (Also can be used with palette [section: HL aurora-3t]color 	classes[/section]).
 
 
+[h2] [/h2]
+
+[anchor|tc]
 [h4][section: fas fa-deer ] [/section] Text Color Classes [/h4]
 	[section: red]red[/section]  ‏‏‎  ‏‏‎ 
 	[section: orange]orange[/section]  ‏‏‎  ‏‏‎ 
@@ -124,6 +134,9 @@ Gradients
 	[section: lightgray-hex]lightgray-hex[/section]  ‏‏‎  ‏‏‎ 
 	[section: lightgray-hex-50]lightgray-hex-50[/section] 
 
+[h2] [/h2]
+
+[anchor|fc]
 [h4][section: fas fa-deer ] [/section] Font classes[/h4]
 	[section: font-1]font-1[/section]  ‏‏‎  ‏‏‎ 
 	[section: font-2]font-2[/section]  ‏‏‎  ‏‏‎ 
@@ -140,23 +153,39 @@ Gradients
   [section: fsize-h4]fsize-h4[/section] [br] 
   [section: fsize-h5]fsize-h5[/section] [br] 
   [section: fsize-h6]fsize-h6[/section] [br] 
-  [section: fsize-text]fsize-text[/section][br]
-
+  [section: fsize-text]fsize-text[/section]
+	[br][br]
 [h4][section: fas fa-deer ] [/section] Em based Size [/h4]
   [section: fsize-big]fsize-big[/section] [br] 
   [section: fsize-small]fsize-small[/section] [br] 
   [section: fsize-med]fsize-med[/section]
 
-[h4][section: fas fa-deer ] [/section] Width Percentages (Thanks To [user:MappingDragon])[/h4]
-classes are [section: HL]bar-XX[/section] (where XX is the width in % by 5s)
-	[container: HLBox-glow bar-25] 
+[h2] [/h2]
+
+[anchor|wp]
+[h4][section: fas fa-deer ] [/section] Width Percentages[/h4]
+(Thanks To [user:MappingDragon] - for showing me this!)
+
+Classes are [section: HL]bar-XX[/section] (where XX is the width in % by 5s)
+	[container: HLBox glow bar-25] 
   	[noparse]
-  		[container: HLBox-glow bar-25] bar-25 [/container] 
+  		[container: HLBox glow bar-25] bar-25 [/container] 
   	[/noparse]
   [/container]
   [container:progress][container:progress-bar bar-90 g-aurora-8]bar-90[/container][/container]
 
-[h4][section: fas fa-deer ] [/section] Display a Statblock Without it's Box / Background[/h4]
+[h2] [/h2]
+
+[anchor|rc]
+[container: marg-top-lg][h4][section: fas fa-deer ] [/section] Rounded Corners [/h4][/container]
+You may want or need to round the corners of some containers. Add [section: HL]round-corners[/section] to your classes list for the container. See the [url:#bbcode-notes]Usage Notes[/url] for an example where I needed to use round-corners to change the bg color of an h2 element.
+[code][noparse][container: g-aurora-7 round-corners] [center]Rounding Corners Test [/center] [/container][/noparse][/code]
+[container: g-aurora-7 round-corners] [center]Rounding Corners Test [/center] [/container]
+
+[h2] [/h2]
+
+[anchor|sbnbg]
+[container: marg-top-lg][h4][section: fas fa-deer ] [/section] Display a Statblock Without it's Box / Background[/h4][/container]
 	[section: HL aurora-9t]display-contents-statblock[/section] to display a statblock with it's parent container's attributes. See [url:https://css-tricks.com/get-ready-for-display-contents/|tab]this article[/url] for more info.
 
  Can you tell this section below is a statblock?
@@ -168,17 +197,88 @@ classes are [section: HL]bar-XX[/section] (where XX is the width in % by 5s)
 	[col3] [h3][section: fas fa-arrow-left fsize-h1] [/section] [/h3] [/col3]
 [/row]
 
+[h2] [/h2]
+
+[anchor|em]
 [h4]Extra margin at the top of items[/h4]
 [container: HLBox]
 	[h2]no extra space at the top[/h2]
 	[h2]no extra space at the top[/h2]
   [container: marg-top-lg][h2]with extra space at the top [/h2][/container]
-  use class [section: HL]marg-top-lg[/section]
+  use class [section: HL]marg-top-lg[/section] in a container around the item.
 [/container]
 
+
+
+[h2] [/h2]
+
+[anchor|un]
+[container: HLBox glow aurora-3t]
+[h1]Usage Notes[/h1]
+When inputting the container to use these effects
+- put the class you want to change (i.e. such as the theme's box class [section: HL]HLBox[/section]) 
+- then the modifying aspects (background color [section: HL]aurora-6t[/section]). 
+
+[row][container: col-md-offset-2 col-md-8]
+[center]
+[section: HL aurora-4t][section: fas fa-stars ] [/section] The hierarchy of the classes goes from left to right.[/section]
+
+[section: HL aurora-4t](i.e. the farther right class in the list overwrites attributes to the left.)[/section][/center]
+[/container][/row]
+
+[h3]For Containers and Sections[/h3]
+It would look like this:
+[code][noparse]
+	[container: HLBox aurora-1t] YOUR TEXT/STUFF HERE [/container]
+[/noparse][/code]
+
+[h3]For WACode/BBcode Elements[/h3]
+You'll need to surround the element or the contents of the element with a container.
+
+[h4]Examples:[/h4]
+At the top of this article there's a light green header that says these classes are for Grandmaster +. This is how I did that. 
+	[code][noparse]
+[h3]
+[section: HL aurora-2l black fsize-h2 ]
+[section: fas fa-book-spells ] [/section] 
+    	(For Grandmaster +)
+[section: fas fa-book-spells ] [/section]
+[/section] 
+[/h3][/noparse][/code]
+
+Or to add a little space at the top of an H1 tag I did this for the big header 'Classes' just below this box.
+	[code][noparse]
+[container: marg-top-lg][h1]Classes[/h1][/container][/noparse][/code]
+
+[h3|bbcode-notes]Notes on WACode/BBcode[/h3]
+The background color classes don't always play nice with some WACode/BBcode elements. For example if I want to color an H2 header with the auora-3t class (kind of a teal semi-transparent color).  
+
+Putting the bg color class on the outside of the [noparse][h2][/noparse] does not work.
+[code][noparse][container: aurora-3t round-corners][h2]This does not play nice. [/h2][/container][/noparse][/code]
+[container: aurora-3t round-corners][h2]This does not play nice.[/h2][/container]
+
+But putting it on the inside does work.
+[code][noparse][h2][container: aurora-3t round-corners]This plays nice.[/container][/h2][/noparse][/code]
+[h2][container: aurora-3t round-corners]This plays nice.[/container][/h2]
+[/container]
+
+[anchor|tt]
 [container: marg-top-lg][h1]Other Tweaks To Go With The Theme[/h1][/container]
 	[section: far fa-narwhal ] [/section]  ‏‏‎  ‏‏‎ Invisible 	space character [ ‏‏‎ ] <- between the brackets that you 		can copy from here.
 
+
+[container: HLBox]You can use an empty h1 or h2 as a nicely styled [noparse][hr][/noparse].
+
+Examples:
+[code] [noparse][h2] [/h2][/noparse] [/code]
+[h2] [/h2]
+
+[code][noparse] [h1] [/h1] [/noparse][/code]
+[h1] [/h1]
+
+[/container]
+
+[anchor|fai]
 [container: table-aurora-icons display-contents-statblock marg-top-lg]
 	[block:309240] 
 [/container]
