@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.2.1
+@version        0.2.4
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 @-moz-document domain("https://www.worldanvil.com/")
@@ -437,7 +437,7 @@ AURORA THEME Variables
 .fsize-h2 { font-size: var(--fsize-h2); line-height: 1.3em;}
 .fsize-h3 { font-size: var(--fsize-h3); line-height: 1.3em;}
 .fsize-h4 { font-size: var(--fsize-h4); line-height: 1.3em;}
-.fsize-h5 { font-size: var(--fsize-h5); line-height: 1.3em;}
+.fsize-h5 { font-size: var(--fsize-h5); line-height: 1.3em; }
 .fsize-h6 { font-size: var(--fsize-h6); line-height: 1.3em;}
 .fsize-text { font-size: var(--fsize-text); }
 .fsize-big { font-size: var(--fsize-big); }
@@ -882,10 +882,10 @@ AURORA THEME Variables
 .user-css-extended h4,
 .user-css-extended h5,
 .user-css-extended h6 {
-	    font-family: var(--font-5);
-	    color: var(--aurora-2l);
-		letter-spacing: 0.15em;
-
+	font-family: var(--font-5);
+	color: var(--aurora-2l);
+	letter-spacing: .1em;
+	text-transform: capitalize;
 }
 /* */
 .user-css .tab-content .col-md-4 .panel h2:first-of-type, .user-css .tab-content .col-md-4 .panel h3:first-of-type, .user-css .tab-content .col-md-4 .panel h4:first-of-type   {
@@ -909,7 +909,7 @@ AURORA THEME Variables
 }
 
 /* ---------- TEXT ---------- */
-.user-css a, .user-css-extended a, .user-css .panel-greatgm a {
+.user-css a, .user-css-extended a, .user-css .panel-greatgm a, .user-css.bow .tab-content a {
     color: var(--aurora-5l);
 }
 
@@ -951,12 +951,12 @@ AURORA THEME Variables
 	font-family: var(--font-code);
 }
 /* ---------- Search bar -------- */
-.user-css .search-form .typeahead-input {
+.user-css .search-form .typeahead-input, .user-css .dictionary-search {
     width: 180px;
     height: 25px;
     padding:  var(--cont-pad-med);
     color: var(--aurora-night);
-    font-size: var(--fsize-text);
+    font-size: var(--fsize-med);
     text-transform: capitalize;
     background-color: var(--aurora-wl);
     border: 3px solid var(--aurora-2d);
@@ -982,6 +982,27 @@ AURORA THEME Variables
 }
 
 .user-css .typeahead.dropdown-menu li .dropdown-item .text-muted{ color: var(--aurora-wd); }
+
+/* dictionary  */ 
+.user-css .dictionary-word {
+	color: var(--aurora-wb);
+	border-radius: var(--cont-rad);
+	background: var(--aurora-wtl);
+	border: var(--border-thin) solid var(--aurora-nightt)
+}
+.user-css .dictionary-word-title {
+	color: var(--aurora-1); 
+	font-size: var(--fsize-h5)
+}
+.user-css .dictionary-word-pronunciation {
+	color: var(--aurora-3l);}
+.user-css .form-control[class*=word-edit] { 
+	background: var(--aurora-6d);
+	color: var(--aurora-wb);
+}
+.user-css .dictionary-word-description div:first-of-type {
+	margin-top: 15px;
+}
 
 /* --------- Org tree ------- */
 .user-css-extended .orgtree li a {
@@ -1178,7 +1199,7 @@ AURORA THEME Variables
     background: var(--aurora-nightt);
 	border: 1px dotted var(--aurora-3l);
 }
-.user-css .cover.cover-article, .user-css #cover .img-responsive { /* top only */
+.user-css .cover.cover-article, .user-css #cover .img-responsive, .user-css .article-panel .cover.cover-global { /* top only */
     border-top-left-radius: var(--cont-rad) ;
     border-top-right-radius: var(--cont-rad) ; 
     border-bottom-left-radius: 0 ;
@@ -1408,6 +1429,11 @@ tr:nth-of-type(even) {
 .user-css.template-document .btn-primary {
 	background: var(--aurora-2t);}
 
+/* prose black on white */
+.user-css.bow .tab-content, .user-css.bow .tab-content p, .user-css.bow .article-social-media strong {
+	color: var(--aurora-nightd);
+}
+
 .user-css .map-box { /* box with maps on world page */
 	border-radius: var(--cont-rad);
 	background: var(--aurora-6t);
@@ -1608,11 +1634,13 @@ tr:nth-of-type(even) {
 .table-aurora-icons .table tr td:nth-child(1), .table-aurora-icons .table tr td:nth-child(3) {
 	text-align: center;
 	max-width: 10%;
+	min-width: 10%;
 	font-size: var(--fsize-h3);
 }
 .table-aurora-icons .table tr td:nth-child(2), .table-aurora-icons .table tr td:nth-child(4)  {
     text-align: left;
 	max-width: 40%;
+	min-width: 40%;
 	white-space: nowrap;
 	font-family: var(--font-code);
 }
@@ -1638,3 +1666,17 @@ tr:nth-of-type(even) {
 
 .side-box-vocab a {color: var(--aurora-night);}
 .side-box-vocab a:hover {color: var(--aurora-7l);}
+
+.news-cols {
+    margin: 15px;
+    line-height: 1.5em;
+    column-count: 2;
+    column-gap: 3em;
+    column-rule: 2px solid black;
+}
+
+.news-cols h2, .news-cols h3, .news-cols h4, .news-cols h5 {
+    column-span: all;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
