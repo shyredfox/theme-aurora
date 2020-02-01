@@ -1,10 +1,10 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.2.4
+@version        0.2.5
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
-@-moz-document domain("https://www.worldanvil.com/")
+@-moz-document url-prefix("https://www.worldanvil.com/w/themes---shyredfox-shyredfox")
 ==/UserStyle== */
 /* --------------------------------- 
 AURORA THEME - by Shyredfox
@@ -1365,12 +1365,13 @@ tr:nth-of-type(even) {
 .user-css-secret h5 { color: var(--aurora-1l);}
 
 /* ------ WA CATEGORIES ------ */ 
-.user-css.page-category .nav-strip {
+.user-css.page-category .nav-strip, .user-css.page-timeline .nav-strip {
 	background: var(--aurora-nightd);
     border-top-right-radius: var(--cont-rad);
 	bottom: -.5px;
 }
-.user-css.page-category .nav-strip a {
+
+.user-css.page-category .nav-strip a, .user-css.page-timeline .nav-strip a {
 	font-family: var(--font-5);
 	color: var(--aurora-2l);
 	font-size: 1em;
@@ -1489,6 +1490,85 @@ tr:nth-of-type(even) {
     color: var(--aurora-w);
 }
 
+/* timelines */
+/* the line */
+.user-css .timeline:before {
+	background-color: var(--aurora-1t);
+}
+.user-css .timeline li .tl-circ {
+	border-color: var(--aurora-2t);
+}
+
+/* panel colors */
+.user-css .timeline li .timeline-panel, .user-css .timeline .milestone, .user-css .timeline .major .header-icon, .timeline .important .header-icon, .timeline .timeline-entry-milestone .header-icon, .timeline .minor .header-icon, .timeline .trivial .header-icon, .timeline .no-importance .header-icon, .timeline li .tl-circ  { 
+	background: var(--aurora-wl);
+}
+.user-css .timeline li .timeline-panel::after { 
+	border-left-color: var(--aurora-wl) ; 
+	border-right-color: var(--aurora-wl); 
+}
+
+.user-css .timeline li .timeline-panel, .user-css .timeline .timeline-entry-milestone {
+	border-radius: var(--cont-rad);
+}
+/* event panel text */
+.user-css .tl-heading-date, .user-css .timeline li .timeline-panel h4, .user-css .timeline li .milestone-panel h4, .user-css .timeline li .timeline-panel p, .user-css .header-title.text-muted, .user-css .timeline li .timeline-panel small strong, .user-css .timeline li .timeline-panel .history-location strong {
+	color: var(--aurora-7);}
+
+.user-css .timeline li .timeline-panel p, .user-css .tl-body .history-content p, .user-css .timeline li .timeline-panel small, .timeline li .milestone-panel small {
+	color: var(--aurora-night);
+}
+
+.user-css .timeline li .timeline-panel a {
+	color: var(--aurora-9);
+}
+
+.user-css .timeline .label-default { background: var(--aurora-1t); }
+
+.user-css .timeline .label-default.tag { color: var(--aurora-nightl) ; }
+
+.user-css .timeline a.label-default:hover { color: var(--aurora-8) ; }
+
+/* time line era headers */
+.user-css .era-header .text-muted { color: var(--aurora-wtb);}
+.user-css .era-header h2.m-b-0 { margin-bottom: var(--cont-pad-sm) !important;}
+
+/* event colors */
+.user-css .timeline .major .timeline-panel {
+	border-top-color: var(--aurora-9d);}
+.user-css .timeline .major .header-icon {
+	color: var(--aurora-9d);
+	border-color: var(--aurora-w);}
+
+.user-css .timeline .important .timeline-panel{
+	border-top-color: var(--aurora-8d);}
+.user-css .timeline .important .header-icon {
+	color: var(--aurora-8d);
+	border-color: var(--aurora-w);}
+
+.user-css .timeline .minor .timeline-panel{
+	border-top-color: var(--aurora-6l);}
+.user-css .timeline .minor .header-icon {
+	color: var(--aurora-6l);
+	border-color: var(--aurora-w);}
+
+.user-css .timeline .trivial .timeline-panel{
+	border-top-color: var(--aurora-4d);}
+.user-css .timeline .trivial .header-icon {
+	color: var(--aurora-4d);
+	border-color: var(--aurora-w);}
+
+.user-css .timeline .no-importance .timeline-panel{
+	border-top-color: var(--aurora-wd);}
+.user-css .timeline .no-importance .header-icon {
+	color: var(--aurora-wd);
+	border-color: var(--aurora-w);}
+
+.user-css .timeline .timeline-entry-milestone {
+	border-color: var(--aurora-nightd);}
+.user-css .timeline .timeline-entry-milestone .header-icon {
+	color: var(--aurora-nightd);
+	border-color: var(--aurora-w);}
 
 /* ------------------ MY CONTAINERS ----------------- */
 .HL {
@@ -1659,7 +1739,7 @@ tr:nth-of-type(even) {
   font-size: .7em;
   line-height: 1.2em;
   border: var(--border-thin) solid var(--aurora-wtb); 
-  background: var(--aurora-w); 
+  background: var(--aurora-wl); 
   position: fixed;
   z-index:10;
 }
