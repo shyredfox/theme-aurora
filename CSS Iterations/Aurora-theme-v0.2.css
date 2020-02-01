@@ -1472,11 +1472,16 @@ tr:nth-of-type(even) {
 	border-color: var(--aurora-8l);
 	box-shadow: 0 0 0 0.2rem var(--aurora-8t);
 }
-.btn-secondary {
+.user-css .btn-secondary {
     color: var(--aurora-wl);
     background-color: var(--aurora-wd);
     border-color: var(--aurora-wt);
 }
+.user-css a.btn-secondary:hover {
+	color: var(--aurora-8d);
+	background: var(--aurora-wtb);
+}
+
 .user-css-map-sidebar .btn-secondary:not(:disabled):not(.disabled):hover,
 .user-css-map-sidebar .btn-secondary:not(:disabled):not(.disabled):active, 
 .user-css-map-sidebar .btn-secondary:not(:disabled):not(.disabled):active:focus {
@@ -1594,6 +1599,12 @@ tr:nth-of-type(even) {
 	color: var(--aurora-wl);
 }
 
+/* Hero Journal Notes */
+.user-css .journal-container {
+	border-radius: var(--cont-rad);
+	border-bottom: 3px var(--aurora-1t) solid;
+}
+.user-css .journal-container h4 small { color: var(--aurora-4l);}
 /* ------------------ MY CONTAINERS ----------------- */
 .HL {
     background: var(--aurora-2t);
