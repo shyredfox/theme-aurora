@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.2.5
+@version        0.2.6
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 @-moz-document url-prefix("https://www.worldanvil.com/w/themes---shyredfox-shyredfox")
@@ -230,6 +230,11 @@ AURORA THEME Variables
     --box-shadows: 0 0 4px 3px var(--aurora-1l);
     --glow-params: 0 0 3px 3px var(--aurora-2l), inset 0 0 2px 2px var(--aurora-2l);
 
+		
+	/* campaign containers */
+	--camp-top-marg: 180px;
+	--camp-marg: -15px;
+	
     /* text */
     --indent: 20px;
 
@@ -809,12 +814,12 @@ AURORA THEME Variables
     text-transform: uppercase;
     /* font-variant: small-caps; */
     padding-left: 0;
-    background: linear-gradient(var(--aurora-1), var(--aurora-2l), var(--aurora-7));
+    background: linear-gradient(var(--aurora-1), var(--aurora-2l), var(--aurora-5));
     /* light bg */
     /*background: linear-gradient(var(--aurora-1), var(--aurora-)) ;  dark bg */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: .02em var(--aurora-4);
+    -webkit-text-stroke: .02em var(--aurora-night);
 
 }
 
@@ -842,6 +847,7 @@ AURORA THEME Variables
     text-align: center;
 	margin-top: var(--cont-pad-sm);
 	margin-bottom: var(--cont-pad-sm);
+	padding: var(--cont-pad-tiny);
 }
 
 .marg-top-lg { margin-top: var(--cont-pad-lg); }
@@ -910,7 +916,7 @@ AURORA THEME Variables
 
 /* ---------- TEXT ---------- */
 .user-css a, .user-css-extended a, .user-css .panel-greatgm a, .user-css.bow .tab-content a {
-    color: var(--aurora-5l);
+    color: var(--aurora-4l);
 }
 
 .user-css a:focus,
@@ -918,7 +924,7 @@ AURORA THEME Variables
 .user-css-extended a:focus,
 .user-css-extended a:hover
 {
-    color: var(--aurora-4l);
+    color: var(--aurora-3l);
 }
 
 .user-css strong.phrase-key, .user-css dt {
@@ -1570,6 +1576,24 @@ tr:nth-of-type(even) {
 	color: var(--aurora-nightd);
 	border-color: var(--aurora-w);}
 
+/* Campaigns + Heroes / Characters */
+.user-css .campaign-panel, .user-css .campaign-panel .details, .user-css .world-heroes .character-panel, .user-css .world-heroes .character-panel .details {
+	border-radius: var(--cont-rad);
+}
+.user-css .campaign-panel .details p, .user-css .world-heroes .character-panel .details p {
+	font-size: var(--fsize-med);
+	line-height: 1.5em;
+} 
+.user-css .campaign-panel .details, .user-css .world-heroes .character-panel .details {
+	position: relative;
+	margin-bottom: var(--camp-marg);
+	margin-left: var(--camp-marg);
+	margin-right: var(--camp-marg);
+	margin-top: var(--camp-top-marg);
+	background: var(--aurora-nightt3);
+	color: var(--aurora-wl);
+}
+
 /* ------------------ MY CONTAINERS ----------------- */
 .HL {
     background: var(--aurora-2t);
@@ -1742,6 +1766,15 @@ tr:nth-of-type(even) {
   background: var(--aurora-wl); 
   position: fixed;
   z-index:10;
+}
+
+.med-text  {
+	background: var(--aurora-wt);
+	border-radius: var(--cont-rad);
+    display: inline-block;
+    font-size: .8em;
+    line-height: 1.5em;
+	padding: var(--cont-pad);
 }
 
 .side-box-vocab a {color: var(--aurora-night);}
