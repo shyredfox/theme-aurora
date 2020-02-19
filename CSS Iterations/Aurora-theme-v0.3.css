@@ -611,6 +611,7 @@ AURORA THEME Variables
 	background-color: var(--aurora-nightt);
 	color: var(--aurora-text);
 	padding: var(--cont-pad-sm);
+	border-radius: 0 !important;
 }
 
 
@@ -619,11 +620,11 @@ AURORA THEME Variables
 	background-color: var(--aurora-wt);
 	color: var(--aurora-text);
 }
-.user-css-extended .panel-heading {
-	background-color: var(--aurora-7t);
-	color: var(--aurora-text);
+.user-css .panel-heading, .user-css-extended .panel-heading {
+	background-color: var(--aurora-w);
+	color: var(--aurora-night);
 	border-top-right-radius: var(--cont-rad) !important;
-	border-top-left-radius: var(--cont-rad);
+	border-top-left-radius: var(--cont-rad) !important;
 }
 .user-css-extended .panel-heading h3 {
 	color: var(--aurora-text); 
@@ -1116,6 +1117,9 @@ AURORA THEME Variables
 	border-radius: var(--cont-rad);
 	font-size:  var(--fsize-small);
 }
+.user-css .credit-artist-website.credit-artist-name a{
+	color: var(--aurora-4l);
+}
 
 .user-css .aloud,
 .user-css-extended .aloud {
@@ -1331,6 +1335,9 @@ AURORA THEME Variables
 	background-color: transparent !important;
 }
 
+.user-css table a {
+	color: var(--aurora-5);
+}
 .user-css-presentation table th,
 .user-css table th,
 .user-css-extended table th,
