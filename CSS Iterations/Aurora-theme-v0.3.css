@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.3.0
+@version        0.3.2
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 @-moz-document url-prefix("https://www.worldanvil.com/w/themes---shyredfox-shyredfox")
@@ -909,6 +909,9 @@ AURORA THEME Variables
     text-align: left;    
 }
 
+.user-css .table-of-contents h6 a[class~=emphasized] {
+	color: var(--aurora-4l) !important;
+}
 
 .user-css hr, .user-css-extended hr {
 	border-top: 1px dotted var(--aurora-2l);
@@ -1020,13 +1023,13 @@ AURORA THEME Variables
 
 /* ---------- TOC ---------- */
 .user-css .world-toc-loader .category-list a,
-.user-css #world-menu .category-list h5 a {
+.user-css #world-menu .category-list h5 a{
     color: var(--aurora-3l);
     text-transform: capitalize;
 }
 
 .user-css .world-toc-loader .category-list h6 a,
-.user-css #world-menu .category-list h6 a {
+.user-css #world-menu .category-list h6 a, .user-css world-menu-subcategory h6 a {
     color: var(--aurora-2l);
     text-transform: capitalize;
 }
@@ -1146,6 +1149,11 @@ AURORA THEME Variables
 	line-height: 1.2;
 }
 
+.user-css pre a,
+.user-css-extended pre a {
+	color: var(--aurora-4);
+}
+
 .user-css blockquote,
 .user-css-extended blockquote {
     border-radius: var(--cont-rad);
@@ -1231,7 +1239,23 @@ AURORA THEME Variables
     color: var(--aurora-wl);
 }
 
+/* article popups - tooltipster */
+.user-css-presentation .tooltipster-content {
+	background: var(--aurora-night);
+	color: var(--aurora-wl);
+}
 
+.user-css-presentation .tooltipster-content h2 {
+	color: var(--aurora-2l);
+	border-bottom-color: var(--aurora-3l);
+}
+.user-css-presentation .tooltipster-content a.btn {color: var(--aurora-4l);}
+.user-css-presentation .tooltipster-content .mb-3 {color: var(--aurora-w);}
+.user-css-presentation .tooltipster-content .p-2 {
+	color: var(--aurora-w);
+	margin-top: var(--cont-pad-med);
+	margin-bottom: 0;
+}
 
 /* tooltip */
 .user-css .tooltip.top .tooltip-arrow,
@@ -1479,10 +1503,16 @@ AURORA THEME Variables
 	color: var(--aurora-night) !important;
 }
 
+/* maps */
 .user-css .map-box { /* box with maps on world page */
 	border-radius: var(--cont-rad);
 	background: var(--aurora-6t);
 }
+
+body.presentation-interface-map, .map-context-user-css {
+	background: var(--aurora-nightd);
+}
+
 .user-css .leaflet-control-zoom-in, 
 .user-css .leaflet-control-zoom-out,
 .user-css .leaflet-control-layers, 
@@ -1640,7 +1670,7 @@ AURORA THEME Variables
 .user-css .timeline a.label-default:hover { color: var(--aurora-8) ; }
 
 /* time line era headers */
-.user-css .era-header .text-muted { color: var(--aurora-wtb);}
+.user-css .era-header .text-muted { color: var(--aurora-wtb)}
 .user-css .era-header h2.m-b-0 { margin-bottom: var(--cont-pad-sm) !important;}
 
 /* event colors */
@@ -1648,7 +1678,8 @@ AURORA THEME Variables
 	border-top-color: var(--aurora-9d);}
 .user-css .timeline .major .header-icon {
 	color: var(--aurora-9d);
-	border-color: var(--aurora-w);}
+	border-color: var(--aurora-w);
+text-align: center;}
 
 .user-css .timeline .important .timeline-panel{
 	border-top-color: var(--aurora-8d);}
@@ -1660,7 +1691,9 @@ AURORA THEME Variables
 	border-top-color: var(--aurora-6l);}
 .user-css .timeline .minor .header-icon {
 	color: var(--aurora-6l);
-	border-color: var(--aurora-w);}
+	border-color: var(--aurora-w);
+	text-align: center;
+}
 
 .user-css .timeline .trivial .timeline-panel{
 	border-top-color: var(--aurora-4d);}
@@ -1704,6 +1737,111 @@ AURORA THEME Variables
 	border-bottom: 3px var(--aurora-1t) solid;
 }
 .user-css .journal-container h4 small { color: var(--aurora-4l);}
+
+/* calendars */
+.user-css-calendar.panel {
+	background: transparent;}
+.user-css-calendar .btn-calendar {
+	background: transparent;
+	color: var(--aurora-night);
+	border: none !important;
+	margin: var(--cont-pad-tiny);
+	margin-bottom: var(--cont-pad-lg);
+	padding: var(--cont-pad-tiny);
+	word-break: break-all;
+	box-sizing: border-box;
+	white-space: pre-wrap;
+	
+}
+.user-css-calendar.modal-dialog {
+	background: var(--aurora-nightd);
+	border-radius: var(--cont-rad);
+}
+.user-css-calendar.modal-dialog .modal-header .close {
+	color: var(--aurora-w);
+	opacity: .8;
+}
+.user-css-calendar.modal-dialog .modal-header h3 { width: 96%;}
+
+.user-css-calendar table th {
+	font-family: var(--font-5);
+	font-size: .9em;
+	
+}
+
+.user-css-calendar .table-bordered {border: none;}
+
+.user-css-calendar table thead, .user-css-calendar thead tr {
+	background: var(--aurora-nightd);
+	border-radius: 10px;
+}
+
+.user-css-calendar table tr:first-child th:first-child,
+.user-css-calendar table tr:first-child td:first-child,
+.user-css-calendar tbody tr:first-child th:first-child
+ {
+    border-top-left-radius: 0;
+	-webkit-border-top-left-radius: 0;
+}
+
+.user-css-calendar table tr:first-child th:last-child,
+.user-css-calendar table tr:first-child td:last-child,
+.user-css-calendar tbody tr:first-child th:last-child
+ {
+    border-top-right-radius: 0;
+	-webkit-border-top-right-radius: 0;
+
+}
+.user-css-calendar table tr:last-child th:first-child,
+.user-css-calendar table tr:last-child td:first-child,
+.user-css-calendar tbody tr:last-child th:first-child
+ {
+    border-bottom-left-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+}
+.user-css-calendar table tr:last-child th:last-child,
+.user-css-calendar table tr:last-child td:last-child,
+.user-css-calendar tbody tr:last-child th:last-child
+ {
+    border-bottom-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+}
+
+.user-css-calendar table .calendar-day h3{
+	background: none;
+	border: none;
+	color: var(--aurora-7t);
+}
+.user-css-calendar .celestial-object {
+	background: none;
+	border: none !important;
+}
+.user-css-calendar .celestial-object i {
+	left: 58%;
+	bottom: 27%;
+}
+.user-css-calendar td.calendar-day {
+	border: 1px solid var(--aurora-wd) !important;
+}
+.user-css-calendar table {
+	border-collapse: unset;
+}
+
+.user-css-calendar table .event-name{
+	overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+	
+.user-css-calendar .moon, .user-css-calendar .moon-flip {
+	--scale-lightgray: var(--aurora-night)!important;
+	--moon-shadow: var(--aurora-5l);
+}
+
 /* ------------------ MY CONTAINERS ----------------- */
 .HL {
     background: var(--aurora-2t);
