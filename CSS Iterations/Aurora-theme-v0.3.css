@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Aurora Theme
 @namespace      github.com/openstyles/stylus
-@version        0.3.2
+@version        0.3.3
 @description    WA theme test for Aurora theme
 @author         Amy Winters-Voss
 @-moz-document url-prefix("https://www.worldanvil.com/w/themes---shyredfox-shyredfox")
@@ -9,89 +9,7 @@
 /* --------------------------------- 
 AURORA THEME - by Shyredfox
  ---------------------------------*/
-/*  ---------------------------------
-Ademal's editor hack - scrolls with the page and it's wider - gifted in Discord server
--------------------------------- */
-@media (min-width: 768px) {
-    .col-sm-2 {
-        width: 32%
-    }
-    .col-sm-10 {
-        width: 68%
-    }
-}
-#css-palette-panel {
-    position: fixed!important;
-    width: 32%!important;
-    top: 30px!important;
-    background: grey;
-    z-index: 2000
-}
-#css-palette-panel textarea.form-control {
-    height: 0
-}
-#css-palette-panel .form-group {
-    margin-bottom: 5px;
-    background: #d3d3d3;
-    border-radius: 3px;
-    padding: 5px
-}
-#css-palette-panel textarea {
-    min-height: 55vh!important
-}
-.hidden-xs {
-    background: transparent
-}
-.hidden-xs .fa-palette {
-    background: #fff;
-    border-radius: 5px;
-    padding: 3px;
-    top: 200px!important;
-    border: 2px solid;
-    margin-left: -9px;
-    border-left: #fff;
-    border-style: outset;
-    position: fixed!important;
-    left: unset!important;
-    z-index: 0
-}
-.user-css pre {
-    white-space: pre-wrap;
-    white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap;
-    word-wrap: break-word
-}
 
-/*  ---------------------------------
-Ademal's grid column hack - gifted in Discord server
--------------------------------- */
-/*Contain-Grid*/
-@media only screen and (min-width: 960px) {
-    .contain-grid {
-        display: grid;
-        grid-gap: 20px;
-        grid-auto-rows: minmax(0px, auto);
-    }
-    .contain-grid-col-12 {
-        grid-template-columns: repeat(12, 1fr);
-    }
-    .contain-grid-col-8 {
-        grid-template-columns: repeat(8, 1fr);
-    }
-    .contain-grid-col-5 {
-        grid-template-columns: repeat(5, 1fr);
-    }
-    .contain-grid-col-4 {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .contain-grid-col-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .contain-grid-col-2 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 /*  ---------------------------------
 AURORA THEME Variables
@@ -797,16 +715,23 @@ AURORA THEME Variables
 .user-css,
 .user-css-extended,
 .user-css p, .user-css-extended p,
-.user-css .tab-content, .user-css .panel-body p {
+.user-css .tab-content, 
+.user-css .panel-body p,
+.user-css-presentation .tooltipster-content p,
+.user-css-presentation .tooltipster-content .statblock p
+{
     /* color: var(--aurora-nightd); */
 	color: var(--aurora-wl);
     font-size: var(--fsize-text);
     font-family: var(--font-3);
 	margin-bottom: var(--cont-pad);
 }
+.user-css-presentation .tooltipster-content .statblock { background: var(--aurora-nightt)}
 
 /* --------------- HEADERS -------------------*/
-.user-css h1 {
+.user-css h1,
+.user-css-extended h1,
+.user-css-presentation .tooltipster-content h1 {
     /* the article/world title / "h1" in the WA editor */
     font-family: var(--font-1);
     font-size: var(--fsize-h1);
@@ -837,7 +762,12 @@ AURORA THEME Variables
 .user-css h6,
 .user-css-extended h4,
 .user-css-extended h5,
-.user-css-extended h6
+.user-css-extended h6,
+.user-css-presentation .tooltipster-content h2,
+.user-css-presentation .tooltipster-content h3,
+.user-css-presentation .tooltipster-content h4,
+.user-css-presentation .tooltipster-content h5,
+.user-css-presentation .tooltipster-content h6
 {
     /* "hN-1" in the WA editor */
     border-radius: var(--cont-rad);
@@ -861,7 +791,8 @@ AURORA THEME Variables
     border-bottom: var( --border-med) solid var(--aurora-6l);
 } */
 
-.user-css h2, .user-css-extended h2 {
+.user-css h2, .user-css-extended h2,
+.user-css-presentation .tooltipster-content h2 {
     /* "hN-1" in the WA editor */
     font-size: var(--fsize-h2);
     text-transform: capitalize;
@@ -872,7 +803,8 @@ AURORA THEME Variables
     border-bottom: var( --border-med) solid var(--aurora-6l);
 }
 
-.user-css h3 {
+.user-css h3,
+.user-css-presentation .tooltipster-content h3 {
     /* "hN-1" in the WA editor */
     font-size: var(--fsize-h3);
     text-transform: capitalize;
@@ -888,7 +820,10 @@ AURORA THEME Variables
 .user-css h6,
 .user-css-extended h4,
 .user-css-extended h5,
-.user-css-extended h6 {
+.user-css-extended h6,
+.user-css-presentation .tooltipster-content h4,
+.user-css-presentation .tooltipster-content h5,
+.user-css-presentation .tooltipster-content h6 {
 	font-family: var(--font-5);
 	color: var(--aurora-2l);
 	letter-spacing: .1em;
@@ -906,36 +841,56 @@ AURORA THEME Variables
 .user-css .world-toc-loader h6,
 .user-css .category-toc-loader h5, 
 .user-css .category-toc-loader h6
+.user-css-presentation .tooltipster-content .table-of-contents h5,
+.user-css-presentation .tooltipster-content .table-of-contents h6
 {
     text-align: left;    
 }
 
-.user-css .table-of-contents h6 a[class~=emphasized] {
+.user-css .table-of-contents h6 a[class~=emphasized],
+.user-css .world-toc-loader h6 a[class~=emphasized],
+.user-css .category-toc-loader h6 a[class~=emphasized],
+.user-css-presentation .tooltipster-content .table-of-contents h6 a[class~=emphasized],
+.user-css-presentation .tooltipster-content .world-toc-loader h6 a[class~=emphasized],
+.user-css-presentation .tooltipster-content .category-toc-loader h6 a[class~=emphasized]
+{
 	color: var(--aurora-4l) !important;
 }
 
-.user-css hr, .user-css-extended hr {
+.user-css hr, .user-css-extended hr,
+.user-css-presentation .tooltipster-content hr {
 	border-top: 1px dotted var(--aurora-2l);
 }
 
 /* ---------- TEXT ---------- */
-.user-css a, .user-css-extended a, .user-css .panel-greatgm a, .user-css.bow .tab-content a {
+.user-css a, .user-css-extended a, .user-css .panel-greatgm a, .user-css.bow .tab-content a,
+.user-css-presentation .tooltipster-content a {
     color: var(--aurora-4l);
 }
 
 .user-css a:focus,
 .user-css a:hover,
 .user-css-extended a:focus,
-.user-css-extended a:hover
+.user-css-extended a:hover,
+.user-css-presentation .tooltipster-content a:focus,
+.user-css-presentation .tooltipster-content a:hover
 {
     color: var(--aurora-3l);
 }
 
-.user-css strong.phrase-key, .user-css dt {
+.user-css strong.phrase-key, 
+.user-css dt,
+.user-css-presentation .tooltipster-content strong.phrase-key,
+.user-css-presentation .tooltipster-content dt
+{
     color: var(--aurora-2l);
 }
 
-.user-css .phrase-value, .user-css dd {
+.user-css .phrase-value, 
+.user-css dd,
+.user-css-presentation .tooltipster-content .phrase-value,
+.user-css-presentation .tooltipster-content dd
+{
     color: var(--aurora-wl);
     margin-left: var(--indent);
 }
@@ -946,7 +901,7 @@ AURORA THEME Variables
 	background: var(--aurora-4);
 }
 
-.user-css .dropcap {
+.user-css .dropcap, .user-css-presentation .tooltipster-content .dropcap {
     font-family: var(--font-2);
     font-size: var(--fsize-h1);
     text-transform: uppercase;
@@ -957,7 +912,7 @@ AURORA THEME Variables
     line-height: 1em;
 }
 
-.user-css small, .user-css-extended small {
+.user-css small, .user-css-extended small, .user-css-presentation .tooltipster-content small {
 	font-family: var(--font-code);
 }
 /* ---------- Search bar -------- */
@@ -1024,13 +979,21 @@ AURORA THEME Variables
 
 /* ---------- TOC ---------- */
 .user-css .world-toc-loader .category-list a,
-.user-css #world-menu .category-list h5 a{
+.user-css #world-menu .category-list h5 a,
+.user-css-presentation .tooltipster-content .world-toc-loader .category-list a,
+.user-css-presentation .tooltipster-content #world-menu .category-list h5 a
+{
     color: var(--aurora-3l);
     text-transform: capitalize;
 }
 
 .user-css .world-toc-loader .category-list h6 a,
-.user-css #world-menu .category-list h6 a, .user-css world-menu-subcategory h6 a {
+.user-css #world-menu .category-list h6 a, 
+.user-css world-menu-subcategory h6 a 
+.user-css-presentation .tooltipster-content .world-toc-loader .category-list h6 a,
+.user-css-presentation .tooltipster-content #world-menu .category-list h6 a,
+.user-css-presentation .tooltipster-content world-menu-subcategory h6 a
+{
     color: var(--aurora-2l);
     text-transform: capitalize;
 }
@@ -1154,7 +1117,9 @@ AURORA THEME Variables
 }
 
 .user-css pre a,
-.user-css-extended pre a {
+.user-css-extended pre a,
+.user-css-presentation .tooltipster-content pre a
+{
 	color: var(--aurora-4);
 }
 
@@ -1342,7 +1307,9 @@ AURORA THEME Variables
 .user-css table th,
 .user-css-extended table th,
 .user-css .statblock .table tbody tr th,
-.user-css-extended .statblock .table tbody tr th {
+.user-css-extended .statblock .table tbody tr th,
+.user-css-presentation .tooltipster-content th
+{
     background: var(--aurora-nightt2) !important;
     border: 0 solid !important;
     width: 100%;
@@ -1481,7 +1448,10 @@ AURORA THEME Variables
 	background: var(--aurora-2t);}
 
 /* prose black on white */
-.user-css.bow .tab-content, .user-css.bow .tab-content p, .user-css.bow .article-social-media strong {
+.user-css.bow .tab-content, 
+.user-css.bow .tab-content p, 
+.user-css.bow .article-social-media strong
+{
 	color: var(--aurora-nightd);
 }
 
@@ -1618,9 +1588,11 @@ body.presentation-interface-map, .map-context-user-css {
 
 }
 
-
+.user-css.map-included {
+	border-radius: var(--cont-rad);
+}
 /* chemical element */
-.user-css .chemical-element-container {
+.user-css .chemical-element {
 	background: var(--aurora-nightd);
 	border-radius: var(--cont-rad) !important;
 	border: 0;
@@ -1739,11 +1711,14 @@ text-align: center;}
 }
 
 /* Hero Journal Notes */
-.user-css .journal-container {
+.user-css #journals div {
 	border-radius: var(--cont-rad);
-	border-bottom: 3px var(--aurora-1t) solid;
+	border: 3px var(--aurora-1t) solid;
 }
-.user-css .journal-container h4 small { color: var(--aurora-4l);}
+.user-css #journals div h4 small { color: var(--aurora-4l);}
+.user-css #journals div div {
+	padding: var(--cont-pad-sm);
+}
 
 /* calendars */
 .user-css-calendar.panel {
@@ -1849,7 +1824,7 @@ text-align: center;}
 	--moon-shadow: var(--aurora-5l);
 }
 
-/* ------------------ MY CONTAINERS ----------------- */
+/* ------------------ MY CONTAINERS for the Theme ----------------- */
 .HL {
     background: var(--aurora-2t);
     border-radius: var(--sect-rad);
@@ -1885,7 +1860,7 @@ text-align: center;}
     word-break: break-all;
 }
 
-/* palette classes*/
+/* palette color background classes*/
 .aurora-1 { background: var(--aurora-1); }
 .aurora-2 { background: var(--aurora-2); }
 .aurora-3 { background: var(--aurora-3); }
@@ -1951,7 +1926,8 @@ text-align: center;}
 .g-aurora-f {  background: linear-gradient(var(--aurora-night), var(--aurora-ft)); }
 .g-aurora-night { background: linear-gradient(var(--aurora-night), var(--aurora-nightt3)); }
 .g-aurora-w { background: linear-gradient(var(--aurora-night), var(--aurora-wt)); }
-/* ------------------------------------- Red text because [color] not seem to work in statblocks ------------------------------------ */
+
+/* ------------------------------------- color basic classes - [color] not seem to work in statblocks ------------------------------------ */
 .red { color: red; }
 .orange { color: orange; }
 .yellow { color: yellow; }
@@ -1990,6 +1966,10 @@ text-align: center;}
   display: contents;
 }
 
+/* -------------------------------------
+               NON THEME 
+-------------------------------------- */
+
 .table-aurora-icons .table tr td:nth-child(1), .table-aurora-icons .table tr td:nth-child(3) {
 	text-align: center;
 	max-width: 10%;
@@ -2004,10 +1984,6 @@ text-align: center;}
 	font-family: var(--font-code);
 }
 
-
-/* -------------------------------------
-               NON THEME 
--------------------------------------- */
 /* Side box */
 .side-box-vocab {
   opacity: 0.5;
