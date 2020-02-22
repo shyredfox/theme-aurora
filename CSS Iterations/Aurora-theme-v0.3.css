@@ -1,14 +1,21 @@
 /* ==UserStyle==
-@name           Aurora Theme
+@name           Aurora Theme for World Anvil
 @namespace      github.com/openstyles/stylus
-@version        0.3.3
-@description    WA theme test for Aurora theme
-@author         Amy Winters-Voss
-@-moz-document url-prefix("https://www.worldanvil.com/w/themes---shyredfox-shyredfox")
+@version        0.3.8
+
+Notes: 
+- Re-fixing the sidepanel issue for chrome (Thank goodness for github! I would have had to re-figure that bit out after I had to re-install windows!)
+- Chrome/Firefox differences on rpg statsheets
+
+@description    This theme is inspired by the Finnish Foxfire legend
+@author         Amy Winters-Voss (shyredfox on World Anvil, ShyRedFox#7256 on Discord) 
+
+---- Please contact me, not Dimitris with any issues in the theme. Thanks! ;) ----
+
+Theme sampler can be found at: https://www.worldanvil.com/w/aurora-theme-shyredfox
+
 ==/UserStyle== */
-/* --------------------------------- 
-AURORA THEME - by Shyredfox
- ---------------------------------*/
+
 
 
 /*  ---------------------------------
@@ -89,6 +96,20 @@ AURORA THEME Variables
     --aurora-wtl: #FFFFFF20;
     --aurora-wd: #888888;
     --aurora-clear: none;
+	
+	/* gradients */
+	--g-aurora-1: linear-gradient(var(--aurora-night), var(--aurora-1t));
+--g-aurora-2: linear-gradient(var(--aurora-night), var(--aurora-2t)); 
+--g-aurora-3: linear-gradient(var(--aurora-night), var(--aurora-3t)); 
+--g-aurora-4: linear-gradient(var(--aurora-night), var(--aurora-4t)); 
+--g-aurora-5: linear-gradient(var(--aurora-night), var(--aurora-5t)); 
+--g-aurora-6: linear-gradient(var(--aurora-night), var(--aurora-6t)); 
+--g-aurora-7: linear-gradient(var(--aurora-night), var(--aurora-7t)); 
+--g-aurora-8: linear-gradient(var(--aurora-night), var(--aurora-8t)); 
+--g-aurora-9: linear-gradient(var(--aurora-night), var(--aurora-9t)); 
+--g-aurora-f: linear-gradient(var(--aurora-night), var(--aurora-ft)); 
+--g-aurora-night: linear-gradient(var(--aurora-night), var(--aurora-nightt3));
+--g-aurora-w: linear-gradient(var(--aurora-night), var(--aurora-wt)); 
 	
 	/* bootstrap/theme color names */
 	--aurora-success: var(--aurora-5);
@@ -222,31 +243,6 @@ AURORA THEME Variables
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* latin-ext */
-@font-face {
-  font-family: Ruslan Display;
-  font-style: normal;
-  font-weight: 400;
-  src: local(Ruslan Display), local(RuslanDisplay), url(https://fonts.gstatic.com/s/ruslandisplay/v10/Gw6jwczl81XcIZuckK_e3Upfdwxin921vg.woff2);
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: Ruslan Display;
-  font-style: normal;
-  font-weight: 400;
-  src: local(Ruslan Display), local(RuslanDisplay), url(https://fonts.gstatic.com/s/ruslandisplay/v10/Gw6jwczl81XcIZuckK_e3Upfdwxsn90.woff2) ;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: Acme;
-  font-style: normal;
-  font-weight: 400;
-  src: local(Acme Regular), local(Acme-Regular), url(https://fonts.gstatic.com/s/acme/v9/RrQfboBx-C5_XxrBbg.woff2);
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
 @font-face {
   font-family: Merienda One;
   font-style: normal;
@@ -254,23 +250,6 @@ AURORA THEME Variables
   src: local(Merienda One), local(MeriendaOne-Regular), url(https://fonts.gstatic.com/s/meriendaone/v10/H4cgBXaMndbflEq6kyZ1ht6ohYaz.woff2);
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
-/* latin-ext 
-@font-face {
-    font-family: Skranji;
-    font-style: normal;
-    font-weight: 400;
-    src: local(Skranji), url(https://fonts.gstatic.com/s/skranji/v7/OZpDg_dtriVFNerMUzKkk2Tm.woff2);
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; 
-}*/
-/* latin 
-@font-face {
-    font-family: Skranji;
-    font-style: normal;
-    font-weight: 400;
-    src: local(Skranji), url(https://fonts.gstatic.com/s/skranji/v7/OZpDg_dtriVFNerMUzykkw.woff2);
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}*/
 
 /* latin */
 @font-face {
@@ -282,23 +261,6 @@ AURORA THEME Variables
 }
 
 /* CODE FONT */
-/* latin-ext */
-@font-face {
-    font-family: Source Code Pro;
-    font-style: normal;
-    font-weight: 400;
-    src: local(Source Code Pro Regular), local(SourceCodePro-Regular), url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_SiYsKILxRpg3hIP6sJ7fM7PqlM-vWjMY.woff2);
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-    font-family: Source Code Pro;
-    font-style: normal;
-    font-weight: 400;
-    src: local(Source Code Pro Regular), local(SourceCodePro-Regular), url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_SiYsKILxRpg3hIP6sJ7fM7PqlPevW.woff2);
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
 @font-face {
     font-family: JetBrains Mono;
     font-style: normal;
@@ -416,7 +378,7 @@ AURORA THEME Variables
     border-radius: var(--cont-rad);
 }
 
-.user-css .label, .user-css-extended .label {
+.user-css .label, .user-css-extended .label, .user-css-rpgblock .label {
     color: var(--aurora-text);
 	background: var(--aurora-4d);
 	font-family: var(--font-3); 
@@ -425,6 +387,7 @@ AURORA THEME Variables
     border: var(--border-thin) solid var(--aurora-w) !important;
     border-radius: var(--cont-rad);
 }
+
 
 /* .user-css .label:hover, .user-css-extended .label:hover {
     color: var(--aurora-4l);
@@ -529,9 +492,12 @@ AURORA THEME Variables
 	background-color: var(--aurora-nightt);
 	color: var(--aurora-text);
 	padding: var(--cont-pad-sm);
-	border-radius: 0 !important;
+    border-radius: var(--cont-rad);
 }
-
+/* panel-bodies after a heading should not have rounded corners */
+.user-css .panel-heading ~ .panel-body {
+		border-radius: 0 !important;
+}
 
 .user-css .panel { border-radius: var(--cont-rad); }
 .user-css-extended .panel-default {
@@ -705,7 +671,7 @@ AURORA THEME Variables
 }*/
 /* article bg */
 .user-css.page,
-.user-css-extended .page {
+.user-css-extended .page, .user-css-rpgblock .statblock [class*=sheet] {
     background: var(--aurora-nightt2);
     box-shadow: 0 0 var(--border-xthick) var(--border-med) var(--aurora-1);
 }
@@ -726,7 +692,6 @@ AURORA THEME Variables
     font-family: var(--font-3);
 	margin-bottom: var(--cont-pad);
 }
-.user-css-presentation .tooltipster-content .statblock { background: var(--aurora-nightt)}
 
 /* --------------- HEADERS -------------------*/
 .user-css h1,
@@ -1074,7 +1039,7 @@ AURORA THEME Variables
     border-radius: var(--cont-rad);
 }
 
-.user-css .user-css-image-thumbnail .artist-credits, .user-css .artist-credits {
+.user-css .user-css-image-thumbnail .artist-credits, .user-css .artist-credits, .user-css-presentation .tooltipster-content .artist-credits {
 	background: var(--aurora-nightt);
 	color: var(--aurora-text);
 	border-radius: var(--cont-rad);
@@ -1085,7 +1050,7 @@ AURORA THEME Variables
 }
 
 .user-css .aloud,
-.user-css-extended .aloud {
+.user-css-extended .aloud, .user-css-presentation .tooltipster-content .aloud {
     border-radius: var(--cont-rad);
     background: var(--aurora-3t);
     border-color: var(--aurora-3);
@@ -1096,16 +1061,187 @@ AURORA THEME Variables
     font-size: var(--fsize-text);
 }
 
+
 .user-css .statblock,
-.user-css-extended .statblock {
+.user-css-extended .statblock, 
+.user-css-presentation .tooltipster-content .statblock, .user-css .statblock [class*=sheet],
+.user-css-extended .statblock [class*=sheet],
+.user-css-rpgblock .statblock [class*=sheet] {
     border-radius: var(--cont-rad);
     background: var(--aurora-clear);
     border-color: var(--aurora-1l);
     border-width: var(--border-thin);
 }
 
+
+.user-css .contentContainer,
+.user-css-extended .contentContainer,
+.user-css-rpgblock .contentContainer {
+	border-radius: var(--cont-rad);
+    background: var(--aurora-clear);
+    border-color: var(--aurora-1l);
+    border-width: var(--border-tiny);
+}
+.user-css .statblock .subheading, .user-css-extended .statblock .subheading,
+.user-css-rpgblock .statblock .subheading { color: var(--aurora-3l) }
+
+.user-css .statblock .statblock-stat,
+.user-css .statblock .statblock-attribute,
+.user-css-extended .statblock .statblock-stat,
+.user-css-extended .statblock .statblock-attribute,
+.user-css .statblock [class*=sheet],
+.user-css-extended .statblock [class*=sheet],
+.user-css-rpgblock .statblock .statblock-stat,
+.user-css-rpgblock .statblock .statblock-attribute,
+.user-css-rpgblock .statblock [class*=sheet]
+{
+	color: var(--aurora-w);
+}
+
+.user-css .statblock .statblock-stat strong,
+.user-css .statblock .statblock-attribute strong,
+.user-css-extended  .statblock .statblock-stat strong,
+.user-css-extended  .statblock .statblock-attribute strong,
+.user-css .statblock [class*=sheet] .inputLabel,
+.user-css-extended .statblock [class*=sheet] .inputLabel,
+.user-css-rpgblock .statblock .statblock-stat strong,
+.user-css-rpgblock .statblock .statblock-attribute strong,
+.user-css-rpgblock .statblock [class*=sheet] .inputLabel
+{
+	color: var(--aurora-4l);
+	border-top: 1px var(--aurora-2l) dotted;
+	border-bottom: 1px var(--aurora-2l) dotted;
+	font-family: var(--font-5);
+}
+
+
+.user-css .statblock [class*=sheet] .inputContent,
+.user-css-extended .statblock [class*=sheet] .inputContent,
+.user-css-rpgblock .statblock [class*=sheet] .inputContent
+{
+	color: var(--aurora-2l);
+	font-family: var(--font-3);
+}
+
+
+.user-css-rpgblock .statblock [class*=sheet] .contentContainer strong {
+	font-family: var(--font-3);
+}
+
+.user-css .statblock [class*=sheet] .contentContainer-side .label-roller,
+.user-css-extended .statblock [class*=sheet] .contentContainer-side .label-roller,
+.user-css-rpgblock .statblock [class*=sheet] .contentContainer-side .label-roller
+{
+	margin-right: var(--cont-pad-med);
+}
+
+.user-css-rpgblock .statblock [class*=sheet] .contentContainer-side .inputLabel {
+	margin-bottom: var(--cont-pad-sm);
+}
+
+.user-css .statblock .label-roller,
+.user-css-extended .statblock .label-roller,
+.user-css .statblock [class*=sheet] .label-roller,
+.user-css-extended .statblock [class*=sheet] .label-roller,
+.user-css-rpgblock .statblock .label-roller,
+.user-css-rpgblock .statblock [class*=sheet] .label-roller
+{
+	background: var(--aurora-8d);
+}
+
+.user-css .statblock [class*=sheet] .contentContainer-side .inputLabel, .user-css-extended .statblock [class*=sheet] .contentContainer-side .inputLabel, 
+.user-css-rpgblock .statblock [class*=sheet] .contentContainer-side .inputLabel
+{
+	border: none;
+}
+
+.user-css .statblock [class*=sheet] h1,
+.user-css-extended .statblock [class*=sheet] h1,
+.user-css .statblock[class*=template] h1
+{
+	color: var(--aurora-3l);
+	-webkit-text-stroke: .03em var(--aurora-night);
+	-webkit-text-fill-color: var(--aurora-3l);
+    font-family: var(--font-1);
+    font-size: 2.0em;
+}
+
+.user-css-rpgblock .statblock [class*=sheet] h1
+{
+	color: var(--aurora-3l);
+	background: none;
+	-webkit-text-stroke: .03em var(--aurora-night);
+	font-family: var(--font-1);
+	text-transform: uppercase;
+	/* no shadow and transp bg */
+	 -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+	font-size: 3.5rem;
+}
+
+.user-css .statblock [class*=sheet] .hr-dark,
+.user-css-extended .statblock [class*=sheet] .hr-dark,
+.user-css-rpgblock .statblock [class*=sheet] .hr-dark
+{
+	color: var(--aurora-1d);
+	border: 1px var(--aurora-1d) solid;
+}
+
+.user-css .statblock [class*=sheet] .table th,
+.user-css-extended .statblock [class*=sheet] .table th,
+.user-css-rpgblock .statblock [class*=sheet] .table th
+{ 
+	font-size: 1em;
+	text-align: left;
+}
+
+@media only screen and (max-width: 1200px) {
+.user-css .statblock [class*=sheet] .col-md-12 .contentContainer-standard table
+{
+    /*  table-layout:fixed; - to make the table stay inside the container - though it messes up column widths then. It only happens when the screen is small on Chrome at abotu 1200px wide. So I put a media query on it */ 
+    table-layout: fixed; 
+} 
+}
+
+ .user-css .statblock [class*=sheet] .col-md-12 .contentContainer table td:nth-child(2),
+.user-css-extended .statblock [class*=sheet] .col-md-12 .contentContainer table td:nth-child(2),
+.user-css-extended .statblock .col-md-12 .contentContainer table td:nth-child(2)
+{	min-width: 150px;
+	max-width: 150px;
+} 
+
+
+.user-css-rpgblock .statblock [class*=sheet] .btn-primary {border: var(--border-thin) solid var(--aurora-wt);}
+
+.user-css .statblock [class*=sheet],
+.user-css-extended .statblock [class*=sheet]
+{
+	background: none;
+	background-image: none;
+}
+
+.user-css-rpgblock .statblock [class*=sheet] {
+	background: var(--aurora-nightt2);
+	font-family: var(--font-3);
+	border: none;
+	font-size: var(--fsize-text);
+}
+
+.user-css .statblock [class*=sheet] .contentContainer b,
+.user-css-rpgblock .statblock [class*=sheet] .contentContainer b { 
+	font-weight: bold;
+	text-decoration: underline; 
+}
+
+.user-css .statblock [class*=sheet] .contentContainer br,
+.user-css-rpgblock .statblock [class*=sheet] .contentContainer br
+{
+	margin-bottom: var(--cont-pad-med);
+}
+
 .user-css pre,
-.user-css-extended pre {
+.user-css-extended pre, .user-css-presentation .tooltipster-content pre {
     border-radius: var(--cont-rad);
     background: var(--aurora-wtb);
     border-color: var(--aurora-1t);
@@ -1124,7 +1260,8 @@ AURORA THEME Variables
 }
 
 .user-css blockquote,
-.user-css-extended blockquote {
+.user-css-extended blockquote,
+.user-css-presentation .tooltipster-content blockquote {
     border-radius: var(--cont-rad);
     -webkit-box-shadow: var(--glow-params);
     -moz-box-shadow: var(--glow-params);
@@ -1139,7 +1276,8 @@ AURORA THEME Variables
 }
 
 .user-css blockquote .author,
-.user-css-extended blockquote .author {
+.user-css-extended blockquote .author, 
+.user-css-presentation .tooltipster-content blockquote .author {
     border-radius: var(--cont-rad);
     color: var(--aurora-2l);
     font-family: var(--font-4);
@@ -1149,7 +1287,10 @@ AURORA THEME Variables
 }
 
 .user-css .spoiler-button,
-.user-css-extended .spoiler-button {
+.user-css-extended .spoiler-button, 
+.user-css-presentation .tooltipster-content .spoiler-button,
+.user-css-rpgblock .statblock [class*=sheet] .spoiler-button
+{
     color: var(--aurora-1l) !important;
     background: var(--aurora-primary) !important;
     font-family: var(--font-2);
@@ -1161,7 +1302,10 @@ AURORA THEME Variables
 .user-css .spoiler-button:hover,
 .user-css-extended .spoiler-button[aria-expanded=true],
 .user-css .spoiler-button:hover,
-.user-css .spoiler-button[aria-expanded=true] {
+.user-css .spoiler-button[aria-expanded=true],
+.user-css-presentation .tooltipster-content .spoiler-button[aria-expanded=true],
+.user-css-rpgblock .statblock [class*=sheet] .spoiler-button[aria-expanded=true]
+{
     color: var(--aurora-2l) !important;
     background: var(--aurora-7d) !important;
     font-family: var(--font-2);
@@ -1170,19 +1314,24 @@ AURORA THEME Variables
 }
 
 .user-css .spoiler-content,
-.user-css-extended .spoiler-content {
+.user-css-extended .spoiler-content, 
+.user-css-presentation .tooltipster-content .spoiler-content,
+.user-css-rpgblock .statblock [class*=sheet] .spoiler-content
+{
     border-radius: var(--cont-rad);
     color: var(--aurora-text) !important;
     background: var(--aurora-7t);
 }
 
 .user-css .article-panel,
-.user-css-extended .article-panel {
+.user-css-extended .article-panel,
+.user-css-presentation .tooltipster-content .article-panel{
     border-radius: var(--cont-rad);
     background: var(--aurora-nightt);
 	border: 1px dotted var(--aurora-3l);
 }
-.user-css .cover.cover-article, .user-css #cover .img-responsive, .user-css .article-panel .cover.cover-global { /* top only */
+.user-css .cover.cover-article, .user-css #cover .img-responsive, .user-css .article-panel .cover.cover-global,
+.user-css-presentation .tooltipster-content .article-panel .cover.cover-global { /* top only */
     border-top-left-radius: var(--cont-rad) ;
     border-top-right-radius: var(--cont-rad) ; 
     border-bottom-left-radius: 0 ;
@@ -1190,7 +1339,9 @@ AURORA THEME Variables
 }
 
 .user-css .article-panel .details h5,
-.user-css-extended .article-panel .details h5 {
+.user-css-extended .article-panel .details h5,
+.user-css-presentation .tooltipster-content .article-panel .details h5
+{
     color: var(--aurora-2l);
 	/* text-shadow: none;
 	-webkit-text-stroke: .02em var(--aurora-4); */
@@ -1199,12 +1350,17 @@ AURORA THEME Variables
 .user-css .article-panel .details .subheading,
 .user-css .article-panel .details .subheading .date,
 .user-css-extended .article-panel .details .subheading,
-.user-css-extended .article-panel .details .subheading .date {
+.user-css-extended .article-panel .details .subheading .date,
+.user-css-presentation .tooltipster-content .article-panel .details .subheading,
+.user-css-presentation .tooltipster-content .article-panel .details .subheading .date
+{
     color: var(--aurora-w);
 }
 
 .user-css .article-panel .details .excerpt,
-.user-css-extended .article-panel .details .excerpt {
+.user-css-extended .article-panel .details .excerpt,
+.user-css-presentation .tooltipster-content .details .excerpt
+{
     color: var(--aurora-wl);
 }
 
@@ -1212,12 +1368,9 @@ AURORA THEME Variables
 .user-css-presentation .tooltipster-content {
 	background: var(--aurora-night);
 	color: var(--aurora-wl);
+	font-family: var(--font-3);
 }
 
-.user-css-presentation .tooltipster-content h2 {
-	color: var(--aurora-2l);
-	border-bottom-color: var(--aurora-3l);
-}
 .user-css-presentation .tooltipster-content a.btn {color: var(--aurora-4l);}
 .user-css-presentation .tooltipster-content .mb-3 {color: var(--aurora-w);}
 .user-css-presentation .tooltipster-content .p-2 {
@@ -1229,86 +1382,131 @@ AURORA THEME Variables
 /* tooltip */
 .user-css .tooltip.top .tooltip-arrow,
 .user-css-extended .tooltip.top .tooltip-arrow,
-.user-css-worldmenu .tooltip.top .tooltip-arrow {
+.user-css-worldmenu .tooltip.top .tooltip-arrow,
+.user-css-presentation .tooltipster-content .tooltip.top .tooltip-arrow
+{
     border-top-color: var(--aurora-night);
 }
 .user-css .tooltip.left .tooltip-arrow,
 .user-css-extended .tooltip.left .tooltip-arrow,
-.user-css-worldmenu .tooltip.left .tooltip-arrow {
+.user-css-worldmenu .tooltip.left .tooltip-arrow,
+.user-css-presentation .tooltipster-content .tooltip.left .tooltip-arrow{
     border-left-color: var(--aurora-night);
 }
 .user-css .tooltip.bottom .tooltip-arrow,
 .user-css-extended .tooltip.bottom .tooltip-arrow,
-.user-css-worldmenu .tooltip.bottom .tooltip-arrow {
+.user-css-worldmenu .tooltip.bottom .tooltip-arrow,
+.user-css-presentation .tooltipster-content .tooltip.bottom .tooltip-arrow{
     border-bottom-color: var(--aurora-night);
 }
 .user-css .tooltip.right .tooltip-arrow,
 .user-css-extended .tooltip.right .tooltip-arrow,
-.user-css-worldmenu .tooltip.right .tooltip-arrow {
+.user-css-worldmenu .tooltip.right .tooltip-arrow,
+.user-css-presentation .tooltipster-content .tooltip.right .tooltip-arrow {
     border-right-color: var(--aurora-night);
 }
 
-
 .user-css .tooltip .tooltip-inner,
 .user-css-extended .tooltip .tooltip-inner,
-.user-css-worldmenu .tooltip .tooltip-inner {
+.user-css-worldmenu .tooltip .tooltip-inner,
+.user-css-presentation .tooltipster-content .tooltip .tooltip-inner
+{
     background: var(--aurora-night);
     border-color: var(--aurora-night);
     color: var(--aurora-wl);
 }
 
 .user-css .text-abbreviation,
-.user-css-extended .text-abbreviation {
+.user-css-extended .text-abbreviation,
+.user-css-presentation .tooltipster-content .text-abbreviation
+{
     color: var(--aurora-3l);
     text-decoration-line: none;
     border-bottom: var(--border-tiny)  dotted var(--aurora-3);
 }
 
 /* tables */
-.user-css table, .user-css .table {
+.user-css table, .user-css .table, .user-css-presentation .tooltipster-content table, .user-css-presentation .tooltipster-content .table,
+.user-css-rpgblock .statblock [class*=sheet] table,
+.user-css-rpgblock .statblock [class*=sheet] .table
+{
     background: none;
     width: 100%;
-    font-family: source sans pro, sans-serif;
+    font-family: var(--font-3);
 }
-.user-css table td {
+.user-css table td, 
+.user-css-presentation .tooltipster-content table td,
+.user-css-extended .tooltipster-content table td,
+.user-css .statblock [class*=sheet] table td
+{
     background: none !important;
     color: var(--aurora-nightd) !important;
-    width: 100%;
+    /* width: 100%; */
     font-family: var(--font-3);
     font-size: .8em;
 }
-
+.user-css-rpgblock .statblock [class*=sheet] table td {
+	    background: none !important;
+    color: var(--aurora-nightd) !important;
+    /* width: 100%; */
+    font-family: var(--font-3);
+}
 .user-css-presentation table,
-.user-css table, .user-css-extended table, .user-css-presentation tbody,
-.user-css tbody, .user-css-extended tbody{ 
+.user-css table, 
+.user-css-extended table, 
+.user-css-presentation tbody,
+.user-css tbody, 
+.user-css-extended tbody,
+.user-css-presentation .tooltipster-content table,
+.user-css-presentation .tooltipster-content tbody,
+.user-css-rpgblock .statblock [class*=sheet] table,
+.user-css-rpgblock .statblock [class*=sheet] tbody
+{ 
 	border-radius: var(--cont-rad); 
 	-webkit-border-radius: var(--cont-rad); 
 }
 
 /* Affects every odd row in tables, good for making striped looks. */
-.user-css tr:nth-of-type(odd), .user-css .table tr:first-of-type td /* if not have a header give the first td row a color -  so firefox fix not make it transparent */{
+.user-css tr:nth-of-type(odd), .user-css .table tr:first-of-type td, /* if not have a header give the first td row a color -  so firefox fix not make it transparent */
+.user-css-extended tr:nth-of-type(odd), .user-css-extended .table tr:first-of-type td,
+.user-css-presentation .tooltipster-content tr:nth-of-type(odd), 
+.user-css-presentation .tooltipster-content .table tr:first-of-type td,
+.user-css-rpgblock .statblock [class*=sheet] tr:nth-of-type(odd), 
+.user-css-rpgblock .statblock [class*=sheet] .table tr:first-of-type td
+{
     background-color: var(--aurora-wtb) !important;
 }
 
 /* Affects every evenrow in tables, good for making striped looks. */
-.user-css tr:nth-of-type(even) {
+.user-css tr:nth-of-type(even),
+.user-css-presentation .tooltipster-content tr:nth-of-type(even),
+.user-css-rpgblock .statblock [class*=sheet] tr:nth-of-type(even)
+{
     background-color: var(--aurora-w) !important;
 }
 
 /* allows for rounded corners on top for firefox */
-.user-css .table tr:first-of-type {
+.user-css .table tr:first-of-type,
+.user-css-presentation .tooltipster-content .table tr:first-of-type,
+.user-css-rpgblock .statblock [class*=sheet] .table tr:first-of-type
+{
 	background-color: transparent !important;
 }
 
-.user-css table a {
+.user-css table a,
+.user-css-presentation .tooltipster-content table a,
+.user-css-rpgblock .statblock [class*=sheet] table a
+{
 	color: var(--aurora-5);
 }
 .user-css-presentation table th,
 .user-css table th,
 .user-css-extended table th,
+.user-css-rpgblock .statblock [class*=sheet] table th,
 .user-css .statblock .table tbody tr th,
 .user-css-extended .statblock .table tbody tr th,
-.user-css-presentation .tooltipster-content th
+.user-css-presentation .tooltipster-content th,
+.user-css-rpgblock .statblock [class*=sheet] th
 {
     background: var(--aurora-nightt2) !important;
     border: 0 solid !important;
@@ -1326,7 +1524,14 @@ AURORA THEME Variables
 .user-css tbody tr:first-child th:first-child,
 .user-css .statblock thead tr:first-child th:first-child,
 .user-css .statblock table tr:first-child td:first-child,
-.user-css .statblock tbody tr:first-child th:first-child {
+.user-css .statblock tbody tr:first-child th:first-child,
+.user-css-presentation .tooltipster-content table tr:first-child th:first-child,
+.user-css-presentation .tooltipster-content table tr:first-child td:first-child,
+.user-css-presentation .tooltipster-content tbody tr:first-child th:first-child,
+.user-css-rpgblock .statblock [class*=sheet] table tr:first-child th:first-child,
+.user-css-rpgblock .statblock [class*=sheet] table tr:first-child td:first-child,
+.user-css-rpgblock .statblock [class*=sheet] tbody tr:first-child th:first-child
+{
     border-top-left-radius: var(--cont-rad);
 	-webkit-border-top-left-radius: var(--cont-rad);
 
@@ -1336,15 +1541,28 @@ AURORA THEME Variables
 .user-css tbody tr:first-child th:last-child,
 .user-css .statblock thead tr:first-child th:last-child,
 .user-cssn .statblock table tr:first-child td:last-child,
-.user-css .statblock tbody tr:first-child th:last-child {
+.user-css .statblock tbody tr:first-child th:last-child,
+.user-css-presentation .tooltipster-content table tr:first-child th:last-child,
+.user-css-presentation .tooltipster-content table tr:first-child td:last-child,
+.user-css-presentation .tooltipster-content tbody tr:first-child th:last-child,
+.user-css-rpgblock .statblock [class*=sheet] table tr:first-child th:last-child,
+.user-css-rpgblock .statblock [class*=sheet] table tr:first-child td:last-child,
+.user-css-rpgblock .statblock [class*=sheet] tbody tr:first-child th:last-child {
     border-top-right-radius: var(--cont-rad);
 }
 .user-css tbody tr:last-child td:first-child,
 .user-css table tr:last-child td:first-child,
-.user-csstbody tr:last-child th:first-child,
+.user-css tbody tr:last-child th:first-child,
 .user-css .statblock tbody tr:last-child td:first-child,
 .user-css .statblock table tr:last-child td:first-child,
-.user-css .statblock tbody tr:last-child th:first-child {
+.user-css .statblock tbody tr:last-child th:first-child,
+.user-css-presentation .tooltipster-content tbody tr:last-child td:first-child,
+.user-css-presentation .tooltipster-content table tr:last-child td:first-child,
+.user-css-presentation .tooltipster-content tr:last-child th:first-child,
+.user-css-rpgblock .statblock [class*=sheet] tbody tr:last-child td:first-child,
+.user-css-rpgblock .statblock [class*=sheet] table tr:last-child td:first-child,
+.user-css-rpgblock .statblock [class*=sheet] tbody tr:last-child th:first-child
+{
     border-bottom-left-radius: var(--cont-rad);
 }
 .user-css tbody tr:last-child td:last-child,
@@ -1352,11 +1570,20 @@ AURORA THEME Variables
 .user-css tbody tr:last-child th:last-child,
 .user-css .statblock tbody tr:last-child td:last-child,
 .user-css .statblock table tr:last-child td:last-child,
-.user-css .statblock tbody tr:last-child th:last-child {
+.user-css .statblock tbody tr:last-child th:last-child,
+.user-css-presentation .tooltipster-content tbody tr:last-child td:last-child,
+.user-css-presentation .tooltipster-content table tr:last-child td:last-child,
+.user-css-presentation .tooltipster-content tbody tr:last-child th:last-child,
+.user-css-rpgblock .statblock [class*=sheet] tbody tr:last-child td:last-child,
+.user-css-rpgblock .statblock [class*=sheet] table tr:last-child td:last-child,
+.user-css-rpgblock .statblock [class*=sheet] tbody tr:last-child th:last-child
+{
     border-bottom-right-radius: var(--cont-rad);
 }
 
-.user-css .panel-greatgm {
+.user-css .panel-greatgm,
+.user-css-presentation .tooltipster-content .panel-greatgm
+{
     background: var(--aurora-3t);
     border: var(--border-thin) dotted var(--aurora-5);
     margin: var(--cont-pad);
@@ -1365,13 +1592,20 @@ AURORA THEME Variables
     font-family: var(--font-3);
     font-size: 1em;
 }
-.user-css .panel-greatgm .panel-body { background: var(--aurora-clear); }
+.user-css .panel-greatgm .panel-body,
+.user-css-presentation .tooltipster-content .panel-greatgm .panel-body
+{ background: var(--aurora-clear); }
 
-.user-css .panel-generic-ggm.panel-npcsheet {
+.user-css .panel-generic-ggm.panel-npcsheet,
+.user-css-presentation .tooltipster-content .panel-generic-ggm.panel-npcsheet
+{
 	padding: var(--cont-pad);
     background: var(--aurora-3t);
 	border-radius: var(--cont-rad);
     border: var(--border-thin) dotted var(--aurora-5);
+}
+.user-css .panel-generic-ggm h5, .user-css .panel-generic-ggm dt {
+	text-decoration: underline dotted;
 }
 
 .user-css-secret {
@@ -1381,14 +1615,27 @@ AURORA THEME Variables
 }
 .user-css-secret h5 { color: var(--aurora-1l);}
 
+/* secrets metadata tab */
+.user-css-extended h3.panel-title {
+	color: var(--aurora-5d);
+}
+.user-css-extended .panel-heading small.text-muted {
+	color: var(--aurora-6d)	
+}
 /* ------ WA CATEGORIES ------ */ 
-.user-css.page-category .nav-strip, .user-css.page-timeline .nav-strip {
+.user-css.page-category .nav-strip, .user-css.page-timeline .nav-strip,
+.user-css.page-followers .nav-strip, .user-css.page-search .nav-strip,
+.user-css .nav-strip
+{
 	background: var(--aurora-nightd);
     border-top-right-radius: var(--cont-rad);
 	bottom: -.5px;
 }
 
-.user-css.page-category .nav-strip a, .user-css.page-timeline .nav-strip a {
+.user-css.page-category .nav-strip a, .user-css.page-timeline .nav-strip a,
+.user-css.page-followers .nav-strip a, .user-css.page-search .nav-strip a,
+.user-css .nav-strip a
+{
 	font-family: var(--font-5);
 	color: var(--aurora-2l);
 	font-size: 1em;
@@ -1409,12 +1656,16 @@ AURORA THEME Variables
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
 }
-.user-css .bookcover{
+.user-css .bookcover,
+.user-css-presentation .tooltipster-content .bookcover
+{
     height: auto;
     background: transparent;
 	text-align: center;
 }
-.user-css .booktitle {
+.user-css .booktitle,
+.user-css-presentation .tooltipster-content .booktitle
+{
 	left: 10px;
 	width: 85%;
     background-color: var(--aurora-wl);
@@ -1426,25 +1677,34 @@ AURORA THEME Variables
     text-align: center;
 	font-family: var(--font-5);
 }
-.user-css .bookcover a:hover .booktitle {
+.user-css .bookcover a:hover .booktitle,
+.user-css-presentation .tooltipster-content .bookcover a:hover .booktitle
+{
 	background-color: var(--aurora-1l) ;
 	color: var(--aurora-6d);
 }
-.user-css .bookcover a:hover img {
+.user-css .bookcover a:hover img,
+.user-css-presentation .tooltipster-content .bookcover a:hover img
+{
     opacity: 1;
     box-shadow:  0px 0px 5px 10px var(--aurora-3t);
     background: var(--aurora-3t);
 }
 
 /* document popup */
-.user-css #myModal .modal-content {
+.user-css #myModal .modal-content,
+.user-css-presentation .tooltipster-content #myModal .modal-content
+{
 	background: var(--aurora-nightd);}
-.user-css #myModal .modal-header button {
+.user-css #myModal .modal-header button,
+.user-css-presentation .tooltipster-content #myModal .modal-header button
+{
 	color: var(--aurora-wl);
 	text-shadow: 0 1px 0 var(--aurora-wt);
 	opacity: .4;
 }
-.user-css.template-document .btn-primary {
+.user-css.template-document .btn-primary
+{
 	background: var(--aurora-2t);}
 
 /* prose black on white */
@@ -1526,7 +1786,8 @@ body.presentation-interface-map, .map-context-user-css {
 	color: var(--aurora-1l);
 	font-family: var(--font-2);
 }
-.user-css-map-sidebar .btn-primary {			
+.user-css-map-sidebar .btn-primary
+{			
 	background: var(--aurora-primary);
 	border-color: var(--aurora-8);
 }
@@ -1611,86 +1872,178 @@ body.presentation-interface-map, .map-context-user-css {
 
 /* timelines */
 /* the line */
-.user-css .timeline:before {
+.user-css .timeline:before,
+.user-css-extended .timeline:before
+{
 	background-color: var(--aurora-1t);
 }
-.user-css .timeline li .tl-circ {
+.user-css .timeline li .tl-circ,
+.user-css-extended .timeline li .tl-circ {
 	border-color: var(--aurora-2t);
 }
 
 /* panel colors */
-.user-css .timeline li .timeline-panel, .user-css .timeline .milestone, .user-css .timeline .major .header-icon, .timeline .important .header-icon, .timeline .timeline-entry-milestone .header-icon, .timeline .minor .header-icon, .timeline .trivial .header-icon, .timeline .no-importance .header-icon, .timeline li .tl-circ  { 
+.user-css .timeline li .timeline-panel, 
+.user-css .timeline .milestone,
+.user-css .timeline .major .header-icon, 
+.user-css .timeline .important .header-icon, 
+.user-css .timeline .timeline-entry-milestone .header-icon, 
+.user-css .timeline .minor .header-icon, 
+.user-css .timeline .trivial .header-icon, 
+.user-css.timeline .no-importance .header-icon, 
+.user-css .timeline li .tl-circ,
+.user-css-extended .timeline li .timeline-panel, 
+.user-css-extended .timeline .milestone,
+.user-css-extended .timeline .major .header-icon, 
+.user-css-extended .timeline .important .header-icon, 
+.user-css-extended .timeline .timeline-entry-milestone .header-icon, 
+.user-css-extended .timeline .minor .header-icon, 
+.user-css-extended .timeline .trivial .header-icon, 
+.user-css-extended .timeline .no-importance .header-icon, 
+.user-css-extended .timeline li .tl-circ
+{ 
 	background: var(--aurora-wl);
 }
-.user-css .timeline li .timeline-panel::after { 
+.user-css .timeline li .timeline-panel::after,
+.user-css-extended .timeline li .timeline-panel::after { 
 	border-left-color: var(--aurora-wl) ; 
 	border-right-color: var(--aurora-wl); 
 }
 
-.user-css .timeline li .timeline-panel, .user-css .timeline .timeline-entry-milestone {
+.user-css .timeline li .timeline-panel, 
+.user-css .timeline .timeline-entry-milestone,
+.user-css-extended .timeline li .timeline-panel, 
+.user-css-extended .timeline .timeline-entry-milestone
+{
 	border-radius: var(--cont-rad);
 }
 /* event panel text */
-.user-css .tl-heading-date, .user-css .timeline li .timeline-panel h4, .user-css .timeline li .milestone-panel h4, .user-css .timeline li .timeline-panel p, .user-css .header-title.text-muted, .user-css .timeline li .timeline-panel small strong, .user-css .timeline li .timeline-panel .history-location strong {
+.user-css .tl-heading-date, 
+.user-css .timeline li .timeline-panel h4, 
+.user-css .timeline li .milestone-panel h4, 
+.user-css .timeline li .timeline-panel p, 
+.user-css .header-title.text-muted, 
+.user-css .timeline li .timeline-panel small strong, 
+.user-css .timeline li .timeline-panel .history-location strong,
+.user-css-extended .tl-heading-date, 
+.user-css-extended .timeline li .timeline-panel h4, 
+.user-css-extended .timeline li .milestone-panel h4, 
+.user-css-extended .timeline li .timeline-panel p, 
+.user-css-extended .header-title.text-muted, 
+.user-css-extended .timeline li .timeline-panel small strong, 
+.user-css-extended .timeline li .timeline-panel .history-location strong
+{
 	color: var(--aurora-7);}
 
-.user-css .timeline li .timeline-panel p, .user-css .tl-body .history-content p, .user-css .timeline li .timeline-panel small, .timeline li .milestone-panel small {
+.user-css .timeline li .timeline-panel p, 
+.user-css .tl-body .history-content p, 
+.user-css .timeline li .timeline-panel small, 
+.user-css .timeline li .milestone-panel small,
+.user-css-extended .timeline li .timeline-panel p, 
+.user-css-extended .tl-body .history-content p, 
+.user-css-extended .timeline li .timeline-panel small, 
+.user-css-extended .timeline li .milestone-panel small
+{
 	color: var(--aurora-night);
 }
 
-.user-css .timeline li .timeline-panel a {
+.user-css .timeline li .timeline-panel a,
+.user-css-extended .timeline li .timeline-panel a
+{
 	color: var(--aurora-9);
 }
 
-.user-css .timeline .label-default { background: var(--aurora-1t); }
+.user-css .timeline .label-default,
+.user-css-extended .timeline .label-default
+{ background: var(--aurora-1t); }
 
-.user-css .timeline .label-default.tag { color: var(--aurora-nightl) ; }
+.user-css .timeline .label-default.tag,
+.user-css-extended .timeline .label-default.tag 
+{ color: var(--aurora-nightl) ; }
 
-.user-css .timeline a.label-default:hover { color: var(--aurora-8) ; }
+.user-css .timeline a.label-default:hover,
+.user-css-extended .timeline a.label-default:hover
+{ color: var(--aurora-8) ; }
 
 /* time line era headers */
-.user-css .era-header .text-muted { color: var(--aurora-wtb)}
-.user-css .era-header h2.m-b-0 { margin-bottom: var(--cont-pad-sm) !important;}
+.user-css .era-header .text-muted,
+.user-css-extended .era-header .text-muted 
+{ color: var(--aurora-wtb)}
+
+.user-css .era-header h2.m-b-0,
+.user-css-extended .era-header h2.m-b-0
+{ margin-bottom: var(--cont-pad-sm) !important;}
 
 /* event colors */
-.user-css .timeline .major .timeline-panel {
+.user-css .timeline .major .timeline-panel,
+.user-css-extended .timeline .major .timeline-panel
+{
 	border-top-color: var(--aurora-9d);}
-.user-css .timeline .major .header-icon {
+
+.user-css .timeline .major .header-icon,
+.user-css-extended .timeline .major .header-icon {
 	color: var(--aurora-9d);
 	border-color: var(--aurora-w);
 text-align: center;}
 
-.user-css .timeline .important .timeline-panel{
+.user-css .timeline .important .timeline-panel,
+.user-css-extended .timeline .important .timeline-panel
+{
 	border-top-color: var(--aurora-8d);}
-.user-css .timeline .important .header-icon {
+
+.user-css .timeline .important .header-icon,
+.user-css-extended .timeline .important .header-icon
+{
 	color: var(--aurora-8d);
 	border-color: var(--aurora-w);}
 
-.user-css .timeline .minor .timeline-panel{
+.user-css .timeline .minor .timeline-panel,
+.user-css-extended .timeline .minor .timeline-panel
+{
 	border-top-color: var(--aurora-6l);}
-.user-css .timeline .minor .header-icon {
+
+.user-css .timeline .minor .header-icon,
+.user-css-extended .timeline .minor .header-icon
+{
 	color: var(--aurora-6l);
 	border-color: var(--aurora-w);
 	text-align: center;
 }
 
-.user-css .timeline .trivial .timeline-panel{
+.user-css .timeline .trivial .timeline-panel,
+.user-css-extended .timeline .trivial .timeline-panel
+{
 	border-top-color: var(--aurora-4d);}
-.user-css .timeline .trivial .header-icon {
+
+.user-css .timeline .trivial .header-icon,
+.user-css-extended .timeline .trivial .header-icon {
 	color: var(--aurora-4d);
 	border-color: var(--aurora-w);}
 
-.user-css .timeline .no-importance .timeline-panel{
+.user-css .timeline .no-importance .timeline-panel,
+.user-css-extended .timeline .no-importance .timeline-panel{
 	border-top-color: var(--aurora-wd);}
-.user-css .timeline .no-importance .header-icon {
+
+.user-css .timeline .no-importance .header-icon,
+.user-css-extended .timeline .no-importance .header-icon{
 	color: var(--aurora-wd);
 	border-color: var(--aurora-w);}
 
-.user-css .timeline .timeline-entry-milestone {
+.user-css .timeline .timeline-entry-milestone,
+.user-css-extended .timeline .timeline-entry-milestone
+{
 	border-color: var(--aurora-nightd);}
-.user-css .timeline .timeline-entry-milestone .header-icon {
+
+.user-css .timeline .timeline-entry-milestone .header-icon,
+.user-css-extended .timeline .timeline-entry-milestone .header-icon {
 	color: var(--aurora-nightd);
 	border-color: var(--aurora-w);}
+
+/* this is the size that seems to center the icon on the circle */
+.user-css .timeline .header-icon,
+.user-css-extended .timeline .header-icon{
+font-size: 13px;
+}
 
 /* Campaigns + Heroes / Characters */
 .user-css .campaign-panel, .user-css .campaign-panel .details, .user-css .world-heroes .character-panel, .user-css .world-heroes .character-panel .details {
@@ -1718,6 +2071,22 @@ text-align: center;}
 .user-css #journals div h4 small { color: var(--aurora-4l);}
 .user-css #journals div div {
 	padding: var(--cont-pad-sm);
+}
+
+/* relationships */
+.user-css .character-relationship-panel .text-oblique {
+	color: var(--aurora-wd);
+}
+
+/* side panel relationships */
+.user-css .relation {font-size: .5em;}
+.user-css .relation h4, .user-css .relation h5 {font-size: 1.25em;}
+.user-css .relation .relationScore {
+    border: none;
+	background:
+    var(--aurora-nightt);
+	color: var(--aurora-w);
+	border-radius: var(--cont-rad);
 }
 
 /* calendars */
@@ -1822,6 +2191,46 @@ text-align: center;}
 .user-css-calendar .moon, .user-css-calendar .moon-flip {
 	--scale-lightgray: var(--aurora-night)!important;
 	--moon-shadow: var(--aurora-5l);
+}
+
+/* followers */
+.user-css .followers-counter .panel-default .panel-body {
+	border-radius: var(--cont-rad) !important;
+}
+
+.user-css .user-css-followers-counter-number a {
+	display: block;
+}
+
+.user-css.page-followers h2 small {
+	color: var(--aurora-1)
+}
+
+.user-css.page-followers .follower-box {
+	border-radius: var(--cont-rad);
+}
+
+/* tooltipster - page preview box. Is outside the .user-css, but I found where Ademal said it was ok as best he knew and my tooltip boxes over articleblocks were HUGE! had to limit it */
+.tooltipster-base, .tooltipster-box  {
+	width: 350px !important;
+	max-width: 350px !important;
+}
+
+/* password protected page */
+.user-css .far.fa-lock-alt.fa-5x ~ h1 {
+	font-family: var(--font-3);
+	font-size: 2.5em;
+	word-break: break-word;
+}
+
+.user-css #passcode.form-control {
+	color: var(--aurora-night);
+	font-size: var(--fsize-med);
+	background-color: var(--aurora-wl);
+	border-radius: var(--cont-rad);
+	border: 3px solid var(--aurora-2d);
+	background-image: none;
+
 }
 
 /* ------------------ MY CONTAINERS for the Theme ----------------- */
@@ -1966,6 +2375,7 @@ text-align: center;}
   display: contents;
 }
 
+
 /* -------------------------------------
                NON THEME 
 -------------------------------------- */
@@ -2024,4 +2434,3 @@ text-align: center;}
     margin-top: 30px;
     margin-bottom: 20px;
 }
-
