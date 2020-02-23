@@ -1430,10 +1430,19 @@ AURORA THEME Variables
 
 /* rounded corners on the cover don't play nice on small screens, so I skiped the rounded corners on the 2 big containers. */
 @media only screen and (max-width: 767px){
-    .user-css.page, .user-css-extended .page {
+    .user-css.page, .user-css-extended .page, .user-css #cover .img-responsive {
         border-radius: 0;
     }
 }
+
+/* takes away the funky right side border on small screens */
+@media only screen and (max-width: 767px){
+    .user-css .cover {
+        margin-right: -15px;
+        margin-left: -20px;
+    }
+}
+
 
 .user-css .article-panel .details h5,
 .user-css-extended .article-panel .details h5,
