@@ -719,7 +719,7 @@ AURORA THEME Variables
 
 @media only screen and (max-width: 1023px) {
     .user-css-presentation {
-        background-image: linear-gradient( var(--aurora-night), var(--aurora-8d)); 
+        background-image: linear-gradient( var(--aurora-6), var(--aurora-4)); 
     }
 }
 
@@ -786,7 +786,7 @@ AURORA THEME Variables
 @media screen and (max-width:799px) { 
     .user-css h1 {
         font-size: var(--fsize-h1-sm);
-        word-break: break-all;
+        word-break: break-word;
     }
 } 
 
