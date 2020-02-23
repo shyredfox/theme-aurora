@@ -4,8 +4,11 @@
 @version        0.3.8
 
 Notes: 
-- Re-fixing the sidepanel issue for chrome (Thank goodness for github! I would have had to re-figure that bit out after I had to re-install windows!)
+- Re-fixing the sidepanel issue for chrome (Thank goodness for github! I would have had to re-figure that bit out after I had to re-install windows!) - panel-body can't be used "body" is a 
 - Chrome/Firefox differences on rpg statsheets
+- TOC category preview H1 not exceed it's container now
+- moved backToWorld for character page - as the other tabs with long names can get covered up
+- @ media for small screen sizes - whitelabel, bg to gradient, take off the rounded corners on the 2 main page boxes
 
 @description    This theme is inspired by the Finnish Foxfire legend
 @author         Amy Winters-Voss (shyredfox on World Anvil, ShyRedFox#7256 on Discord) 
@@ -138,6 +141,7 @@ AURORA THEME Variables
 
     --fsize-h0: 0pt;
     --fsize-h1: 60pt;
+    --fsize-h1-sm: 30pt;
     --fsize-h2: 16pt;
     --fsize-h3: 16pt;
     --fsize-h4: 14pt;
@@ -207,6 +211,8 @@ AURORA THEME Variables
    text-align: center;
 }
 
+  
+
 .user-css-whitelabel small a {
     content: url(https://www.worldanvil.com/uploads/images/0f448d0499c3bc69c2852a37ad390f51.png);
     filter: drop-shadow(0 0 3px var(--aurora-1d));
@@ -215,6 +221,34 @@ AURORA THEME Variables
     display: block;
 }
 
+/* move the white label to the bottom on small screens */
+@media only screen and (max-width: 1399px) { 
+.user-css-whitelabel {
+   bottom: -20px;
+   box-shadow: none;
+   -moz-box-shadow: none;
+   -webkit-box-shadow: none;
+    border-radius: 0;
+   background: var(--aurora-nightd);
+   opacity: 1;
+   text-align: center;
+   display: block;
+   z-index:1000;
+    width: 100%;
+    margin-left: -20px;
+    
+}
+
+.user-css-whitelabel small a {
+    padding: 0;
+   display: inline;
+    font-size: var(--fsize-small);
+}
+    /* extend the page a bit so the whitelabel doesn't cover up anything */
+    .user-css-extended {
+        padding-bottom: 100px;
+    }
+} 
 
 .user-css-whitelabel small, .user-css-whitelabel strong {
    display: block;
@@ -224,6 +258,7 @@ AURORA THEME Variables
 .user-css-whitelabel small{
     color:white;
 }
+
 /* -------------------------------- FONTS/TEXT/HEADERs -------------------------------- */
 /* HEADER FONTS: */
 /* latin-ext */
@@ -484,26 +519,15 @@ AURORA THEME Variables
 	margin-top: var(--cont-pad-med);
 	margin-bottom: var(--cont-pad-med);
 }
+
 .user-css .panel-group {
 	background-color: var(--aurora-clear);
 	color: var(--aurora-text);
 }
-.user-css .panel-body  {
-	background-color: var(--aurora-nightt);
-	color: var(--aurora-text);
-	padding: var(--cont-pad-sm);
-    border-radius: var(--cont-rad);
-}
-/* panel-bodies after a heading should not have rounded corners */
-.user-css .panel-heading ~ .panel-body {
-		border-radius: 0 !important;
-}
+
 
 .user-css .panel { border-radius: var(--cont-rad); }
-.user-css-extended .panel-default {
-	background-color: var(--aurora-wt);
-	color: var(--aurora-text);
-}
+
 .user-css .panel-heading, .user-css-extended .panel-heading {
 	background-color: var(--aurora-w);
 	color: var(--aurora-night);
@@ -517,17 +541,40 @@ AURORA THEME Variables
 	font-family: var(--font-5);
 }
 .user-css-extended .panel-default .panel-heading small {color: var(--aurora-text); }
-.user-css .panel-footer {
+.user-css [class*=panel-foote], .user-css .statblock [class*=panel-foote]{
 	background-color: var(--aurora-default);
 	color: var(--aurora-textd);
 	padding: var(--cont-pad-sm);
+    border: none;
 	border-bottom-right-radius: var(--cont-rad);
 	border-bottom-left-radius: var(--cont-rad);
 }
 .user-css .panel-default, .user-css .panel-default  {
 	background-color: var(--aurora-clear);
-	color: var(--aurora-textd);
+	color: var(--aurora-textd); 
 }
+.user-css-extended .panel-default {
+	background-color: var(--aurora-wt);
+	color: var(--aurora-text);
+}
+.user-css [class*=panel-bod] {
+	background-color: var(--aurora-nightt3);
+	color: var(--aurora-text);
+	padding: var(--cont-pad-sm);
+    border-radius: var(--cont-rad);
+}
+/* ------------ PANEL Side bar ----- */
+.user-css .col-md-4 .panel-default {
+	background: var(--aurora-nightt3);
+	color: var(--aurora-text);
+	border-radius: var(--cont-rad);
+}
+
+/* panel-bodies after a heading should not have rounded corners */
+.user-css .panel-heading ~ [class*=panel-bod] {
+		border-radius: 0 !important;
+}
+
 .user-css .panel-success {
 	background-color: var(--aurora-success);
 	color: var(--aurora-text);
@@ -654,14 +701,26 @@ AURORA THEME Variables
 }
 /* -------------- WA Theme -------------------- */
 /* world background */
+
 .user-css-presentation {
-    background-image:  /* url(https://www.worldanvil.com/uploads/images/424135ed9a353c8206e31dd761405903.jpg); */url(http://www.worldanvil.com/uploads/images/dd542140dedd4a4a637eaabe0568f8e8.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-color: var(--aurora-night);
     /* Used if the image is unavailable */
+}
+
+@media only screen and (min-width: 1024px) {
+    .user-css-presentation {
+        background-image: url(http://www.worldanvil.com/uploads/images/dd542140dedd4a4a637eaabe0568f8e8.jpg);
+        }
+}
+
+@media only screen and (max-width: 1023px) {
+    .user-css-presentation {
+        background-image: linear-gradient( var(--aurora-night), var(--aurora-8d)); 
+    }
 }
 
 /* --------------------------- Cover image ------------------- 
@@ -671,7 +730,7 @@ AURORA THEME Variables
 }*/
 /* article bg */
 .user-css.page,
-.user-css-extended .page, .user-css-rpgblock .statblock [class*=sheet] {
+.user-css-extended .page, .user-css-rpgblock .statblock.system-dnd5e, .user-css-presentation .tooltipster-content .statblock.system-dnd5e {
     background: var(--aurora-nightt2);
     box-shadow: 0 0 var(--border-xthick) var(--border-med) var(--aurora-1);
 }
@@ -682,7 +741,7 @@ AURORA THEME Variables
 .user-css-extended,
 .user-css p, .user-css-extended p,
 .user-css .tab-content, 
-.user-css .panel-body p,
+.user-css .panel-default p,
 .user-css-presentation .tooltipster-content p,
 .user-css-presentation .tooltipster-content .statblock p
 {
@@ -717,6 +776,19 @@ AURORA THEME Variables
 /* .user-css .article-title h1{
     -webkit-text-stroke: .5px var(--aurora-night);
 } */
+
+.user-css #world-category-content h1.m-b-0 {
+    font-size: var(--fsize-h1-sm);
+    word-break: break-word;
+}
+
+
+@media screen and (max-width:799px) { 
+    .user-css h1 {
+        font-size: var(--fsize-h1-sm);
+        word-break: break-all;
+    }
+} 
 
 .user-css h2,
 .user-css h3,
@@ -996,12 +1068,7 @@ AURORA THEME Variables
 .user-css-extended .form-control::-moz-placeholder { color: var(--aurora-1t);  }  /* Mozilla Firefox 19+ */
 .user-css-extended .form-control:-ms-input-placeholder { color: var(--aurora-1t);  }  /* Internet Explorer 10-11 */
 .user-css-extended .form-control::-ms-input-placeholder { color:var(--aurora-1t);  }  /* Microsoft Edge */
-/* ------------ PANEL Side bar ----- */
-.user-css .panel.panel-default .panel-body {
-	background: var(--aurora-nightt);
-	color: var(--aurora-text);
-	border-radius: var(--cont-rad);
-}
+
 /* ---------- WA CONTAINERS ---------- */
 
 .user-css .backtoworld a { 
@@ -1028,6 +1095,16 @@ AURORA THEME Variables
   border-right: 5px solid var(--aurora-2l);
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
+}
+
+/* on character pages with all the tabs and long names in the tabs for RPG systems, the tabs would get hidden behind the back to world, so I moved it */
+.user-css.template-person #header .backtoworld a {
+    /* background: none; */
+    position: absolute;
+    top: -0px;
+    padding-bottom: 25px;
+    border-bottom-right-radius: var(--cont-rad);
+    border-top-right-radius: 0;
 }
 
 .user-css img,
@@ -1064,49 +1141,53 @@ AURORA THEME Variables
 
 .user-css .statblock,
 .user-css-extended .statblock, 
-.user-css-presentation .tooltipster-content .statblock, .user-css .statblock [class*=sheet],
-.user-css-extended .statblock [class*=sheet],
-.user-css-rpgblock .statblock [class*=sheet] {
+.user-css-presentation .tooltipster-content .statblock, .user-css .statblock.system-dnd5e,
+.user-css-extended .statblock.system-dnd5e,
+.user-css-rpgblock .statblock.system-dnd5e,
+.user-css-presentation .tooltipster-content .statblock.system-dnd5e {
     border-radius: var(--cont-rad);
-    background: var(--aurora-clear);
+    background: var(--aurora-clear) ;
     border-color: var(--aurora-1l);
     border-width: var(--border-thin);
 }
 
-
-.user-css .contentContainer,
-.user-css-extended .contentContainer,
-.user-css-rpgblock .contentContainer {
+.user-css [class*=contentContain],
+.user-css-extended [class*=contentContain],
+.user-css-rpgblock [class*=contentContain] {
 	border-radius: var(--cont-rad);
     background: var(--aurora-clear);
     border-color: var(--aurora-1l);
     border-width: var(--border-tiny);
 }
 .user-css .statblock .subheading, .user-css-extended .statblock .subheading,
-.user-css-rpgblock .statblock .subheading { color: var(--aurora-3l) }
+.user-css-rpgblock .statblock .subheading, .user-css-presentation .tooltipster-content .statblock .subheading { color: var(--aurora-3l) }
 
 .user-css .statblock .statblock-stat,
 .user-css .statblock .statblock-attribute,
 .user-css-extended .statblock .statblock-stat,
 .user-css-extended .statblock .statblock-attribute,
-.user-css .statblock [class*=sheet],
-.user-css-extended .statblock [class*=sheet],
+.user-css .statblock.system-dnd5e,
+.user-css-extended .statblock.system-dnd5e,
 .user-css-rpgblock .statblock .statblock-stat,
 .user-css-rpgblock .statblock .statblock-attribute,
-.user-css-rpgblock .statblock [class*=sheet]
+.user-css-presentation .tooltipster-content .statblock .statblock-stat,
+.user-css-presentation .tooltipster-content .statblock .statblock-attribute,
+.user-css-presentation .tooltipster-content .statblock.system-dnd5e
 {
 	color: var(--aurora-w);
 }
+
+
 
 .user-css .statblock .statblock-stat strong,
 .user-css .statblock .statblock-attribute strong,
 .user-css-extended  .statblock .statblock-stat strong,
 .user-css-extended  .statblock .statblock-attribute strong,
-.user-css .statblock [class*=sheet] .inputLabel,
-.user-css-extended .statblock [class*=sheet] .inputLabel,
+.user-css .statblock.system-dnd5e .inputLabel,
+.user-css-extended .statblock.system-dnd5e .inputLabel,
 .user-css-rpgblock .statblock .statblock-stat strong,
 .user-css-rpgblock .statblock .statblock-attribute strong,
-.user-css-rpgblock .statblock [class*=sheet] .inputLabel
+.user-css-rpgblock .statblock.system-dnd5e .inputLabel
 {
 	color: var(--aurora-4l);
 	border-top: 1px var(--aurora-2l) dotted;
@@ -1115,49 +1196,49 @@ AURORA THEME Variables
 }
 
 
-.user-css .statblock [class*=sheet] .inputContent,
-.user-css-extended .statblock [class*=sheet] .inputContent,
-.user-css-rpgblock .statblock [class*=sheet] .inputContent
+.user-css .statblock.system-dnd5e .inputContent,
+.user-css-extended .statblock.system-dnd5e .inputContent,
+.user-css-rpgblock .statblock.system-dnd5e.inputContent
 {
 	color: var(--aurora-2l);
 	font-family: var(--font-3);
 }
 
 
-.user-css-rpgblock .statblock [class*=sheet] .contentContainer strong {
+.user-css-rpgblock .statblock.system-dnd5e strong {
 	font-family: var(--font-3);
 }
 
-.user-css .statblock [class*=sheet] .contentContainer-side .label-roller,
-.user-css-extended .statblock [class*=sheet] .contentContainer-side .label-roller,
-.user-css-rpgblock .statblock [class*=sheet] .contentContainer-side .label-roller
+.user-css .statblock .label-roller,
+.user-css-extended .statblock .label-roller,
+.user-css-rpgblock .statblock .label-roller
 {
 	margin-right: var(--cont-pad-med);
 }
 
-.user-css-rpgblock .statblock [class*=sheet] .contentContainer-side .inputLabel {
+.user-css-rpgblock .statblock.system-dnd5e .inputLabel {
 	margin-bottom: var(--cont-pad-sm);
 }
 
 .user-css .statblock .label-roller,
 .user-css-extended .statblock .label-roller,
-.user-css .statblock [class*=sheet] .label-roller,
-.user-css-extended .statblock [class*=sheet] .label-roller,
+.user-css .statblock.system-dnd5e .label-roller,
+.user-css-extended .statblock.system-dnd5e .label-roller,
 .user-css-rpgblock .statblock .label-roller,
-.user-css-rpgblock .statblock [class*=sheet] .label-roller
+.user-css-rpgblock .statblock.system-dnd5e .label-roller
 {
 	background: var(--aurora-8d);
 }
 
-.user-css .statblock [class*=sheet] .contentContainer-side .inputLabel, .user-css-extended .statblock [class*=sheet] .contentContainer-side .inputLabel, 
-.user-css-rpgblock .statblock [class*=sheet] .contentContainer-side .inputLabel
+.user-css .statblock.system-dnd5e .inputLabel, .user-css-extended .statblock.system-dnd5e, 
+.user-css-rpgblock .statblock.system-dnd5e .inputLabel
 {
 	border: none;
 }
 
-.user-css .statblock [class*=sheet] h1,
-.user-css-extended .statblock [class*=sheet] h1,
-.user-css .statblock[class*=template] h1
+.user-css .statblock.system-dnd5e h1,
+.user-css-extended .statblock.system-dnd5e h1,
+.user-css .statblock.system-dnd5e h1
 {
 	color: var(--aurora-3l);
 	-webkit-text-stroke: .03em var(--aurora-night);
@@ -1166,7 +1247,7 @@ AURORA THEME Variables
     font-size: 2.0em;
 }
 
-.user-css-rpgblock .statblock [class*=sheet] h1
+.user-css-rpgblock .statblock.system-dnd5e h1
 {
 	color: var(--aurora-3l);
 	background: none;
@@ -1180,64 +1261,69 @@ AURORA THEME Variables
 	font-size: 3.5rem;
 }
 
-.user-css .statblock [class*=sheet] .hr-dark,
-.user-css-extended .statblock [class*=sheet] .hr-dark,
-.user-css-rpgblock .statblock [class*=sheet] .hr-dark
+.user-css .statblock.system-dnd5e .hr-dark,
+.user-css-extended .statblock.system-dnd5e .hr-dark,
+.user-css-rpgblock .statblock.system-dnd5e .hr-dark
 {
 	color: var(--aurora-1d);
 	border: 1px var(--aurora-1d) solid;
 }
 
-.user-css .statblock [class*=sheet] .table th,
-.user-css-extended .statblock [class*=sheet] .table th,
-.user-css-rpgblock .statblock [class*=sheet] .table th
+.user-css .statblock.system-dnd5e .table th,
+.user-css-extended .statblock.system-dnd5e .table th,
+.user-css-rpgblock .statblock.system-dnd5e .table th
 { 
 	font-size: 1em;
 	text-align: left;
 }
 
 @media only screen and (max-width: 1200px) {
-.user-css .statblock [class*=sheet] .col-md-12 .contentContainer-standard table
+.user-css .statblock.system-dnd5e .col-md-12 table
 {
     /*  table-layout:fixed; - to make the table stay inside the container - though it messes up column widths then. It only happens when the screen is small on Chrome at abotu 1200px wide. So I put a media query on it */ 
     table-layout: fixed; 
 } 
 }
 
- .user-css .statblock [class*=sheet] .col-md-12 .contentContainer table td:nth-child(2),
-.user-css-extended .statblock [class*=sheet] .col-md-12 .contentContainer table td:nth-child(2),
-.user-css-extended .statblock .col-md-12 .contentContainer table td:nth-child(2)
+ .user-css .statblock.system-dnd5e .col-md-12 table td:nth-child(2),
+.user-css-extended .statblock.system-dnd5e .col-md-12  table td:nth-child(2),
+.user-css-extended .statblock .col-md-12  table td:nth-child(2)
 {	min-width: 150px;
 	max-width: 150px;
 } 
 
 
-.user-css-rpgblock .statblock [class*=sheet] .btn-primary {border: var(--border-thin) solid var(--aurora-wt);}
+.user-css-rpgblock .statblock.system-dnd5e .btn-primary {border: var(--border-thin) solid var(--aurora-wt);}
 
-.user-css .statblock [class*=sheet],
-.user-css-extended .statblock [class*=sheet]
+.user-css .statblock.system-dnd5e,
+.user-css-extended .statblock.system-dnd5e
 {
 	background: none;
 	background-image: none;
 }
 
-.user-css-rpgblock .statblock [class*=sheet] {
+.user-css-rpgblock .statblock.system-dnd5e {
 	background: var(--aurora-nightt2);
 	font-family: var(--font-3);
 	border: none;
 	font-size: var(--fsize-text);
+    color: var(--aurora-w);
 }
 
-.user-css .statblock [class*=sheet] .contentContainer b,
-.user-css-rpgblock .statblock [class*=sheet] .contentContainer b { 
+.user-css .statblock.system-dnd5e  b,
+.user-css-rpgblock .statblock.system-dnd5e b { 
 	font-weight: bold;
 	text-decoration: underline; 
 }
 
-.user-css .statblock [class*=sheet] .contentContainer br,
-.user-css-rpgblock .statblock [class*=sheet] .contentContainer br
+.user-css .statblock.system-dnd5e  br,
+.user-css-rpgblock .statblock.system-dnd5e  br
 {
 	margin-bottom: var(--cont-pad-med);
+}
+
+.user-css-rpgblock .statblock.system-dnd5e {
+    background: var(--aurora-nightt) !important;
 }
 
 .user-css pre,
@@ -1289,7 +1375,7 @@ AURORA THEME Variables
 .user-css .spoiler-button,
 .user-css-extended .spoiler-button, 
 .user-css-presentation .tooltipster-content .spoiler-button,
-.user-css-rpgblock .statblock [class*=sheet] .spoiler-button
+.user-css-rpgblock .statblock.system-dnd5e .spoiler-button
 {
     color: var(--aurora-1l) !important;
     background: var(--aurora-primary) !important;
@@ -1304,7 +1390,7 @@ AURORA THEME Variables
 .user-css .spoiler-button:hover,
 .user-css .spoiler-button[aria-expanded=true],
 .user-css-presentation .tooltipster-content .spoiler-button[aria-expanded=true],
-.user-css-rpgblock .statblock [class*=sheet] .spoiler-button[aria-expanded=true]
+.user-css-rpgblock .statblock.system-dnd5e .spoiler-button[aria-expanded=true]
 {
     color: var(--aurora-2l) !important;
     background: var(--aurora-7d) !important;
@@ -1316,7 +1402,7 @@ AURORA THEME Variables
 .user-css .spoiler-content,
 .user-css-extended .spoiler-content, 
 .user-css-presentation .tooltipster-content .spoiler-content,
-.user-css-rpgblock .statblock [class*=sheet] .spoiler-content
+.user-css-rpgblock .statblock.system-dnd5e .spoiler-content
 {
     border-radius: var(--cont-rad);
     color: var(--aurora-text) !important;
@@ -1330,12 +1416,23 @@ AURORA THEME Variables
     background: var(--aurora-nightt);
 	border: 1px dotted var(--aurora-3l);
 }
-.user-css .cover.cover-article, .user-css #cover .img-responsive, .user-css .article-panel .cover.cover-global,
-.user-css-presentation .tooltipster-content .article-panel .cover.cover-global { /* top only */
+
+.user-css .cover.cover-article, 
+.user-css #cover .img-responsive, 
+.user-css .article-panel .cover.cover-global,
+.user-css-presentation .tooltipster-content .article-panel .cover.cover-global
+{ /* top only */
     border-top-left-radius: var(--cont-rad) ;
     border-top-right-radius: var(--cont-rad) ; 
     border-bottom-left-radius: 0 ;
     border-bottom-right-radius: 0 ; 
+}
+
+/* rounded corners on the cover don't play nice on small screens, so I skiped the rounded corners on the 2 big containers. */
+@media only screen and (max-width: 767px){
+    .user-css.page, .user-css-extended .page {
+        border-radius: 0;
+    }
 }
 
 .user-css .article-panel .details h5,
@@ -1427,8 +1524,8 @@ AURORA THEME Variables
 
 /* tables */
 .user-css table, .user-css .table, .user-css-presentation .tooltipster-content table, .user-css-presentation .tooltipster-content .table,
-.user-css-rpgblock .statblock [class*=sheet] table,
-.user-css-rpgblock .statblock [class*=sheet] .table
+.user-css-rpgblock .statblock.system-dnd5e table,
+.user-css-rpgblock .statblock.system-dnd5e .table
 {
     background: none;
     width: 100%;
@@ -1437,7 +1534,7 @@ AURORA THEME Variables
 .user-css table td, 
 .user-css-presentation .tooltipster-content table td,
 .user-css-extended .tooltipster-content table td,
-.user-css .statblock [class*=sheet] table td
+.user-css .statblock.system-dnd5e table td
 {
     background: none !important;
     color: var(--aurora-nightd) !important;
@@ -1445,7 +1542,7 @@ AURORA THEME Variables
     font-family: var(--font-3);
     font-size: .8em;
 }
-.user-css-rpgblock .statblock [class*=sheet] table td {
+.user-css-rpgblock .statblock.system-dnd5e table td {
 	    background: none !important;
     color: var(--aurora-nightd) !important;
     /* width: 100%; */
@@ -1459,8 +1556,8 @@ AURORA THEME Variables
 .user-css-extended tbody,
 .user-css-presentation .tooltipster-content table,
 .user-css-presentation .tooltipster-content tbody,
-.user-css-rpgblock .statblock [class*=sheet] table,
-.user-css-rpgblock .statblock [class*=sheet] tbody
+.user-css-rpgblock .statblock.system-dnd5e table,
+.user-css-rpgblock .statblock.system-dnd5e tbody
 { 
 	border-radius: var(--cont-rad); 
 	-webkit-border-radius: var(--cont-rad); 
@@ -1471,8 +1568,8 @@ AURORA THEME Variables
 .user-css-extended tr:nth-of-type(odd), .user-css-extended .table tr:first-of-type td,
 .user-css-presentation .tooltipster-content tr:nth-of-type(odd), 
 .user-css-presentation .tooltipster-content .table tr:first-of-type td,
-.user-css-rpgblock .statblock [class*=sheet] tr:nth-of-type(odd), 
-.user-css-rpgblock .statblock [class*=sheet] .table tr:first-of-type td
+.user-css-rpgblock .statblock.system-dnd5e tr:nth-of-type(odd), 
+.user-css-rpgblock .statblock.system-dnd5e .table tr:first-of-type td
 {
     background-color: var(--aurora-wtb) !important;
 }
@@ -1480,7 +1577,7 @@ AURORA THEME Variables
 /* Affects every evenrow in tables, good for making striped looks. */
 .user-css tr:nth-of-type(even),
 .user-css-presentation .tooltipster-content tr:nth-of-type(even),
-.user-css-rpgblock .statblock [class*=sheet] tr:nth-of-type(even)
+.user-css-rpgblock .statblock.system-dnd5e tr:nth-of-type(even)
 {
     background-color: var(--aurora-w) !important;
 }
@@ -1488,25 +1585,25 @@ AURORA THEME Variables
 /* allows for rounded corners on top for firefox */
 .user-css .table tr:first-of-type,
 .user-css-presentation .tooltipster-content .table tr:first-of-type,
-.user-css-rpgblock .statblock [class*=sheet] .table tr:first-of-type
+.user-css-rpgblock .statblock.system-dnd5e .table tr:first-of-type
 {
 	background-color: transparent !important;
 }
 
 .user-css table a,
 .user-css-presentation .tooltipster-content table a,
-.user-css-rpgblock .statblock [class*=sheet] table a
+.user-css-rpgblock .statblock.system-dnd5e table a
 {
 	color: var(--aurora-5);
 }
 .user-css-presentation table th,
 .user-css table th,
 .user-css-extended table th,
-.user-css-rpgblock .statblock [class*=sheet] table th,
+.user-css-rpgblock .statblock.system-dnd5e table th,
 .user-css .statblock .table tbody tr th,
 .user-css-extended .statblock .table tbody tr th,
 .user-css-presentation .tooltipster-content th,
-.user-css-rpgblock .statblock [class*=sheet] th
+.user-css-rpgblock .statblock.system-dnd5e th
 {
     background: var(--aurora-nightt2) !important;
     border: 0 solid !important;
@@ -1528,9 +1625,9 @@ AURORA THEME Variables
 .user-css-presentation .tooltipster-content table tr:first-child th:first-child,
 .user-css-presentation .tooltipster-content table tr:first-child td:first-child,
 .user-css-presentation .tooltipster-content tbody tr:first-child th:first-child,
-.user-css-rpgblock .statblock [class*=sheet] table tr:first-child th:first-child,
-.user-css-rpgblock .statblock [class*=sheet] table tr:first-child td:first-child,
-.user-css-rpgblock .statblock [class*=sheet] tbody tr:first-child th:first-child
+.user-css-rpgblock .statblock.system-dnd5e table tr:first-child th:first-child,
+.user-css-rpgblock .statblock.system-dnd5e table tr:first-child td:first-child,
+.user-css-rpgblock .statblock.system-dnd5e tbody tr:first-child th:first-child
 {
     border-top-left-radius: var(--cont-rad);
 	-webkit-border-top-left-radius: var(--cont-rad);
@@ -1545,9 +1642,9 @@ AURORA THEME Variables
 .user-css-presentation .tooltipster-content table tr:first-child th:last-child,
 .user-css-presentation .tooltipster-content table tr:first-child td:last-child,
 .user-css-presentation .tooltipster-content tbody tr:first-child th:last-child,
-.user-css-rpgblock .statblock [class*=sheet] table tr:first-child th:last-child,
-.user-css-rpgblock .statblock [class*=sheet] table tr:first-child td:last-child,
-.user-css-rpgblock .statblock [class*=sheet] tbody tr:first-child th:last-child {
+.user-css-rpgblock .statblock.system-dnd5e table tr:first-child th:last-child,
+.user-css-rpgblock .statblock.system-dnd5e table tr:first-child td:last-child,
+.user-css-rpgblock .statblock.system-dnd5e tbody tr:first-child th:last-child {
     border-top-right-radius: var(--cont-rad);
 }
 .user-css tbody tr:last-child td:first-child,
@@ -1559,9 +1656,9 @@ AURORA THEME Variables
 .user-css-presentation .tooltipster-content tbody tr:last-child td:first-child,
 .user-css-presentation .tooltipster-content table tr:last-child td:first-child,
 .user-css-presentation .tooltipster-content tr:last-child th:first-child,
-.user-css-rpgblock .statblock [class*=sheet] tbody tr:last-child td:first-child,
-.user-css-rpgblock .statblock [class*=sheet] table tr:last-child td:first-child,
-.user-css-rpgblock .statblock [class*=sheet] tbody tr:last-child th:first-child
+.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child td:first-child,
+.user-css-rpgblock .statblock.system-dnd5e table tr:last-child td:first-child,
+.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child th:first-child
 {
     border-bottom-left-radius: var(--cont-rad);
 }
@@ -1574,9 +1671,9 @@ AURORA THEME Variables
 .user-css-presentation .tooltipster-content tbody tr:last-child td:last-child,
 .user-css-presentation .tooltipster-content table tr:last-child td:last-child,
 .user-css-presentation .tooltipster-content tbody tr:last-child th:last-child,
-.user-css-rpgblock .statblock [class*=sheet] tbody tr:last-child td:last-child,
-.user-css-rpgblock .statblock [class*=sheet] table tr:last-child td:last-child,
-.user-css-rpgblock .statblock [class*=sheet] tbody tr:last-child th:last-child
+.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child td:last-child,
+.user-css-rpgblock .statblock.system-dnd5e table tr:last-child td:last-child,
+.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child th:last-child
 {
     border-bottom-right-radius: var(--cont-rad);
 }
@@ -1592,8 +1689,8 @@ AURORA THEME Variables
     font-family: var(--font-3);
     font-size: 1em;
 }
-.user-css .panel-greatgm .panel-body,
-.user-css-presentation .tooltipster-content .panel-greatgm .panel-body
+.user-css .panel-greatgm [class*=panel-bod],
+.user-css-presentation .tooltipster-content .panel-greatgm [class*=panel-bod]
 { background: var(--aurora-clear); }
 
 .user-css .panel-generic-ggm.panel-npcsheet,
@@ -1736,7 +1833,7 @@ AURORA THEME Variables
     background-color: var(--aurora-1l) !important;
 }
 
-.user-css.bow .panel-greatgm .panel-body {
+.user-css.bow .panel-greatgm [class*=panel-bod] {
 	color: var(--aurora-night) !important;
 }
 
@@ -2194,7 +2291,7 @@ font-size: 13px;
 }
 
 /* followers */
-.user-css .followers-counter .panel-default .panel-body {
+.user-css .followers-counter .panel-default [class*=panel-bod] {
 	border-radius: var(--cont-rad) !important;
 }
 
@@ -2420,6 +2517,10 @@ font-size: 13px;
 
 .side-box-vocab a {color: var(--aurora-night);}
 .side-box-vocab a:hover {color: var(--aurora-7l);}
+
+@media only screen and (max-width: 1099px) {
+    .side-box-vocab {display: none;}
+}
 
 .news-cols {
     margin: 15px;
