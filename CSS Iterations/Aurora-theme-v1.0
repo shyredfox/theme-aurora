@@ -1,20 +1,36 @@
 /* ==UserStyle==
 @name           Aurora Theme for World Anvil
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.0.1
 
 Notes: 
-** I think we have a complete theme! **
-- updated articleblock cover image to fit in the space for small screens
-- added formatting for .statblock article blocks - they were big and ugly. Now they look much like the regular article blocks.
-- added hyphenation for long label names in the statblocks, so not exceed space for small screens
+- Changed bg to have a clearer image
+- Updating BG size to be smaller with 16:9 ratio, so loads faster
+- darkened the page page BG for readability + tweaked the small screen gradient
+- moved the dice roller out of the way of the user way accessibility thingy
+- fixed time line no-importance bg icon color
+- tweak and fix d&d5e rpg sheets
+- styled the notification for follow/unfollow
+- made the calendar holiday modal-dialog popup bg show up contrast better with the moon phases.
+- divided up the gradient bg classes to be all transparent or all solid
+
 
 @description    This theme is inspired by the Finnish Foxfire legend
 @author         Amy Winters-Voss (shyredfox on World Anvil, ShyRedFox#7256 on Discord) 
 
----- Please contact me, not Dimitris with any issues in the theme. Thanks! ;) ----
+------------------------------------------------------------
+Please contact me, not Dimitris with any issues in the theme. Thanks! ★~(◠‿◕)
+------------------------------------------------------------
 
 Theme sampler can be found at: https://www.worldanvil.com/w/aurora-theme-shyredfox
+
+------------------------------------------------------------
+------------------------------------------------------------
+This theme has many **BONUS CLASSES** available for Gransmaster+
+
+See https://www.worldanvil.com/w/aurora-theme-shyredfox/a/aurora-bonus-classes-article for a listing
+------------------------------------------------------------
+------------------------------------------------------------
 
 ==/UserStyle== */
 
@@ -86,9 +102,12 @@ AURORA THEME Variables
     --aurora-nightt: #09064980;
 	--aurora-nightt2: #09064990;
 	--aurora-nightt3: #09064950;
+	/* --aurora-nightt4: #09064999; */
+	--aurora-nightt4: #07052a99;
     --aurora-nightl: #221F69;
     /* dark grey */
     --aurora-nightd: #000;
+	--aurora-nightdt: #00000090;
     /* black */
     --aurora-w: #CCC;
     /* almost white */
@@ -99,19 +118,32 @@ AURORA THEME Variables
     --aurora-wd: #888888;
     --aurora-clear: none;
 	
-	/* gradients */
-	--g-aurora-1: linear-gradient(var(--aurora-night), var(--aurora-1t));
---g-aurora-2: linear-gradient(var(--aurora-night), var(--aurora-2t)); 
---g-aurora-3: linear-gradient(var(--aurora-night), var(--aurora-3t)); 
---g-aurora-4: linear-gradient(var(--aurora-night), var(--aurora-4t)); 
---g-aurora-5: linear-gradient(var(--aurora-night), var(--aurora-5t)); 
---g-aurora-6: linear-gradient(var(--aurora-night), var(--aurora-6t)); 
---g-aurora-7: linear-gradient(var(--aurora-night), var(--aurora-7t)); 
---g-aurora-8: linear-gradient(var(--aurora-night), var(--aurora-8t)); 
---g-aurora-9: linear-gradient(var(--aurora-night), var(--aurora-9t)); 
---g-aurora-f: linear-gradient(var(--aurora-night), var(--aurora-ft)); 
---g-aurora-night: linear-gradient(var(--aurora-night), var(--aurora-nightt3));
---g-aurora-w: linear-gradient(var(--aurora-night), var(--aurora-wt)); 
+	/* gradients - transparent */
+	--g-aurora-1: linear-gradient(var(--aurora-nightt3), var(--aurora-1t));
+	--g-aurora-2: linear-gradient(var(--aurora-nightt3), var(--aurora-2t)); 
+	--g-aurora-3: linear-gradient(var(--aurora-nightt3), var(--aurora-3t)); 
+	--g-aurora-4: linear-gradient(var(--aurora-nightt3), var(--aurora-4t)); 
+	--g-aurora-5: linear-gradient(var(--aurora-nightt3), var(--aurora-5t)); 
+	--g-aurora-6: linear-gradient(var(--aurora-nightt3), var(--aurora-6t)); 
+	--g-aurora-7: linear-gradient(var(--aurora-nightt3), var(--aurora-7t)); 
+	--g-aurora-8: linear-gradient(var(--aurora-nightt3), var(--aurora-8t)); 
+	--g-aurora-9: linear-gradient(var(--aurora-nightt3), var(--aurora-9t)); 
+	--g-aurora-f: linear-gradient(var(--aurora-nightt3), var(--aurora-ft)); 
+	--g-aurora-night: linear-gradient(var(--aurora-nightt3), var(--aurora-nightdt));
+	--g-aurora-w: linear-gradient(var(--aurora-nightt3), var(--aurora-wt)); 
+		/* gradients - solid */
+	--gs-aurora-1: linear-gradient(var(--aurora-night), var(--aurora-1));
+	--gs-aurora-2: linear-gradient(var(--aurora-night), var(--aurora-2)); 
+	--gs-aurora-3: linear-gradient(var(--aurora-night), var(--aurora-3)); 
+	--gs-aurora-4: linear-gradient(var(--aurora-night), var(--aurora-4)); 
+	--gs-aurora-5: linear-gradient(var(--aurora-night), var(--aurora-5)); 
+	--gs-aurora-6: linear-gradient(var(--aurora-night), var(--aurora-6)); 
+	--gs-aurora-7: linear-gradient(var(--aurora-night), var(--aurora-7)); 
+	--gs-aurora-8: linear-gradient(var(--aurora-night), var(--aurora-8)); 
+	--gs-aurora-9: linear-gradient(var(--aurora-night), var(--aurora-9)); 
+	--gs-aurora-f: linear-gradient(var(--aurora-night), var(--aurora-f)); 
+	--gs-aurora-night: linear-gradient(var(--aurora-night), var(--aurora-nightd));
+	--gs-aurora-w: linear-gradient(var(--aurora-night), var(--aurora-w)); 
 	
 	/* bootstrap/theme color names */
 	--aurora-success: var(--aurora-5);
@@ -345,6 +377,7 @@ AURORA THEME Variables
     font-weight: 400;
     src: url(https://rawcdn.githack.com/shyredfox/liminal-chronicles/e707041be71eb7d59821103a37010dd4f77681cc/lc-fonts/noto-sans-japanese/NotoSansCJKjp-Regular.otf);
 }
+
 /* container based font classes */
 .font-1 { font-family: var(--font-1); }
 .font-2 { font-family: var(--font-2); }
@@ -398,6 +431,14 @@ AURORA THEME Variables
 }
 
 .user-css .alert-success { background: var(--aurora-success);}
+
+/* subscribe + unsub notification */
+.user-css-presentation .alert-success {
+	background: var(--aurora-success);
+	color: var(--aurora-night);
+	border: var(--border-thin) solid var(--aurora-w);
+	border-radius: var(--cont-rad);
+}
 .user-css .alert-info, .user-css-extended .alert-info {  background: var(--aurora-info);}
 .user-css .alert-warning {  background: var(--aurora-warning);}
 .user-css .alert-danger {  background: var(--aurora-danger); }
@@ -712,13 +753,13 @@ AURORA THEME Variables
 
 @media only screen and (min-width: 1024px) {
     .user-css-presentation {
-        background-image: url(http://www.worldanvil.com/uploads/images/dd542140dedd4a4a637eaabe0568f8e8.jpg);
+        background-image: url(https://www.worldanvil.com/uploads/images/7d49d6f5b13b8ab7e9b357608a604c6e.jpg);
         }
 }
 
 @media only screen and (max-width: 1023px) {
     .user-css-presentation {
-        background-image: linear-gradient( var(--aurora-6), var(--aurora-4)); 
+        background-image: linear-gradient( var(--aurora-nightd), var(--aurora-5), var(--aurora-nightd)); 
     }
 }
 
@@ -730,7 +771,7 @@ AURORA THEME Variables
 /* article bg */
 .user-css.page,
 .user-css-extended .page, .user-css-rpgblock .statblock.system-dnd5e, .user-css-presentation .tooltipster-content .statblock.system-dnd5e {
-    background: var(--aurora-nightt2);
+    background: var(--aurora-nightt4);
     box-shadow: 0 0 var(--border-xthick) var(--border-med) var(--aurora-1);
 }
 
@@ -755,7 +796,7 @@ AURORA THEME Variables
 .user-css h1,
 .user-css-extended h1,
 .user-css-presentation .tooltipster-content h1 {
-    /* the article/world title / "h1" in the WA editor */
+    /* the article/world title / not h1 in the WA editor */
     font-family: var(--font-1);
     font-size: var(--fsize-h1);
     line-height: 1.2em;
@@ -772,9 +813,6 @@ AURORA THEME Variables
     -webkit-text-stroke: .03em var(--aurora-night);
 }
 
-/* .user-css .article-title h1{
-    -webkit-text-stroke: .5px var(--aurora-night);
-} */
 
 .user-css #world-category-content h1.m-b-0 {
     font-size: var(--fsize-h1-sm);
@@ -794,6 +832,7 @@ AURORA THEME Variables
 .user-css-extended h2,
 .user-css-extended h3,
 .user-css h4,
+.user-css h4.article-subheading,
 .user-css h5,
 .user-css h6,
 .user-css-extended h4,
@@ -817,6 +856,9 @@ AURORA THEME Variables
 	padding: var(--cont-pad-tiny);
 }
 
+.user-css h4.article-subheading {
+	color: var(--aurora-2l);
+}
 .marg-top-lg { margin-top: var(--cont-pad-lg); }
 
 /* .user-css h2, .user-css-extended h2 {
@@ -1116,7 +1158,7 @@ AURORA THEME Variables
 }
 
 .user-css .user-css-image-thumbnail .artist-credits, .user-css .artist-credits, .user-css-presentation .tooltipster-content .artist-credits {
-	background: var(--aurora-nightt);
+	background: var(--aurora-nightdt);
 	color: var(--aurora-text);
 	border-radius: var(--cont-rad);
 	font-size:  var(--fsize-small);
@@ -1137,13 +1179,15 @@ AURORA THEME Variables
     font-size: var(--fsize-text);
 }
 
-
 .user-css .statblock,
 .user-css-extended .statblock, 
-.user-css-presentation .tooltipster-content .statblock, .user-css .statblock.system-dnd5e,
+.user-css-presentation .tooltipster-content .statblock, 
+.user-css .statblock.system-dnd5e,
+.user-css .statblock .dnd5e-sheet,
 .user-css-extended .statblock.system-dnd5e,
 .user-css-rpgblock .statblock.system-dnd5e,
-.user-css-presentation .tooltipster-content .statblock.system-dnd5e {
+.user-css-presentation .tooltipster-content .statblock.system-dnd5e
+{
     border-radius: var(--cont-rad);
     background: var(--aurora-clear) ;
     border-color: var(--aurora-1l);
@@ -1158,8 +1202,12 @@ AURORA THEME Variables
     border-color: var(--aurora-1l);
     border-width: var(--border-tiny);
 }
-.user-css .statblock .subheading, .user-css-extended .statblock .subheading,
-.user-css-rpgblock .statblock .subheading, .user-css-presentation .tooltipster-content .statblock .subheading { color: var(--aurora-3l) }
+.user-css .statblock .subheading, 
+.user-css-extended .statblock .subheading,
+.user-css-rpgblock .statblock .subheading, 
+.user-css .statblock.system-dnd5e .subheading,
+.user-css-presentation .tooltipster-content .statblock .subheading 
+{ color: var(--aurora-3l); }
 
 .user-css .statblock .statblock-stat,
 .user-css .statblock .statblock-attribute,
@@ -1167,6 +1215,7 @@ AURORA THEME Variables
 .user-css-extended .statblock .statblock-attribute,
 .user-css .statblock.system-dnd5e,
 .user-css-extended .statblock.system-dnd5e,
+.user-css .statblock .dnd5e-sheet,
 .user-css-rpgblock .statblock .statblock-stat,
 .user-css-rpgblock .statblock .statblock-attribute,
 .user-css-presentation .tooltipster-content .statblock .statblock-stat,
@@ -1182,8 +1231,12 @@ AURORA THEME Variables
 .user-css .statblock .statblock-attribute strong,
 .user-css-extended  .statblock .statblock-stat strong,
 .user-css-extended  .statblock .statblock-attribute strong,
+.user-css .statblock .dnd5e-sheet .statblock-attribute strong,
+.user-css [class$=dnd5e] .inputLabel,
+.user-css .statblock .dnd5e-sheet .inputLabel,
 .user-css .statblock.system-dnd5e .inputLabel,
 .user-css-extended .statblock.system-dnd5e .inputLabel,
+.user-css .statblock .dnd5e-sheet .inputLabel,
 .user-css-rpgblock .statblock .statblock-stat strong,
 .user-css-rpgblock .statblock .statblock-attribute strong,
 .user-css-rpgblock .statblock.system-dnd5e .inputLabel
@@ -1198,7 +1251,8 @@ AURORA THEME Variables
 
 .user-css .statblock.system-dnd5e .inputContent,
 .user-css-extended .statblock.system-dnd5e .inputContent,
-.user-css-rpgblock .statblock.system-dnd5e.inputContent
+.user-css-rpgblock .statblock.system-dnd5e.inputContent,
+.user-css .statblock .dnd5e-sheet .inputContent
 {
 	color: var(--aurora-2l);
 	font-family: var(--font-3);
@@ -1230,15 +1284,23 @@ AURORA THEME Variables
 	background: var(--aurora-8d);
 }
 
-.user-css .statblock.system-dnd5e .inputLabel, .user-css-extended .statblock.system-dnd5e, 
-.user-css-rpgblock .statblock.system-dnd5e .inputLabel
-{
-	border: none;
+.user-css-presentation .notifyjs-bootstrap-roller-alert {
+	/* position: relative;
+	float: right; */
+	border-radius: var(--cont-rad);
+	border: 2px solid var(--aurora-w);
+	background: var(--aurora-8) !important;
 }
 
-.user-css .statblock.system-dnd5e h1,
-.user-css-extended .statblock.system-dnd5e h1,
-.user-css .statblock.system-dnd5e h1
+.user-css-presentation .notifyjs-corner {
+	position: fixed;
+	/* right: 0; */
+	margin-bottom: 200px;
+} 
+
+.user-css [class$=dnd5e] h1,
+.user-css [class*=template] h1,
+.user-css-extended .statblock.system-dnd5e h1
 {
 	color: var(--aurora-3l);
 	-webkit-text-stroke: .03em var(--aurora-night);
@@ -1247,7 +1309,7 @@ AURORA THEME Variables
     font-size: 2.0em;
 }
 
-.user-css-rpgblock .statblock.system-dnd5e h1
+.user-css-rpgblock .statblock[class$=dnd5e] h1
 {
 	color: var(--aurora-3l);
 	background: none;
@@ -1263,7 +1325,8 @@ AURORA THEME Variables
 
 .user-css .statblock.system-dnd5e .hr-dark,
 .user-css-extended .statblock.system-dnd5e .hr-dark,
-.user-css-rpgblock .statblock.system-dnd5e .hr-dark
+.user-css-rpgblock .statblock.system-dnd5e .hr-dark,
+.user-css .statblock .dnd5e-sheet .hr-dark
 {
 	color: var(--aurora-1d);
 	border: 1px var(--aurora-1d) solid;
@@ -1271,7 +1334,8 @@ AURORA THEME Variables
 
 .user-css .statblock.system-dnd5e .table th,
 .user-css-extended .statblock.system-dnd5e .table th,
-.user-css-rpgblock .statblock.system-dnd5e .table th
+.user-css-rpgblock .statblock.system-dnd5e .table th,
+.user-css .statblock .dnd5e-sheet .table th
 { 
 	font-size: 1em;
 	text-align: left;
@@ -1311,19 +1375,22 @@ AURORA THEME Variables
 }
 
 .user-css .statblock.system-dnd5e  b,
-.user-css-rpgblock .statblock.system-dnd5e b { 
+.user-css-rpgblock .statblock.system-dnd5e b,
+.user-css .statblock .dnd5e-sheet b
+{ 
 	font-weight: bold;
 	text-decoration: underline; 
 }
 
 .user-css .statblock.system-dnd5e  br,
-.user-css-rpgblock .statblock.system-dnd5e  br
+.user-css-rpgblock .statblock.system-dnd5e  br,
+.user-css .statblock .dnd5e-sheet br
 {
 	margin-bottom: var(--cont-pad-med);
 }
 
 .user-css-rpgblock .statblock.system-dnd5e {
-    background: var(--aurora-nightt) !important;
+    background: var(--aurora-nightt4) !important;
 }
 
 .user-css pre,
@@ -1657,11 +1724,11 @@ AURORA THEME Variables
 .user-css .statblock .table tbody tr th,
 .user-css-extended .statblock .table tbody tr th,
 .user-css-presentation .tooltipster-content th,
-.user-css-rpgblock .statblock.system-dnd5e th
+.user-css-rpgblock .statblock.system-dnd5e th,
+.user-css .statblock .dnd5e-sheet th
 {
-    background: var(--aurora-nightt2) !important;
+    background: var(--aurora-nightl) !important;
     border: 0 solid !important;
-    width: 100%;
     color: var(--aurora-wl) !important;
     font-family: var(--font-2);
     font-size: 1.2em;
@@ -1681,10 +1748,12 @@ AURORA THEME Variables
 .user-css-presentation .tooltipster-content tbody tr:first-child th:first-child,
 .user-css-rpgblock .statblock.system-dnd5e table tr:first-child th:first-child,
 .user-css-rpgblock .statblock.system-dnd5e table tr:first-child td:first-child,
-.user-css-rpgblock .statblock.system-dnd5e tbody tr:first-child th:first-child
+.user-css-rpgblock .statblock.system-dnd5e tbody tr:first-child th:first-child,
+.user-css .statblock .dnd5e-sheet table tr:first-child th:first-child,
+.user-css .statblock .dnd5e-sheet table tr:first-child td:first-child,
+.user-css .statblock .dnd5e-sheet tbody tr:first-child th:first-child
 {
     border-top-left-radius: var(--cont-rad);
-	-webkit-border-top-left-radius: var(--cont-rad);
 
 }
 .user-css table tr:first-child th:last-child,
@@ -1698,7 +1767,11 @@ AURORA THEME Variables
 .user-css-presentation .tooltipster-content tbody tr:first-child th:last-child,
 .user-css-rpgblock .statblock.system-dnd5e table tr:first-child th:last-child,
 .user-css-rpgblock .statblock.system-dnd5e table tr:first-child td:last-child,
-.user-css-rpgblock .statblock.system-dnd5e tbody tr:first-child th:last-child {
+.user-css-rpgblock .statblock.system-dnd5e tbody tr:first-child th:last-child,
+.user-css .statblock .dnd5e-sheet table tr:first-child th:last-child,
+.user-css .statblock .dnd5e-sheet table tr:first-child td:last-child,
+.user-css .statblock .dnd5e-sheet tbody tr:first-child th:last-child 
+{
     border-top-right-radius: var(--cont-rad);
 }
 .user-css tbody tr:last-child td:first-child,
@@ -1712,7 +1785,10 @@ AURORA THEME Variables
 .user-css-presentation .tooltipster-content tr:last-child th:first-child,
 .user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child td:first-child,
 .user-css-rpgblock .statblock.system-dnd5e table tr:last-child td:first-child,
-.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child th:first-child
+.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child th:first-child,
+.user-css .statblock .dnd5e-sheet tbody tr:last-child td:first-child,
+.user-css .statblock .dnd5e-sheet table tr:last-child td:first-child,
+.user-css .statblock .dnd5e-sheet tbody tr:last-child th:first-child
 {
     border-bottom-left-radius: var(--cont-rad);
 }
@@ -1727,7 +1803,10 @@ AURORA THEME Variables
 .user-css-presentation .tooltipster-content tbody tr:last-child th:last-child,
 .user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child td:last-child,
 .user-css-rpgblock .statblock.system-dnd5e table tr:last-child td:last-child,
-.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child th:last-child
+.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child th:last-child,
+.user-css .statblock .dnd5e-sheet tbody tr:last-child td:last-child,
+.user-css .statblock .dnd5e-sheet table tr:last-child td:last-child,
+.user-css .statblock .dnd5e-sheet tbody tr:last-child th:last-child
 {
     border-bottom-right-radius: var(--cont-rad);
 }
@@ -2041,7 +2120,7 @@ body.presentation-interface-map, .map-context-user-css {
 .user-css .timeline .timeline-entry-milestone .header-icon, 
 .user-css .timeline .minor .header-icon, 
 .user-css .timeline .trivial .header-icon, 
-.user-css.timeline .no-importance .header-icon, 
+.user-css .timeline .no-importance .header-icon, 
 .user-css .timeline li .tl-circ,
 .user-css-extended .timeline li .timeline-panel, 
 .user-css-extended .timeline .milestone,
@@ -2054,6 +2133,7 @@ body.presentation-interface-map, .map-context-user-css {
 .user-css-extended .timeline li .tl-circ
 { 
 	background: var(--aurora-wl);
+	background-color: var(--aurora-wl);
 }
 .user-css .timeline li .timeline-panel::after,
 .user-css-extended .timeline li .timeline-panel::after { 
@@ -2178,7 +2258,8 @@ text-align: center;}
 .user-css .timeline .no-importance .header-icon,
 .user-css-extended .timeline .no-importance .header-icon{
 	color: var(--aurora-wd);
-	border-color: var(--aurora-w);}
+	border-color: var(--aurora-w);
+}
 
 .user-css .timeline .timeline-entry-milestone,
 .user-css-extended .timeline .timeline-entry-milestone
@@ -2229,6 +2310,10 @@ font-size: 13px;
 	color: var(--aurora-wd);
 }
 
+.user-css .character-relationship-panel .fas.fa-exchange.fa-3x {
+	color: var(--aurora-w);
+}
+
 /* side panel relationships */
 .user-css .relation {font-size: .5em;}
 .user-css .relation h4, .user-css .relation h5 {font-size: 1.25em;}
@@ -2256,14 +2341,19 @@ font-size: 13px;
 	
 }
 .user-css-calendar.modal-dialog {
-	background: var(--aurora-nightd);
+	background: var(--gs-aurora-4);
 	border-radius: var(--cont-rad);
+	border: none;
 }
 .user-css-calendar.modal-dialog .modal-header .close {
 	color: var(--aurora-w);
 	opacity: .8;
 }
 .user-css-calendar.modal-dialog .modal-header h3 { width: 96%;}
+
+.user-css-calendar.modal-dialog .celestial-desc {
+	color: var(--aurora-w);
+}
 
 .user-css-calendar table th {
 	font-family: var(--font-5);
@@ -2473,20 +2563,33 @@ font-size: 13px;
 .aurora-nightd { background: var(--aurora-nightd); }
 .aurora-wd { background: var(--aurora-wd); }
 
-/* gradients */
-.g-aurora-1 { background: linear-gradient(var(--aurora-night), var(--aurora-1t)); }
-.g-aurora-2 { background: linear-gradient(var(--aurora-night), var(--aurora-2t)); }
-.g-aurora-3 { background: linear-gradient(var(--aurora-night), var(--aurora-3t)); }
-.g-aurora-4 { background: linear-gradient(var(--aurora-night), var(--aurora-4t)); }
-.g-aurora-5 {  background: linear-gradient(var(--aurora-night), var(--aurora-5t)); }
-.g-aurora-6 { background: linear-gradient(var(--aurora-night), var(--aurora-6t)); }
-.g-aurora-7 { background: linear-gradient(var(--aurora-night), var(--aurora-7t)); }
-.g-aurora-8 { background: linear-gradient(var(--aurora-night), var(--aurora-8t)); }
-.g-aurora-9 { background: linear-gradient(var(--aurora-night), var(--aurora-9t)); }
-.g-aurora-f {  background: linear-gradient(var(--aurora-night), var(--aurora-ft)); }
-.g-aurora-night { background: linear-gradient(var(--aurora-night), var(--aurora-nightt3)); }
-.g-aurora-w { background: linear-gradient(var(--aurora-night), var(--aurora-wt)); }
+/* gradients - transparent bottom*/
+.g-aurora-1 { background: var(--g-aurora-1); }
+.g-aurora-2 { background: var(--g-aurora-2); }
+.g-aurora-3 { background: var(--g-aurora-3); }
+.g-aurora-4 { background: var(--g-aurora-4); }
+.g-aurora-5 { background: var(--g-aurora-5); }
+.g-aurora-6 { background: var(--g-aurora-6); }
+.g-aurora-7 { background: var(--g-aurora-7); }
+.g-aurora-8 { background: var(--g-aurora-8); }
+.g-aurora-9 { background: var(--g-aurora-9); }
+.g-aurora-f {  background: var(--g-aurora-f); }
+.g-aurora-night { background: var(--g-aurora-night); }
+.g-aurora-w { background: var(--g-aurora-w); }
 
+/* gradients - solid*/
+.gs-aurora-1 { background: var(--gs-aurora-1); }
+.gs-aurora-2 { background: var(--gs-aurora-2); }
+.gs-aurora-3 { background: var(--gs-aurora-3); }
+.gs-aurora-4 { background: var(--gs-aurora-4); }
+.gs-aurora-5 { background: var(--gs-aurora-5); }
+.gs-aurora-6 { background: var(--gs-aurora-6); }
+.gs-aurora-7 { background: var(--gs-aurora-7); }
+.gs-aurora-8 { background: var(--gs-aurora-8); }
+.gs-aurora-9 { background: var(--gs-aurora-9); }
+.gs-aurora-f { background: var(--gs-aurora-f); }
+.gs-aurora-night { background: var(--gs-aurora-night); }
+.gs-aurora-w { background: var(--gs-aurora-w); }
 /* ------------------------------------- color basic classes - [color] not seem to work in statblocks ------------------------------------ */
 .red { color: red; }
 .orange { color: orange; }
