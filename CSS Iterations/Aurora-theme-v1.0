@@ -3,16 +3,7 @@
 @namespace      github.com/openstyles/stylus
 @version        1.0.1
 
-Notes: 
-- Changed bg to have a clearer image
-- Updating BG size to be smaller with 16:9 ratio, so loads faster
-- darkened the page page BG for readability + tweaked the small screen gradient
-- moved the dice roller out of the way of the user way accessibility thingy
-- fixed time line no-importance bg icon color
-- tweak and fix d&d5e rpg sheets
-- styled the notification for follow/unfollow
-- made the calendar holiday modal-dialog popup bg show up contrast better with the moon phases.
-- divided up the gradient bg classes to be all transparent or all solid
+Change Notes: 
 
 
 @description    This theme is inspired by the Finnish Foxfire legend
