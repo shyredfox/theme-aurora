@@ -19,7 +19,8 @@ Theme sampler can be found at: https://www.worldanvil.com/w/aurora-theme-shyredf
 ------------------------------------------------------------
 This theme has many **BONUS CLASSES** available for Gransmaster+
 
-See https://www.worldanvil.com/w/aurora-theme-shyredfox/a/aurora-bonus-classes-article for a listing
+Search for BONUS CLASSES in this file or see:
+https://www.worldanvil.com/w/aurora-theme-shyredfox/a/aurora-bonus-classes-article for a listing
 ------------------------------------------------------------
 ------------------------------------------------------------
 
@@ -2465,7 +2466,7 @@ font-size: 13px;
 
 }
 
-/* ------------------ MY CONTAINERS for the Theme ----------------- */
+/* ------------------ BONUS CLASSES ----------------- */
 .HL {
     background: var(--aurora-2t);
     border-radius: var(--sect-rad);
