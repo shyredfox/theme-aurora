@@ -1,9 +1,10 @@
 /* ==UserStyle==
 @name           Aurora Theme for World Anvil
 @namespace      github.com/openstyles/stylus
-@version        1.0.1
+@version        1.0.2
 
-Change Notes: 
+Notes: 
+- Fixed jump link to not hide the header we want to jump to - https://css-tricks.com/fixed-headers-and-jump-links-the-solution-is-scroll-margin-top/
 
 
 @description    This theme is inspired by the Finnish Foxfire legend
@@ -19,8 +20,7 @@ Theme sampler can be found at: https://www.worldanvil.com/w/aurora-theme-shyredf
 ------------------------------------------------------------
 This theme has many **BONUS CLASSES** available for Gransmaster+
 
-Search for BONUS CLASSES in this file or see:
-https://www.worldanvil.com/w/aurora-theme-shyredfox/a/aurora-bonus-classes-article for a listing
+See https://www.worldanvil.com/w/aurora-theme-shyredfox/a/aurora-bonus-classes-article for a listing
 ------------------------------------------------------------
 ------------------------------------------------------------
 
@@ -2466,7 +2466,7 @@ font-size: 13px;
 
 }
 
-/* ------------------ BONUS CLASSES ----------------- */
+/* ------------------ MY CONTAINERS for the Theme ----------------- */
 .HL {
     background: var(--aurora-2t);
     border-radius: var(--sect-rad);
@@ -2619,4 +2619,73 @@ font-size: 13px;
 /* display a statblock with it's parent container's attributes */ 
 .display-contents-statblock .statblock {
   display: contents;
+}
+
+
+/* -------------------------------------
+               NON THEME 
+-------------------------------------- */
+
+.table-aurora-icons .table tr td:nth-child(1), .table-aurora-icons .table tr td:nth-child(3) {
+	text-align: center;
+	max-width: 10%;
+	min-width: 10%;
+	font-size: var(--fsize-h3);
+}
+.table-aurora-icons .table tr td:nth-child(2), .table-aurora-icons .table tr td:nth-child(4)  {
+    text-align: left;
+	max-width: 40%;
+	min-width: 40%;
+	white-space: nowrap;
+	font-family: var(--font-code);
+}
+
+/* Side box */
+.side-box-vocab {
+  opacity: 0.5;
+  border-radius: 10px; 
+  top: 100px; 
+  right: 10px; 
+  padding: 10px;
+  font-size: .7em;
+  line-height: 1.2em;
+  border: var(--border-thin) solid var(--aurora-wtb); 
+  background: var(--aurora-wl); 
+  position: fixed;
+  z-index:10;
+}
+
+.med-text  {
+	background: var(--aurora-wt);
+	border-radius: var(--cont-rad);
+    display: inline-block;
+    font-size: .8em;
+    line-height: 1.5em;
+	padding: var(--cont-pad);
+}
+
+.side-box-vocab a {color: var(--aurora-night);}
+.side-box-vocab a:hover {color: var(--aurora-7l);}
+
+@media only screen and (max-width: 1099px) {
+    .side-box-vocab {display: none;}
+}
+
+.news-cols {
+    margin: 15px;
+    line-height: 1.5em;
+    column-count: 2;
+    column-gap: 3em;
+    column-rule: 2px solid black;
+}
+
+.news-cols h2, .news-cols h3, .news-cols h4, .news-cols h5 {
+    column-span: all;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* fixes jump links leaveing the header off the page */
+span, h2, h3, h4 {
+  scroll-margin-top: 5rem; 
 }
