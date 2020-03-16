@@ -1,10 +1,11 @@
 /* ==UserStyle==
 @name           Aurora Theme for World Anvil
 @namespace      github.com/openstyles/stylus
-@version        1.0.2
+@version        1.1.0
 
 Notes: 
-- Fixed jump link to not hide the header we want to jump to - https://css-tricks.com/fixed-headers-and-jump-links-the-solution-is-scroll-margin-top/
+- subscriber group containers
+- carousel
 
 
 @description    This theme is inspired by the Finnish Foxfire legend
@@ -136,6 +137,7 @@ AURORA THEME Variables
 	--gs-aurora-f: linear-gradient(var(--aurora-night), var(--aurora-f)); 
 	--gs-aurora-night: linear-gradient(var(--aurora-night), var(--aurora-nightd));
 	--gs-aurora-w: linear-gradient(var(--aurora-night), var(--aurora-w)); 
+	
 	
 	/* bootstrap/theme color names */
 	--aurora-success: var(--aurora-5);
@@ -2464,6 +2466,25 @@ font-size: 13px;
 	border: 3px solid var(--aurora-2d);
 	background-image: none;
 
+}
+
+/* subscription/subscriber containers */
+/* subscriber group containers */
+.user-css [class*=subcontain] {
+	display: block;
+	padding: var(--cont-pad);
+	border-radius: var(--cont-rad );
+	background: var(--g-aurora-night);
+	border: 1px dotted var(--aurora-1);
+	margin-bottom: var(--fsize-small);
+}
+
+/* carousel */
+ .user-css .carousel  {
+	background: none;
+	border: 1px solid var(--aurora-3);
+	border-radius: var(--cont-rad);
+	overflow: hidden;
 }
 
 /* ------------------ MY CONTAINERS for the Theme ----------------- */
