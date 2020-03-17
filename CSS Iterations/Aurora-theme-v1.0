@@ -1,11 +1,12 @@
 /* ==UserStyle==
 @name           Aurora Theme for World Anvil
 @namespace      github.com/openstyles/stylus
-@version        1.1.0
+@version        1.1.1
 
 Notes: 
 - subscriber group containers
 - carousel
+- 3/17/2020 panel colors needed update against dark background + fixed a few CSS issued with word-wrap
 
 
 @description    This theme is inspired by the Finnish Foxfire legend
@@ -592,14 +593,16 @@ AURORA THEME Variables
 	color: var(--aurora-text);
 }
 .user-css [class*=panel-bod] {
-	background-color: var(--aurora-nightt3);
+	background-color: var(--aurora-6d);
 	color: var(--aurora-text);
 	padding: var(--cont-pad-sm);
     border-radius: var(--cont-rad);
 }
+
+
 /* ------------ PANEL Side bar ----- */
 .user-css .col-md-4 .panel-default {
-	background: var(--aurora-nightt3);
+	background: var(--aurora-6d);
 	color: var(--aurora-text);
 	border-radius: var(--cont-rad);
 }
@@ -810,14 +813,14 @@ AURORA THEME Variables
 
 .user-css #world-category-content h1.m-b-0 {
     font-size: var(--fsize-h1-sm);
-    word-break: break-word;
+    word-wrap: break-word;
 }
 
 
 @media screen and (max-width:799px) { 
     .user-css h1 {
         font-size: var(--fsize-h1-sm);
-        word-break: break-word;
+        word-wrap: break-word;
     }
 } 
 
@@ -2455,7 +2458,7 @@ font-size: 13px;
 .user-css .far.fa-lock-alt.fa-5x ~ h1 {
 	font-family: var(--font-3);
 	font-size: 2.5em;
-	word-break: break-word;
+	word-wrap: break-word;
 }
 
 .user-css #passcode.form-control {
@@ -2710,3 +2713,4 @@ font-size: 13px;
 span, h2, h3, h4 {
   scroll-margin-top: 5rem; 
 }
+
