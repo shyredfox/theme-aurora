@@ -1,12 +1,16 @@
 /* ==UserStyle==
 @name           Aurora Theme for World Anvil
 @namespace      github.com/openstyles/stylus
-@version        1.1.1
+@version        1.1.3
 
 Notes: 
 - subscriber group containers
 - carousel
 - 3/17/2020 panel colors needed update against dark background + fixed a few CSS issued with word-wrap
+1.1.2
+- added userstate options
+1.1.3
+- added family trees (CSS available as of 3/17/2020)
 
 
 @description    This theme is inspired by the Finnish Foxfire legend
@@ -2490,6 +2494,94 @@ font-size: 13px;
 	overflow: hidden;
 }
 
+/* user state */
+.user-css [class*=user-state] {
+	display: block;
+	padding: var(--cont-pad);
+	border-radius: var(--cont-rad );
+	border: 5px solid var(--aurora-1l);
+	margin-bottom: var(--fsize-small);
+	margin-top: var(--fsize-small);
+	box-shadow: var(--box-shadows);
+    -moz-box-shadow: var(--box-shadows);
+    -webkit-box-shadow: var(--box-shadows);
+}
+
+.user-css .user-state-loggedin {
+	background: var(--aurora-1t);
+}
+
+.user-css .user-state-loggedout {
+	background: var(--aurora-9t);
+}
+
+.user-css .user-state-follower {
+	background: var(--aurora-3t);
+}
+
+.user-css .user-state-notfollower {
+	background: var(--aurora-8t);
+}
+
+/* family tree */
+.user-css .rhea-family-tree{
+	/* portrait frame colors */
+	--highlightedCharGradient: linear-gradient(0deg,var(--aurora-wl), var(--aurora-3l));
+	
+	--inactiveCharGradient: linear-gradient(0deg,var(--aurora-wl),var(--aurora-wd));
+	
+	/* lines */
+	--rootNodeBg: var(--aurora-wt);
+	--rootNodeBorder: 2px solid var(--aurora-1t);
+	border-radius: var(--cont-rad);
+	--lineWidth: 2px;
+	--lineColor: var(--aurora-nightl);
+	
+	/* name plates */
+ 	--characterNameBorder: 1px solid var(--aurora-wd);
+	--characterNameBorderRadius: var(--cont-rad );
+ 	--characterNamePadding: 5px;
+	--characterHonorificColor: var(--aurora-night);
+	--characterDatesSize: 0.8em;
+	--characterDatesLineHeight: 0.9em;
+	--characterDatesFont: var(--font-reg);
+	--characterNameSize: .95em;
+	--characterNameLineHeight: 1.1em;
+	--characterNameFont: var(--font-code);
+	--characterNameColor: var(--aurora-5);
+	--characterHonorificFont:var(--font-);
+	--characterLabelBg: var(--aurora-w); /* name and char box */
+	--characterDatesColor: var(--aurora-night);
+
+	
+	/* main Char portrait */
+ 	--mainCharPortraitFrameBg: var(--highlightedCharGradient);
+	--mainCharParentPortraitFrameBg: var(--inactiveCharGradient);
+	
+	/* relationship card */
+	--characterRelationshipCardFont: var(--font-reg);
+	--characterRelationshipCardBg: var(--aurora-night);
+	--characterRelationshipCardColor: white;
+
+	/* inactive char frames */
+	--mainCharChildPortraitFrameBg: var(--inactiveCharGradient);
+}
+
+.user-css .rhea-family-tree .character-label, .user-css .rhea-family-tree .character-relationship {
+	border-radius: var(--cont-rad);
+}
+
+.user-css [class*=rhea-search-contain] input {
+	color: var(--aurora-night);
+	border-radius: var(--cont-rad);
+	border:  2px solid var(--aurora-wd);
+	background: var(--aurora-w);
+}
+
+.user-css [class*=rhea-search-contain] input::placeholder {
+	color: var(--aurora-wd);
+}
+
 /* ------------------ MY CONTAINERS for the Theme ----------------- */
 .HL {
     background: var(--aurora-2t);
@@ -2713,4 +2805,3 @@ font-size: 13px;
 span, h2, h3, h4 {
   scroll-margin-top: 5rem; 
 }
-
