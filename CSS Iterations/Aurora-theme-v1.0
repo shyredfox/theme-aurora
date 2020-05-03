@@ -1,7 +1,7 @@
- /* ==UserStyle==
+/* ==UserStyle==
 @name           Aurora Theme for World Anvil
 @namespace      github.com/openstyles/stylus
-@version        1.1.4
+@version        1.1.7
 
 Notes: 
 - subscriber group containers
@@ -13,6 +13,14 @@ Notes:
 - added family trees (CSS available as of 3/17/2020)
 1.1.4
 - minor change for front page to show as a glow box but not have the ugly BBCode in a discord link.
+1.1.5 5/1/2020
+- New D&D 5e sheets NPC + Item
+1.1.6 (from 4/3/2020)
+- finished family tree sample
+1.1.7 5/2/2020
+- New D&D 5e Monster and Spell
+- took out rounding of table corners - too many options made it maddening! :( So I just did the header corners
+- fix table going off small screens (scroll)
 
 
 @description    This theme is inspired by the Finnish Foxfire legend
@@ -387,16 +395,16 @@ AURORA THEME Variables
 .font-5 { font-family: var(--font-5); }
 .font-code { font-family: var(--font-code); }
 .fsize-h0 { font-size: var(--fsize-h0); line-height: 1.3em;}
-.fsize-h1 { font-size: var(--fsize-h1); line-height: 1.3em; }
+.fsize-h1 { font-size: var(--fsize-h1); line-height: 1.3em;}
 .fsize-h2 { font-size: var(--fsize-h2); line-height: 1.3em;}
 .fsize-h3 { font-size: var(--fsize-h3); line-height: 1.3em;}
 .fsize-h4 { font-size: var(--fsize-h4); line-height: 1.3em;}
-.fsize-h5 { font-size: var(--fsize-h5); line-height: 1.3em; }
+.fsize-h5 { font-size: var(--fsize-h5); line-height: 1.3em;}
 .fsize-h6 { font-size: var(--fsize-h6); line-height: 1.3em;}
-.fsize-text { font-size: var(--fsize-text); }
-.fsize-big { font-size: var(--fsize-big); }
-.fsize-small { font-size: var(--fsize-small); }
-.fsize-med { font-size: var(--fsize-med); }
+.fsize-text { font-size: var(--fsize-text);}
+.fsize-big { font-size: var(--fsize-big);}
+.fsize-small { font-size: var(--fsize-small);}
+.fsize-med { font-size: var(--fsize-med);}
 
 /* ------------------ BOOTSTRAP CONTAINERS --------------- */
 
@@ -454,7 +462,8 @@ AURORA THEME Variables
     border-radius: var(--cont-rad);
 }
 
-.user-css .label, .user-css-extended .label, .user-css-rpgblock .label {
+.user-css .label, .user-css-extended .label, 
+.user-css-rpgblock .label {
     color: var(--aurora-text);
 	background: var(--aurora-4d);
 	font-family: var(--font-3); 
@@ -782,7 +791,8 @@ AURORA THEME Variables
 /* ---------- GENERAL TEXT ---------- */
 .user-css,
 .user-css-extended,
-.user-css p, .user-css-extended p,
+.user-css p, 
+.user-css-extended p,
 .user-css .tab-content, 
 .user-css .panel-default p,
 .user-css-presentation .tooltipster-content p,
@@ -921,7 +931,7 @@ AURORA THEME Variables
 .user-css .world-toc-loader h5, 
 .user-css .world-toc-loader h6,
 .user-css .category-toc-loader h5, 
-.user-css .category-toc-loader h6
+.user-css .category-toc-loader h6,
 .user-css-presentation .tooltipster-content .table-of-contents h5,
 .user-css-presentation .tooltipster-content .table-of-contents h6
 {
@@ -1070,7 +1080,7 @@ AURORA THEME Variables
 
 .user-css .world-toc-loader .category-list h6 a,
 .user-css #world-menu .category-list h6 a, 
-.user-css world-menu-subcategory h6 a 
+.user-css world-menu-subcategory h6 a,
 .user-css-presentation .tooltipster-content .world-toc-loader .category-list h6 a,
 .user-css-presentation .tooltipster-content #world-menu .category-list h6 a,
 .user-css-presentation .tooltipster-content world-menu-subcategory h6 a
@@ -1182,6 +1192,7 @@ AURORA THEME Variables
     font-size: var(--fsize-text);
 }
 
+
 .user-css .statblock,
 .user-css-extended .statblock, 
 .user-css-presentation .tooltipster-content .statblock, 
@@ -1189,12 +1200,15 @@ AURORA THEME Variables
 .user-css .statblock .dnd5e-sheet,
 .user-css-extended .statblock.system-dnd5e,
 .user-css-rpgblock .statblock.system-dnd5e,
-.user-css-presentation .tooltipster-content .statblock.system-dnd5e
+.user-css-presentation .tooltipster-content .statblock.system-dnd5e,
+.user-css [class*=_2020-dimitris-1],
+.user-css-extended [class*=_2020-dimitris-1],
+.user-css .template-monster-dimitris-1,
+.user-css-extended .template-monster-dimitris-1 
 {
     border-radius: var(--cont-rad);
-    background: var(--aurora-clear) ;
-    border-color: var(--aurora-1l);
-    border-width: var(--border-thin);
+    background: var(--aurora-clear);
+	border: var(--aurora-1l) solid var(--border-thin);
 }
 
 .user-css [class*=contentContain],
@@ -1301,6 +1315,152 @@ AURORA THEME Variables
 	margin-bottom: 200px;
 } 
 
+/* D&D 5E sheets - 2020 versions and prev */
+.user-css [class*=_2020-dimitris-1] .subheading, 
+.user-css .template-monster-dimitris-1 .subheading,
+.user-css-extended [class*=_2020-dimitris-1] .subheading, 
+.user-css-extended .template-monster-dimitris-1 .subheading
+{
+	font-family: var(--font-3);
+	color: var(--aurora-wl)
+}
+.user-css [class*=_2020-dimitris-1] .statblock-stat, 
+.user-css .template-monster-dimitris-1 .statblock-stat,
+.user-css-extended [class*=_2020-dimitris-1] .statblock-stat, 
+.user-css-extended .template-monster-dimitris-1 .statblock-stat
+{
+	margin: var(--cont-pad-sm);
+}
+.user-css [class*=_2020-dimitris-1] .inside-content,
+.user-css .template-monster-dimitris-1 .inside-content,
+.user-css-extended [class*=_2020-dimitris-1] .inside-content,
+.user-css-extended .template-monster-dimitris-1 .inside-content
+{
+	background: none;
+	border: none;
+}
+.user-css [class*=_2020-dimitris-1] .gold,
+.user-css .template-monster-dimitris-1 .gold,
+.user-css-extended [class*=_2020-dimitris-1] .gold,
+.user-css-extended .template-monster-dimitris-1 .gold
+{
+	display: none;
+}
+.user-css [class*=_2020-dimitris-1] .dndline,
+.user-css .template-monster-dimitris-1 .dndline,
+.user-css-extended [class*=_2020-dimitris-1] .dndline,
+.user-css-extended .template-monster-dimitris-1 .dndline
+{
+	border: solid var(--aurora-4d);
+	
+}
+.user-css [class*=_2020-dimitris-1] .statblock-attribute h3,
+.user-css .template-monster-dimitris-1 .statblock-attribute h3,
+.user-css-extended [class*=_2020-dimitris-1] .statblock-attribute h3,
+.user-css-extended .template-monster-dimitris-1 .statblock-attribute h3
+{
+	background: none;
+	border: none;
+	font-family: var(--font-3);
+}
+
+.user-css [class*=_2020-dimitris-1] .statblock-attribute h3 .label-roller,
+.user-css .template-monster-dimitris-1 .statblock-attribute h3 .label-roller,
+.user-css-extended [class*=_2020-dimitris-1] .statblock-attribute h3 .label-roller,
+.user-css-extended .template-monster-dimitris-1 .statblock-attribute h3 .label-roller
+{
+	margin-top: -3px;
+}
+
+.user-css [class*=_2020-dimitris-1] .statblock-attribute h2,
+.user-css-extended [class*=_2020-dimitris-1] .statblock-attribute h2,
+.user-css .template-monster-dimitris-1 .statblock-attribute h2,
+.user-css-extended .template-monster-dimitris-1 .statblock-attribute h2
+{
+	border-bottom: unset;
+    font-family: var(--font-2);
+    font-size: unset;
+    color: var(--aurora-wl);
+    margin: unset;
+    padding: unset;
+}
+
+.user-css [class*=_2020-dimitris-1] .statblock-attribute h3,
+.user-css-extended [class*=_2020-dimitris-1] .statblock-attribute h3,
+.user-css .template-monster-dimitris-1 .statblock-stat h3,
+.user-css-extended .template-monster-dimitris-1 .statblock-stat h3,
+.user-css .template-monster-dimitris-1 .statblock-attribute h3,
+.user-css-extended .template-monster-dimitris-1 .statblock-attribute h3
+{
+	border-bottom: unset;
+    font-family: var(--font-3);
+    font-size: unset;
+    color: var(--aurora-wl);
+    margin:  var(--cont-pad-sm);
+    padding: var(--cont-pad-sm);
+}
+
+.user-css [class*=_2020-dimitris-1] .statblock-stat h3,
+.user-css-extended [class*=_2020-dimitris-1] .statblock-stat h3,
+.user-css .template-monster-dimitris-1  .statblock-stat h3,
+.user-css-extended .template-monster-dimitris-1  .statblock-stat h3
+{
+	font-family: var(--font-2);
+	color: var(--aurora-wl);
+	font-size: var(--fsize-h3);
+	margin-top: var(--cont-pad-sm);
+    margin-bottom: var(--cont-pad-sm);
+	padding-top: var(--cont-pad-tiny);
+	padding-bottom: var(--cont-pad-tiny);
+}
+
+
+.user-css [class*=dimitris-1] .statblock-stat .label-roller,
+.user-css-extended [class*=dimitris-1] .statblock-stat .label-roller
+{
+	margin-top: -7px;
+}
+.user-css [class*=_2020-dimitris-1] .statblock-source,
+.user-css .template-monster-dimitris-1 .statblock-source,
+.user-css-extended [class*=_2020-dimitris-1] .statblock-source,
+.user-css-extended .template-monster-dimitris-1 .statblock-source
+{
+	font-size: 0.9em;
+	padding: var(--cont-pad-tiny);
+	color: var(--aurora-wl);
+	background: var(--aurora-8d);
+	border-radius: 5px;
+}
+.user-css [class*=_2020-dimitris-1] img,
+.user-css .template-monster-dimitris-1 img,
+.user-css-extended [class*=_2020-dimitris-1] img,
+.user-css-extended .template-monster-dimitris-1 img
+{
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 400px;
+}
+/* Dimi had this set to display none - so I'm taking out the black line from it */
+.user-css [class*=_2020-dimitris-1] .credit-artist-name, 
+.user-css [class*=_2020-dimitris-1] .artist-credits,
+.user-css .template-monster-dimitris-1 .credit-artist-name, 
+.user-css .template-monster-dimitris-1 .artist-credits,
+.user-css-extended [class*=_2020-dimitris-1] .credit-artist-name, 
+.user-css-extended [class*=_2020-dimitris-1] .artist-credits,
+.user-css-extended .template-monster-dimitris-1 .credit-artist-name, 
+.user-css-extended .template-monster-dimitris-1 .artist-credits 
+{
+	padding: 0;
+}
+
+.user-css [class*=_2020-dimitris-1] table,
+.user-css .template-monster-dimitris-1 table,
+.user-css-extended [class*=_2020-dimitris-1] table,
+.user-css-extended .template-monster-dimitris-1 table
+{
+	margin-top: var(--cont-pad-tiny);
+} 
+
 .user-css [class$=dnd5e] h1,
 .user-css [class*=template] h1,
 .user-css-extended .statblock.system-dnd5e h1
@@ -1338,27 +1498,37 @@ AURORA THEME Variables
 .user-css .statblock.system-dnd5e .table th,
 .user-css-extended .statblock.system-dnd5e .table th,
 .user-css-rpgblock .statblock.system-dnd5e .table th,
-.user-css .statblock .dnd5e-sheet .table th
+.user-css .statblock .dnd5e-sheet .table th,
+.user-css [class*=_2020-dimitris-1] .table th,
+.user-css-extended [class*=_2020-dimitris-1] .table th
 { 
 	font-size: 1em;
 	text-align: left;
 }
 
-@media only screen and (max-width: 1200px) {
-.user-css .statblock.system-dnd5e .col-md-12 table
-{
-    /*  table-layout:fixed; - to make the table stay inside the container - though it messes up column widths then. It only happens when the screen is small on Chrome at abotu 1200px wide. So I put a media query on it */ 
-    table-layout: fixed; 
-} 
+.user-css .statblock table {
+	width: 100%;
 }
 
- .user-css .statblock.system-dnd5e .col-md-12 table td:nth-child(2),
+/* when a table goes off a small screen make it scroll */
+@media only screen and (max-width: 1210px){
+	.user-css .statblock table
+	{
+		/*  table-layout:fixed; - to make the table stay inside the container - though it messes up column widths then. It only happens when the screen is small on Chrome at abotu 1200px wide. So I put a media query on it */ 
+		/* table-layout: fixed; */
+		overflow-x: auto;
+		display: inline-block;
+	} 
+
+/* .user-css .statblock.system-dnd5e .col-md-12 table td:nth-child(2),
 .user-css-extended .statblock.system-dnd5e .col-md-12  table td:nth-child(2),
-.user-css-extended .statblock .col-md-12  table td:nth-child(2)
+.user-css-extended .statblock .col-md-12  table td:nth-child(2),
+.user-css .col-md-12 [class*=_2020-dimitris-1] table td:nth-child(2),
+.user-css-extended .col-md-12 [class*=_2020-dimitris-1] table td:nth-child(2)
 {	min-width: 150px;
 	max-width: 150px;
-} 
-
+} */
+}
 
 .user-css-rpgblock .statblock.system-dnd5e .btn-primary {border: var(--border-thin) solid var(--aurora-wt);}
 
@@ -1481,7 +1651,7 @@ AURORA THEME Variables
 
 .user-css .article-panel,
 .user-css-extended .article-panel,
-.user-css-presentation .tooltipster-content .article-panel{
+.user-css-presentation .tooltipster-content .article-panel {
     border-radius: var(--cont-rad);
     background: var(--aurora-nightt);
 	border: 1px dotted var(--aurora-3l);
@@ -1649,7 +1819,11 @@ AURORA THEME Variables
 /* tables */
 .user-css table, .user-css .table, .user-css-presentation .tooltipster-content table, .user-css-presentation .tooltipster-content .table,
 .user-css-rpgblock .statblock.system-dnd5e table,
-.user-css-rpgblock .statblock.system-dnd5e .table
+.user-css-rpgblock .statblock.system-dnd5e .table,
+.user-css [class*=_2020-dimitris-1] table,
+.user-css [class*=_2020-dimitris-1] .table,
+.user-css-extended [class*=_2020-dimitris-1] table,
+.user-css-extended [class*=_2020-dimitris-1] .table
 {
     background: none;
     width: 100%;
@@ -1658,7 +1832,9 @@ AURORA THEME Variables
 .user-css table td, 
 .user-css-presentation .tooltipster-content table td,
 .user-css-extended .tooltipster-content table td,
-.user-css .statblock.system-dnd5e table td
+.user-css .statblock.system-dnd5e table td,
+.user-css [class*=_2020-dimitris-1] table td,
+.user-css-extended [class*=_2020-dimitris-1] table td
 {
     background: none !important;
     color: var(--aurora-nightd) !important;
@@ -1666,25 +1842,34 @@ AURORA THEME Variables
     font-family: var(--font-3);
     font-size: .8em;
 }
-.user-css-rpgblock .statblock.system-dnd5e table td {
+.user-css-rpgblock .statblock.system-dnd5e table td,
+.user-css [class*=_2020-dimitris-1] table td,
+.user-css-extended [class*=_2020-dimitris-1] table td
+{
 	    background: none !important;
     color: var(--aurora-nightd) !important;
     /* width: 100%; */
     font-family: var(--font-3);
 }
-.user-css-presentation table,
-.user-css table, 
-.user-css-extended table, 
-.user-css-presentation tbody,
-.user-css tbody, 
-.user-css-extended tbody,
-.user-css-presentation .tooltipster-content table,
-.user-css-presentation .tooltipster-content tbody,
-.user-css-rpgblock .statblock.system-dnd5e table,
-.user-css-rpgblock .statblock.system-dnd5e tbody
+.user-css-presentation table thead,
+.user-css table thead, 
+.user-css-extended table thead
 { 
 	border-radius: var(--cont-rad); 
 	-webkit-border-radius: var(--cont-rad); 
+	border-collapse: unset;
+}
+.user-css-presentation table th:first-child,
+.user-css table th:first-child, 
+.user-css-extended table th:first-child {
+	border-top-left-radius: var(--cont-rad); 
+	-webkit-border-top-left-radius: var(--cont-rad); 
+}
+.user-css-presentation table th:last-child,
+.user-css table th:last-child, 
+.user-css-extended table th:last-child{
+	border-top-right-radius: var(--cont-rad); 
+	-webkit-border-top-right-radius: var(--cont-rad); 
 }
 
 /* Affects every odd row in tables, good for making striped looks. */
@@ -1693,7 +1878,11 @@ AURORA THEME Variables
 .user-css-presentation .tooltipster-content tr:nth-of-type(odd), 
 .user-css-presentation .tooltipster-content .table tr:first-of-type td,
 .user-css-rpgblock .statblock.system-dnd5e tr:nth-of-type(odd), 
-.user-css-rpgblock .statblock.system-dnd5e .table tr:first-of-type td
+.user-css-rpgblock .statblock.system-dnd5e .table tr:first-of-type td,
+.user-css [class*=_2020-dimitris-1] tr:nth-of-type(odd), 
+.user-css [class*=_2020-dimitris-1] .table tr:first-of-type td,
+.user-css-extended [class*=_2020-dimitris-1] tr:nth-of-type(odd), 
+.user-css-extended [class*=_2020-dimitris-1] .table tr:first-of-type td
 {
     background-color: var(--aurora-wtb) !important;
 }
@@ -1701,7 +1890,9 @@ AURORA THEME Variables
 /* Affects every evenrow in tables, good for making striped looks. */
 .user-css tr:nth-of-type(even),
 .user-css-presentation .tooltipster-content tr:nth-of-type(even),
-.user-css-rpgblock .statblock.system-dnd5e tr:nth-of-type(even)
+.user-css-rpgblock .statblock.system-dnd5e tr:nth-of-type(even),
+.user-css [class*=_2020-dimitris-1]  tr:nth-of-type(even),
+.user-css-extended [class*=_2020-dimitris-1]  tr:nth-of-type(even)
 {
     background-color: var(--aurora-w) !important;
 }
@@ -1709,7 +1900,9 @@ AURORA THEME Variables
 /* allows for rounded corners on top for firefox */
 .user-css .table tr:first-of-type,
 .user-css-presentation .tooltipster-content .table tr:first-of-type,
-.user-css-rpgblock .statblock.system-dnd5e .table tr:first-of-type
+.user-css-rpgblock .statblock.system-dnd5e .table tr:first-of-type,
+.user-css [class*=_2020-dimitris-1] .table tr:first-of-type,
+.user-css-extended [class*=_2020-dimitris-1] .table tr:first-of-type
 {
 	background-color: transparent !important;
 }
@@ -1728,7 +1921,8 @@ AURORA THEME Variables
 .user-css-extended .statblock .table tbody tr th,
 .user-css-presentation .tooltipster-content th,
 .user-css-rpgblock .statblock.system-dnd5e th,
-.user-css .statblock .dnd5e-sheet th
+.user-css .statblock .dnd5e-sheet th,
+.user-css [class*=_2020-dimitris-1] th
 {
     background: var(--aurora-nightl) !important;
     border: 0 solid !important;
@@ -1737,82 +1931,6 @@ AURORA THEME Variables
     font-size: 1.2em;
 }
 
-
-
-/*Round the corners set only specific radii per corner (don't use the border-radius shorthand)*/
-.user-css table tr:first-child th:first-child,
-.user-css table tr:first-child td:first-child,
-.user-css tbody tr:first-child th:first-child,
-.user-css .statblock thead tr:first-child th:first-child,
-.user-css .statblock table tr:first-child td:first-child,
-.user-css .statblock tbody tr:first-child th:first-child,
-.user-css-presentation .tooltipster-content table tr:first-child th:first-child,
-.user-css-presentation .tooltipster-content table tr:first-child td:first-child,
-.user-css-presentation .tooltipster-content tbody tr:first-child th:first-child,
-.user-css-rpgblock .statblock.system-dnd5e table tr:first-child th:first-child,
-.user-css-rpgblock .statblock.system-dnd5e table tr:first-child td:first-child,
-.user-css-rpgblock .statblock.system-dnd5e tbody tr:first-child th:first-child,
-.user-css .statblock .dnd5e-sheet table tr:first-child th:first-child,
-.user-css .statblock .dnd5e-sheet table tr:first-child td:first-child,
-.user-css .statblock .dnd5e-sheet tbody tr:first-child th:first-child
-{
-    border-top-left-radius: var(--cont-rad);
-
-}
-.user-css table tr:first-child th:last-child,
-.user-css table tr:first-child td:last-child,
-.user-css tbody tr:first-child th:last-child,
-.user-css .statblock thead tr:first-child th:last-child,
-.user-cssn .statblock table tr:first-child td:last-child,
-.user-css .statblock tbody tr:first-child th:last-child,
-.user-css-presentation .tooltipster-content table tr:first-child th:last-child,
-.user-css-presentation .tooltipster-content table tr:first-child td:last-child,
-.user-css-presentation .tooltipster-content tbody tr:first-child th:last-child,
-.user-css-rpgblock .statblock.system-dnd5e table tr:first-child th:last-child,
-.user-css-rpgblock .statblock.system-dnd5e table tr:first-child td:last-child,
-.user-css-rpgblock .statblock.system-dnd5e tbody tr:first-child th:last-child,
-.user-css .statblock .dnd5e-sheet table tr:first-child th:last-child,
-.user-css .statblock .dnd5e-sheet table tr:first-child td:last-child,
-.user-css .statblock .dnd5e-sheet tbody tr:first-child th:last-child 
-{
-    border-top-right-radius: var(--cont-rad);
-}
-.user-css tbody tr:last-child td:first-child,
-.user-css table tr:last-child td:first-child,
-.user-css tbody tr:last-child th:first-child,
-.user-css .statblock tbody tr:last-child td:first-child,
-.user-css .statblock table tr:last-child td:first-child,
-.user-css .statblock tbody tr:last-child th:first-child,
-.user-css-presentation .tooltipster-content tbody tr:last-child td:first-child,
-.user-css-presentation .tooltipster-content table tr:last-child td:first-child,
-.user-css-presentation .tooltipster-content tr:last-child th:first-child,
-.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child td:first-child,
-.user-css-rpgblock .statblock.system-dnd5e table tr:last-child td:first-child,
-.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child th:first-child,
-.user-css .statblock .dnd5e-sheet tbody tr:last-child td:first-child,
-.user-css .statblock .dnd5e-sheet table tr:last-child td:first-child,
-.user-css .statblock .dnd5e-sheet tbody tr:last-child th:first-child
-{
-    border-bottom-left-radius: var(--cont-rad);
-}
-.user-css tbody tr:last-child td:last-child,
-.user-css table tr:last-child td:last-child,
-.user-css tbody tr:last-child th:last-child,
-.user-css .statblock tbody tr:last-child td:last-child,
-.user-css .statblock table tr:last-child td:last-child,
-.user-css .statblock tbody tr:last-child th:last-child,
-.user-css-presentation .tooltipster-content tbody tr:last-child td:last-child,
-.user-css-presentation .tooltipster-content table tr:last-child td:last-child,
-.user-css-presentation .tooltipster-content tbody tr:last-child th:last-child,
-.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child td:last-child,
-.user-css-rpgblock .statblock.system-dnd5e table tr:last-child td:last-child,
-.user-css-rpgblock .statblock.system-dnd5e tbody tr:last-child th:last-child,
-.user-css .statblock .dnd5e-sheet tbody tr:last-child td:last-child,
-.user-css .statblock .dnd5e-sheet table tr:last-child td:last-child,
-.user-css .statblock .dnd5e-sheet tbody tr:last-child th:last-child
-{
-    border-bottom-right-radius: var(--cont-rad);
-}
 
 .user-css .panel-greatgm,
 .user-css-presentation .tooltipster-content .panel-greatgm
@@ -2277,7 +2395,7 @@ text-align: center;}
 /* this is the size that seems to center the icon on the circle */
 .user-css .timeline .header-icon,
 .user-css-extended .timeline .header-icon{
-font-size: 13px;
+	font-size: 13px;
 }
 
 /* Campaigns + Heroes / Characters */
@@ -2526,11 +2644,14 @@ font-size: 13px;
 }
 
 /* family tree */
+.user-css .rhea-ft-zoom-controls {
+	color: var(--aurora-night);
+	
+}
 .user-css .rhea-family-tree{
 	/* portrait frame colors */
-	--highlightedCharGradient: linear-gradient(0deg,var(--aurora-wl), var(--aurora-3l));
-	
-	--inactiveCharGradient: linear-gradient(0deg,var(--aurora-wl),var(--aurora-wd));
+	--highlightedCharGradient: var(--aurora-1t);
+	--inactiveCharGradient: var(--aurora-wt);
 	
 	/* lines */
 	--rootNodeBg: var(--aurora-wt);
@@ -2558,30 +2679,36 @@ font-size: 13px;
 	
 	/* main Char portrait */
  	--mainCharPortraitFrameBg: var(--highlightedCharGradient);
-	--mainCharParentPortraitFrameBg: var(--inactiveCharGradient);
+
 	
 	/* relationship card */
 	--characterRelationshipCardFont: var(--font-reg);
 	--characterRelationshipCardBg: var(--aurora-night);
-	--characterRelationshipCardColor: white;
+	--characterRelationshipCardColor: var(--aurora-wl);
 
 	/* inactive char frames */
+	--mainCharSpousePortraitFrameBg: var(--inactiveCharGradient);
 	--mainCharChildPortraitFrameBg: var(--inactiveCharGradient);
+	--mainCharGrandchildPortraitFrameBg: var(--inactiveCharGradient);
+	--mainCharParentPortraitFrameBg: var(--inactiveCharGradient);
+	--mainCharGrandparentPortraitFrameBg: var(--inactiveCharGradient);
+	--mainCharGreatgrandparentPortraitFrameBg: var(--inactiveCharGradient);
+	--halfBloodPortraitFrameBg: var(--inactiveCharGradient);
 }
 
 .user-css .rhea-family-tree .character-label, .user-css .rhea-family-tree .character-relationship {
 	border-radius: var(--cont-rad);
 }
 
-.user-css [class*=rhea-search-contain] input {
+.user-css .rhea-ft-search-input {
 	color: var(--aurora-night);
 	border-radius: var(--cont-rad);
 	border:  2px solid var(--aurora-wd);
 	background: var(--aurora-w);
 }
 
-.user-css [class*=rhea-search-contain] input::placeholder {
-	color: var(--aurora-wd);
+.user-css .rhea-ft-search-input::placeholder {
+	color: var(--aurora-nightt);
 }
 
 /* ------------------ MY CONTAINERS for the Theme ----------------- */
